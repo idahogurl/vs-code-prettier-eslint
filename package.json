@@ -1,7 +1,17 @@
 {
-	"name": "prettier-eslint",
-	"displayName": "Prettier Eslint Formatter",
+	"publisher": "rvest",
+	"name": "vs-code-prettier-eslint",
+	"displayName": "Prettier Eslint",
 	"description": "Extension to format JavaScript code using prettier-eslint package",
+	"keywords": [
+		"eslint",
+		"prettier",
+		"prettier-eslint"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.com/idahogurl/vs-code-prettier-eslint"
+	},
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.42.0"
@@ -11,8 +21,49 @@
 	],
 	"main": "extension.js",
 	"activationEvents": [
-		"onLanguage:javascript"
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact"
 	],
+	"contributes": {
+		"configuration": {
+			"title": "Prettier Eslint",
+			"properties": {
+				"vs-code-prettier-eslint.enabled": {
+					"type": "boolean",
+					"default": true,
+					"description": "Enable Prettier Eslint"
+				},
+				"vs-code-prettier-eslint.eslintFileName": {
+					"type": "string",
+					"default": ".eslintrc",
+					"description": "Eslint config file name"
+				},
+				"vs-code-prettier-eslint.eslintFileType": {
+					"type": "string",
+					"default": "json",
+					"enum": [
+						"json",
+						"yaml"
+					],
+					"description": "Eslint config file type"
+				},
+				"vs-code-prettier-eslint.prettierFileName": {
+					"type": "string",
+					"default": "",
+					"description": "(optional) Prettier options file name"
+				},
+				"vs-code-prettier-eslint.prettierFileType": {
+					"type": "string",
+					"default": "json",
+					"enum": [
+						"json",
+						"yaml"
+					],
+					"description": "Prettier config file type"
+				}
+			}
+		}
+	},
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "yarn run lint",
@@ -34,6 +85,7 @@
 	"dependencies": {
 		"eslint": "^6.8.0",
 		"prettier": "^1.19.1",
-		"prettier-eslint": "^9.0.1"
+		"prettier-eslint": "^9.0.1",
+		"yaml": "^1.7.2"
 	}
 }

@@ -1,34 +1,42 @@
 const fs = require('fs');
+const path = require('path');
+const yaml = require('yaml');
 const format = require('prettier-eslint');
 
-function getPrettierOptions(workspaceFolder) {
-    // check if exists
-    try {
-        const config = fs.readFileSync(workspaceFolder + '/.prettierrc');
-        return JSON.parse(config.toString('UTF-8'));
-    } catch (err) {
-        return undefined;
+function readConfigFile(fileName, fileType) {
+  try {
+    const contents = fs.readFileSync(fileName).toString('UTF-8');
+    if (fileType === 'json') {
+      return JSON.parse(contents);
     }
+    if (fileType === 'yaml') {
+      return yaml.parse(contents);
+    }
+  } catch (err) {
+    return undefined;
+  }
 }
 
-function getEslintConfig(workspaceFolder) {
-    try {
-        const config = fs.readFileSync(workspaceFolder + '/.eslintrc');
-        return JSON.parse(config.toString('UTF-8'));
-    } catch (err) {
-        return undefined;
+module.exports = function formatText({
+  text, filePath, eslintFileName, eslintFileType, prettierFileName, prettierFileType,
+}) {
+  const workspaceFolder = path.dirname(filePath);
+  const eslintConfig = readConfigFile(`${workspaceFolder}/${eslintFileName}`, eslintFileType);
+  if (!eslintConfig) {
+    throw new Error('Cannot open or find your Eslint configuration file');
+  }
+
+  // prettier options are optional
+  let prettierOptions;
+  if (prettierFileName) {
+    prettierOptions = readConfigFile(`${workspaceFolder}/${prettierFileName}`, prettierFileType);
+    if (!prettierOptions) {
+      throw new Error('Cannot open or find your Prettier options file');
     }
-}
+  }
 
-module.exports = function formatText(text, workspaceFolder) {
-    const eslintConfig = getEslintConfig(workspaceFolder);
-    if (!eslintConfig) {
-        throw new Error('Cannot open or find .eslintrc');
-    }
-    const prettierOptions = getPrettierOptions(workspaceFolder);
-
-    const formatted = format({ text, eslintConfig, prettierOptions });
-    return formatted;
-
+  const formatted = format({
+    text, eslintConfig, prettierOptions, filePath,
+  });
+  return formatted;
 };
-

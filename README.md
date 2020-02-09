@@ -1,65 +1,26 @@
-# vs-code-prettier-eslint README
 
-This is the README for your extension "vs-code-prettier-eslint". After writing up a brief description, we recommend including the following sections.
+# VS Code Prettier Eslint
 
-## Features
+ Visual Studio Extension to format JavaScript code using [prettier-eslint](https://github.com/prettier/prettier-eslint) package. 
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Once installed it, open a JavaScript file and press `CTRL + CMD + P`(MacOS) or  `CTRL + Shift + P`  (Windows) to manually format a file or a selection of code. If you don’t want to format your file manually every time, you can format it on save as well.
+## Format on Save
+- Open up the VS Code User's settings/preferences as UI, search for "Format On " and enable "Format on Save".
+- Ensure both "Format on Input" and "Format on Paste" are disabled. They are not supported functionality. 
+- Afterward, the file should format automatically once you save it. 
 
-For example if there is an image subfolder under your extension project workspace:
+## Settings:
+### Required:
 
-\!\[feature X\]\(images/feature-x.png\)
+#### Eslint File Name
+The name of your Eslint config file. The extension assumes the file is located in workspace root.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+#### Eslint File Type
+The file type of your Eslint config file (only JSON and YAML are supported)
 
-## Requirements
+### Optional:
+#### Prettier Options File Name
+The name of your Eslint config file. The extension assumes the file is located in workspace root.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+#### Prettier Options File Type
+The file type of your Prettier options file (only JSON and YAML are supported)

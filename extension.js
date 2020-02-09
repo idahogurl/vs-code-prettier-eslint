@@ -1,41 +1,58 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+// eslint-disable-next-line import/no-unresolved
 const vscode = require('vscode');
-const path = require("path");
-require('./register');
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+const format = require('./formatter');
 
-/**
- * @param {vscode.ExtensionContext} context
- */
-function activate() {
+function formatter(document, range) {
+  try {
+    if (!range) {
+      const firstLine = document.lineAt(0);
+      const lastLine = document.lineAt(document.lineCount - 1);
+      // eslint-disable-next-line no-param-reassign
+      range = new vscode.Range(firstLine.range.start, lastLine.range.end);
+    }
 
-// 	// Use the console to output diagnostic information (console.log) and errors (console.error)
-// 	// This line of code will only be executed once when your extension is activated
-// 	console.log('Congratulations, your extension "vs-code-prettier-eslint" is now active!');
-
-// 	// The command has been defined in the package.json file
-// 	// Now provide the implementation of the command with  registerCommand
-// 	// The commandId parameter must match the command field in package.json
-// 	let disposable = vscode.commands.registerCommand('extension.helloWorld', function () {
-// 		// The code you place here will be executed every time your command is executed
-
-// 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor.document.fileName;
-//    var currentlyOpenTabfileName = path.basename(currentlyOpenTabfilePath);
-//    // Display a message box to the user
-// 		vscode.window.showInformationMessage(currentlyOpenTabfilePath);
-		
-// 	});
-
-// 	context.subscriptions.push(disposable);
+    const text = document.getText(range);
+    const extensionConfig = vscode.workspace.getConfiguration('vs-code-prettier-eslint');
+    const formatted = format({
+      text, filePath: document.fileName, ...extensionConfig,
+    });
+    return [vscode.TextEdit.replace(range, formatted)];
+  } catch (err) {
+    vscode.window.showErrorMessage(err.message);
+  }
 }
-exports.activate = activate;
 
-// this method is called when your extension is deactivated
-function deactivate() {}
 
-module.exports = {
-	activate,
-	deactivate
+// have a function that adds/removes the formatter based
+// on a configuration setting
+let registration;
+function registerFormatterIfEnabled() {
+  const isEnabled = vscode.workspace.getConfiguration().get('vs-code-prettier-eslint.enabled');
+  if (isEnabled && !registration) {
+    registration = {};
+    registration.documentFormatting = vscode.languages.registerDocumentFormattingEditProvider('javascript', {
+      provideDocumentFormattingEdits(document) {
+        return formatter(document);
+      },
+    });
+    registration.documentRangeFormatting = vscode.languages.registerDocumentRangeFormattingEditProvider('javascript', {
+      provideDocumentRangeFormattingEdits(document, range) {
+        return formatter(document, range);
+      },
+    });
+  } else if (!isEnabled && registration) {
+    registration.documentFormatting.dispose();
+    registration.documentRangeFormatting.dispose();
+    registration = undefined;
+  }
 }
+
+// register at activate-time
+registerFormatterIfEnabled();
+
+// add/remove formatter when config changes
+vscode.workspace.onDidChangeConfiguration((event) => {
+  if (event.affectsConfiguration('vs-code-prettier-eslint.enabled')) {
+    registerFormatterIfEnabled();
+  }
+});
