@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const yaml = require('yaml');
-const format = require('prettier-eslint');
+import fs from 'fs';
+import path from 'path';
+import yaml from 'js-yaml';
+import format from 'prettier-eslint';
 
 function readConfigFile(fileName, fileType) {
   try {
@@ -10,20 +10,20 @@ function readConfigFile(fileName, fileType) {
       return JSON.parse(contents);
     }
     if (fileType === 'yaml') {
-      return yaml.parse(contents);
+      return yaml.safeLoad(contents);
     }
   } catch (err) {
     return undefined;
   }
 }
 
-module.exports = function formatText({
-  text, filePath, eslintFileName, eslintFileType, prettierFileName, prettierFileType,
+export default function formatText({
+  text, filePath, workspaceFolder, eslintFileName, eslintFileType, prettierFileName,
+  prettierFileType,
 }) {
-  const workspaceFolder = path.dirname(filePath);
   const eslintConfig = readConfigFile(`${workspaceFolder}/${eslintFileName}`, eslintFileType);
   if (!eslintConfig) {
-    throw new Error('Cannot open or find your Eslint configuration file');
+    throw new Error(`Cannot open or find your Eslint configuration file at ${workspaceFolder}/${eslintFileName}`);
   }
 
   // prettier options are optional
@@ -39,4 +39,4 @@ module.exports = function formatText({
     text, eslintConfig, prettierOptions, filePath,
   });
   return formatted;
-};
+}

@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
-const vscode = require('vscode');
-const format = require('./formatter');
+import * as vscode from 'vscode';
+import format from './formatter';
 
 function formatter(document, range) {
   try {
@@ -13,15 +13,19 @@ function formatter(document, range) {
 
     const text = document.getText(range);
     const extensionConfig = vscode.workspace.getConfiguration('vs-code-prettier-eslint');
+    const workspaceFolder = vscode.workspace.workspaceFolders[0].uri.fsPath;
+
     const formatted = format({
-      text, filePath: document.fileName, ...extensionConfig,
+      text,
+      filePath: document.fileName,
+      workspaceFolder,
+      ...extensionConfig,
     });
     return [vscode.TextEdit.replace(range, formatted)];
   } catch (err) {
     vscode.window.showErrorMessage(err.message);
   }
 }
-
 
 // have a function that adds/removes the formatter based
 // on a configuration setting
@@ -30,16 +34,22 @@ function registerFormatterIfEnabled() {
   const isEnabled = vscode.workspace.getConfiguration().get('vs-code-prettier-eslint.enabled');
   if (isEnabled && !registration) {
     registration = {};
-    registration.documentFormatting = vscode.languages.registerDocumentFormattingEditProvider('javascript', {
-      provideDocumentFormattingEdits(document) {
-        return formatter(document);
+    registration.documentFormatting = vscode.languages.registerDocumentFormattingEditProvider(
+      'javascript',
+      {
+        provideDocumentFormattingEdits(document) {
+          return formatter(document);
+        },
       },
-    });
-    registration.documentRangeFormatting = vscode.languages.registerDocumentRangeFormattingEditProvider('javascript', {
-      provideDocumentRangeFormattingEdits(document, range) {
-        return formatter(document, range);
+    );
+    registration.documentRangeFormatting = vscode.languages.registerDocumentRangeFormattingEditProvider(
+      'javascript',
+      {
+        provideDocumentRangeFormattingEdits(document, range) {
+          return formatter(document, range);
+        },
       },
-    });
+    );
   } else if (!isEnabled && registration) {
     registration.documentFormatting.dispose();
     registration.documentRangeFormatting.dispose();

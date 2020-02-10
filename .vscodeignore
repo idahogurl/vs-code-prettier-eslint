@@ -5,4 +5,7 @@ test/**
 vsc-extension-quickstart.md
 **/jsconfig.json
 **/*.map
+node_modules/**
 **/.eslintrc.json
+rollup.config.js
+src/**
