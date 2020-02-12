@@ -68,7 +68,8 @@
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "yarn run lint",
-		"test": "node ./test/runTest.js"
+		"test": "node ./test/runTest.js",
+		"build": "yarn rollup --config"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^11.0.2",
