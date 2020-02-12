@@ -2,6 +2,11 @@
 import * as vscode from 'vscode';
 import format from './formatter';
 
+// store registrations for disposal when `vscode-prettier-eslint.disabled` becomes true
+let registration;
+
+let outputChannel;
+
 function formatter(document, range) {
   try {
     if (!range) {
@@ -23,13 +28,10 @@ function formatter(document, range) {
     });
     return [vscode.TextEdit.replace(range, formatted)];
   } catch (err) {
-    vscode.window.showErrorMessage(err.message);
+    outputChannel.appendLine(`Error: ${err.message}`);
   }
 }
 
-// have a function that adds/removes the formatter based
-// on a configuration setting
-let registration;
 function registerFormatterIfEnabled() {
   const isEnabled = vscode.workspace.getConfiguration().get('vs-code-prettier-eslint.enabled');
   if (isEnabled && !registration) {
@@ -50,10 +52,16 @@ function registerFormatterIfEnabled() {
         },
       },
     );
+
+    // Create output channel for error logging
+    outputChannel = vscode.window.createOutputChannel('Prettier Eslint');
   } else if (!isEnabled && registration) {
     registration.documentFormatting.dispose();
     registration.documentRangeFormatting.dispose();
     registration = undefined;
+
+    outputChannel.dispose();
+    outputChannel = undefined;
   }
 }
 
