@@ -17,8 +17,10 @@ function formatter(document, range) {
     }
 
     const text = document.getText(range);
+    const workspace = vscode.workspace.workspaceFolders.find((w) => document.fileName.includes(w.name));
+    const workspaceFolder = workspace.uri.fsPath;
+
     const extensionConfig = vscode.workspace.getConfiguration('vs-code-prettier-eslint');
-    const workspaceFolder = vscode.workspace.workspaceFolders[0].uri.fsPath;
 
     const formatted = format({
       text,
