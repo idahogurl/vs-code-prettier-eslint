@@ -1,4 +1,3 @@
-
 # VS Code Prettier Eslint
 
  Visual Studio Extension to format JavaScript code using [prettier-eslint](https://github.com/prettier/prettier-eslint) package. 
@@ -20,7 +19,7 @@ The file type of your Eslint config file (only JSON and YAML are supported)
 
 ### Optional:
 #### Prettier Options File Name
-The name of your Eslint config file. The extension assumes the file is located in workspace root.
+The name of your Prettier options file. The extension assumes the file is located in workspace root.
 
 #### Prettier Options File Type
 The file type of your Prettier options file (only JSON and YAML are supported)
