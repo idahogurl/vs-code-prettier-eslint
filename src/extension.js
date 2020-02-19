@@ -1,78 +1,58 @@
-// eslint-disable-next-line import/no-unresolved
-import * as vscode from 'vscode';
-import format from './formatter';
+import {
+  languages, window, workspace, Range, TextEdit,
+} from 'vscode';
 
-// store registrations for disposal when `vscode-prettier-eslint.disabled` becomes true
-let registration;
+import format from './formatter';
 
 let outputChannel;
 
 function formatter(document, range) {
   try {
-    if (!range) {
-      const firstLine = document.lineAt(0);
-      const lastLine = document.lineAt(document.lineCount - 1);
-      // eslint-disable-next-line no-param-reassign
-      range = new vscode.Range(firstLine.range.start, lastLine.range.end);
-    }
+    const workspaceFolder = workspace.getWorkspaceFolder(document.uri).uri.fsPath;
+    const extensionConfig = workspace.getConfiguration('vs-code-prettier-eslint', document.uri);
 
     const text = document.getText(range);
-    const workspace = vscode.workspace.workspaceFolders.find((w) => document.fileName.includes(w.name));
-    const workspaceFolder = workspace.uri.fsPath;
-
-    const extensionConfig = vscode.workspace.getConfiguration('vs-code-prettier-eslint');
-
     const formatted = format({
       text,
       filePath: document.fileName,
       workspaceFolder,
       ...extensionConfig,
     });
-    return [vscode.TextEdit.replace(range, formatted)];
+    return [TextEdit.replace(range, formatted)];
   } catch (err) {
     outputChannel.appendLine(`Error: ${err.message}`);
   }
 }
 
-function registerFormatterIfEnabled() {
-  const isEnabled = vscode.workspace.getConfiguration().get('vs-code-prettier-eslint.enabled');
-  if (isEnabled && !registration) {
-    registration = {};
-    registration.documentFormatting = vscode.languages.registerDocumentFormattingEditProvider(
-      'javascript',
-      {
-        provideDocumentFormattingEdits(document) {
-          return formatter(document);
-        },
-      },
-    );
-    registration.documentRangeFormatting = vscode.languages.registerDocumentRangeFormattingEditProvider(
-      'javascript',
-      {
-        provideDocumentRangeFormattingEdits(document, range) {
-          return formatter(document, range);
-        },
-      },
-    );
+languages.registerDocumentFormattingEditProvider(
+  'javascript',
+  {
+    provideDocumentFormattingEdits(document) {
+      // Extension needs at least one opened folder in a workspace
+      if (!workspace.workspaceFolders) {
+        window.showErrorMessage('Prettier Eslint formatter requires a folder or workspace to be opened.');
+        return null;
+      }
+      const firstLine = document.lineAt(0);
+      const lastLine = document.lineAt(document.lineCount - 1);
+      const range = new Range(firstLine.range.start, lastLine.range.end);
+      return formatter(document, range);
+    },
+  },
+);
+languages.registerDocumentRangeFormattingEditProvider(
+  'javascript',
+  {
+    provideDocumentRangeFormattingEdits(document, range) {
+      // Extension needs at least one opened folder in a workspace
+      if (!workspace.workspaceFolders) {
+        window.showErrorMessage('Prettier Eslint formatter requires a folder or workspace to be opened.');
+        return null;
+      }
+      return formatter(document, range);
+    },
+  },
+);
 
-    // Create output channel for error logging
-    outputChannel = vscode.window.createOutputChannel('Prettier Eslint');
-  } else if (!isEnabled && registration) {
-    registration.documentFormatting.dispose();
-    registration.documentRangeFormatting.dispose();
-    registration = undefined;
-
-    outputChannel.dispose();
-    outputChannel = undefined;
-  }
-}
-
-// register at activate-time
-registerFormatterIfEnabled();
-
-// add/remove formatter when config changes
-vscode.workspace.onDidChangeConfiguration((event) => {
-  if (event.affectsConfiguration('vs-code-prettier-eslint.enabled')) {
-    registerFormatterIfEnabled();
-  }
-});
+// Create output channel for error logging
+outputChannel = window.createOutputChannel('Prettier Eslint');

@@ -7,13 +7,14 @@
 	"keywords": [
 		"eslint",
 		"prettier",
-		"prettier-eslint"
+		"prettier-eslint",
+		"multi-root ready"
 	],
 	"repository": {
 		"type": "git",
 		"url": "https://gitlab.com/idahogurl/vs-code-prettier-eslint"
 	},
-	"version": "0.0.3",
+	"version": "0.1.3",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
@@ -29,18 +30,15 @@
 		"configuration": {
 			"title": "Prettier Eslint",
 			"properties": {
-				"vs-code-prettier-eslint.enabled": {
-					"type": "boolean",
-					"default": true,
-					"description": "Enable Prettier Eslint"
-				},
 				"vs-code-prettier-eslint.eslintFileName": {
 					"type": "string",
+					"scope": "resource",
 					"default": ".eslintrc",
 					"description": "Eslint config file name"
 				},
 				"vs-code-prettier-eslint.eslintFileType": {
 					"type": "string",
+					"scope": "resource",
 					"default": "json",
 					"enum": [
 						"json",
@@ -50,11 +48,13 @@
 				},
 				"vs-code-prettier-eslint.prettierFileName": {
 					"type": "string",
+					"scope": "resource",
 					"default": "",
 					"description": "(optional) Prettier options file name"
 				},
 				"vs-code-prettier-eslint.prettierFileType": {
 					"type": "string",
+					"scope": "resource",
 					"default": "json",
 					"enum": [
 						"json",
@@ -69,7 +69,8 @@
 		"lint": "eslint .",
 		"pretest": "yarn run lint",
 		"test": "node ./test/runTest.js",
-		"build": "yarn rollup --config"
+		"dev": "NODE_ENV=dev yarn rollup --config --watch",
+		"build": "NODE_ENV=prod yarn rollup --config"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^11.0.2",
