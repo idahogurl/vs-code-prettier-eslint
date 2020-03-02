@@ -17,25 +17,10 @@ function readConfigFile(fileName, fileType) {
 }
 
 export default function formatText({
-  text, filePath, workspaceFolder, eslintFileName, eslintFileType, prettierFileName,
-  prettierFileType,
+  text, filePath,
 }) {
-  const eslintConfig = readConfigFile(`${workspaceFolder}/${eslintFileName}`, eslintFileType);
-  if (!eslintConfig) {
-    throw new Error(`Cannot open or find your Eslint configuration file at ${workspaceFolder}/${eslintFileName}`);
-  }
-
-  // prettier options are optional
-  let prettierOptions;
-  if (prettierFileName) {
-    prettierOptions = readConfigFile(`${workspaceFolder}/${prettierFileName}`, prettierFileType);
-    if (!prettierOptions) {
-      throw new Error('Cannot open or find your Prettier options file');
-    }
-  }
-
   const formatted = format({
-    text, eslintConfig, prettierOptions, filePath,
+    text, filePath,
   });
   return formatted;
 }
