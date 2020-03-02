@@ -10,10 +10,12 @@ You can enable the "Format on Save" setting to avoid entering the command all th
 ## Setup Format on Save
 
 - Open User or Workspace settings
---- On Windows/Linux - File > Preferences > Settings
---- On macOS - Code > Preferences > Settings
+  
+  - On Windows/Linux - File > Preferences > Settings
+  
+  - On macOS - Code > Preferences > Settings
 
-- Search for "Format On " and enable "Format on Save".
+- Search for "Format on " and enable "Format on Save".
 
 - Ensure both "Format on Input" and "Format on Paste" are disabled. They are not supported functionality.
 
@@ -28,18 +30,19 @@ These settings may be set on User or Workspace.
 ---
 
 #### Eslint Config File Name
--- The name of your Eslint config file. The extension assumes the file is located in the root folder.
+-- The name of your Eslint config file. The extension assumes the file is located in the root folder. For multi-root workspaces the file name must be the same in each root folder.
 
 #### Eslint Config File Type
--- The file type of your Eslint config file (only JSON and YAML are supported)
-
+-- The file type of your Eslint config file (only JSON and YAML are supported).
+For multi-root workspaces the file type must be the same in each root folder.
 ### Optional:
 ---
 
 #### Prettier Options File Name
 
--- The name of your Prettier options file. The extension assumes the file is located in the root folder.
+-- The name of your Prettier options file. The extension assumes the file is located in the root folder. For multi-root workspaces the file name must be the same in each root folder.
 
 #### Prettier Options File Type
 
--- The file type of your Prettier options file (only JSON and YAML are supported)
+-- The file type of your Prettier options file (only JSON and YAML are supported).
+For multi-root workspaces the file type must be the same in each root folder.
