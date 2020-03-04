@@ -8,7 +8,7 @@
 ### Added
 - Multi-root workspace support
 
-## [0.2.3] - 2020-12-03
+## [0.2.4] - 2020-03-04
 ### Added
 - Support JavaScript Eslint config files
 ### Removed
