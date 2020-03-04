@@ -13,10 +13,9 @@ The extension uses your ESLint and Prettier configuration files. These files are
 
 Use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an [`.eslintrc.*`](https://eslint.org/docs/user-guide/configuring#configuration-file-formats) file or an `eslintConfig` field in a [`package.json`](https://docs.npmjs.com/files/package.json) file.
 
-  ### Prettier Configuration File
- (From https://prettier.io/docs/en/configuration.html)
+### Prettier Configuration File
+(From https://prettier.io/docs/en/configuration.html)
 
----  
 Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for configuration file support. This means you can configure prettier via (in order of precedence):
 
 - A `"prettier"` key in your `package.json` file.
