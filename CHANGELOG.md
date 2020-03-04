@@ -10,6 +10,6 @@
 
 ## [0.2.3] - 2020-12-03
 ### Added
-- JS extension Eslint config file support
+- Support JavaScript Eslint config files
 ### Removed
 - Need for settings

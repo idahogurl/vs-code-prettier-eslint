@@ -1,7 +1,7 @@
 {
 	"publisher": "rvest",
 	"name": "vs-code-prettier-eslint",
-	"displayName": "Prettier Eslint",
+	"displayName": "Prettier ESLint",
 	"description": "Extension to format JavaScript code using prettier-eslint package",
 	"icon": "icon.png",
 	"keywords": [
