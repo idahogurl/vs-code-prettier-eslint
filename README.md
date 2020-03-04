@@ -1,48 +1,40 @@
 
+![](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/blob/5efc268af7132a8bdba50843386b007cca0d7794/icon.png)
 
-# VS Code Prettier Eslint
-Visual Studio Extension to format JavaScript code using [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
+# VS Code Prettier ESLint
+
+A  Visual Studio Extension to format JavaScript code using the [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
+
+## Configuration
+The extension uses your ESLint and Prettier configuration files. These files are resolved starting from the location of the file being formatted, and searching up the file tree until a config file is (or isn't) found.
+
+### ESLint Configuration File
+(From https://eslint.org/docs/user-guide/configuring)
+
+Use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an [`.eslintrc.*`](https://eslint.org/docs/user-guide/configuring#configuration-file-formats) file or an `eslintConfig` field in a [`package.json`](https://docs.npmjs.com/files/package.json) file.
+
+  ### Prettier Configuration File
+ (From https://prettier.io/docs/en/configuration.html)
+
+---  
+Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for configuration file support. This means you can configure prettier via (in order of precedence):
+
+- A `"prettier"` key in your `package.json` file.
+- A `.prettierrc` file, written in JSON or YAML, with optional extensions: `.json/.yaml/.yml` (without extension takes precedence).
+- A `.prettierrc.js` or `prettier.config.js` file that exports an object.
+- A `.prettierrc.toml` file, written in TOML (the `.toml` extension is _required_).
+
+## Running Formatter
 
 Once installed, open a JavaScript file. Press `CTRL + CMD + P` (macOS) or `CTRL + Shift + P` (Windows/Linux) to format a file or a selection of code.
 
-You can enable the "Format on Save" setting to avoid entering the command all the time.
+  You can enable the "Format on Save" setting to avoid entering the command all the time.
 
-## Setup Format on Save
+## Setup Format on Save  
 
 - Open User or Workspace settings
-  
   - On Windows/Linux - File > Preferences > Settings
-  
-  - On macOS - Code > Preferences > Settings
-
-- Search for "Format on " and enable "Format on Save".
-
-- Ensure both "Format on Input" and "Format on Paste" are disabled. They are not supported functionality.
-
+  - On macOS - Code > Preferences > Settings  
+- Search for `"Format on "` and enable `"Format on Save"`.
+- Ensure both `"Format on Input"` and `"Format on Paste"` are disabled. They are not supported functionality.
 - Afterward, the file should format automatically once you save it.
-
-  
-## Settings:
-
-These settings may be set on User or Workspace.
-
-### Required:
----
-
-#### Eslint Config File Name
--- The name of your Eslint config file. The extension assumes the file is located in the root folder. For multi-root workspaces the file name must be the same in each root folder.
-
-#### Eslint Config File Type
--- The file type of your Eslint config file (only JSON and YAML are supported).
-For multi-root workspaces the file type must be the same in each root folder.
-### Optional:
----
-
-#### Prettier Options File Name
-
--- The name of your Prettier options file. The extension assumes the file is located in the root folder. For multi-root workspaces the file name must be the same in each root folder.
-
-#### Prettier Options File Type
-
--- The file type of your Prettier options file (only JSON and YAML are supported).
-For multi-root workspaces the file type must be the same in each root folder.

@@ -1,9 +1,15 @@
 # Change Log
 
-All notable changes to the "vs-code-prettier-eslint" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## [Unreleased]
 
 - Initial release
+
+## [0.1.3] - 2020-03-02
+### Added
+- Multi-root workspace support
+
+## [0.2.3] - 2020-12-03
+### Added
+- Support JavaScript Eslint config files
+### Removed
+- Need for settings

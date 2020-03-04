@@ -1,7 +1,7 @@
 {
 	"publisher": "rvest",
 	"name": "vs-code-prettier-eslint",
-	"displayName": "Prettier Eslint",
+	"displayName": "Prettier ESLint",
 	"description": "Extension to format JavaScript code using prettier-eslint package",
 	"icon": "icon.png",
 	"keywords": [
@@ -14,7 +14,7 @@
 		"type": "git",
 		"url": "https://gitlab.com/idahogurl/vs-code-prettier-eslint"
 	},
-	"version": "0.1.3",
+	"version": "0.2.3",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
@@ -26,45 +26,6 @@
 		"onLanguage:javascript",
 		"onLanguage:javascriptreact"
 	],
-	"contributes": {
-		"configuration": {
-			"title": "Prettier Eslint",
-			"properties": {
-				"vs-code-prettier-eslint.eslintFileName": {
-					"type": "string",
-					"scope": "resource",
-					"default": ".eslintrc",
-					"description": "Eslint config file name"
-				},
-				"vs-code-prettier-eslint.eslintFileType": {
-					"type": "string",
-					"scope": "resource",
-					"default": "json",
-					"enum": [
-						"json",
-						"yaml"
-					],
-					"description": "Eslint config file type"
-				},
-				"vs-code-prettier-eslint.prettierFileName": {
-					"type": "string",
-					"scope": "resource",
-					"default": "",
-					"description": "(optional) Prettier options file name"
-				},
-				"vs-code-prettier-eslint.prettierFileType": {
-					"type": "string",
-					"scope": "resource",
-					"default": "json",
-					"enum": [
-						"json",
-						"yaml"
-					],
-					"description": "Prettier config file type"
-				}
-			}
-		}
-	},
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "yarn run lint",
