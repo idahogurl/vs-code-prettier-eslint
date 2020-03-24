@@ -1,4 +1,4 @@
-![](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/raw/c775549aa406327b2f568cef3553cf9f4987b38c/icon.png)
+![](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/raw/1e52c2f9a582f29f6ae971494a03e25b142fcae1/icon.png)
 
 # VS Code Prettier ESLint
 
