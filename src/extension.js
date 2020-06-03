@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/no-unresolved */
 import {
   languages, window, Range, TextEdit,
 } from 'vscode';
@@ -27,6 +29,7 @@ languages.registerDocumentFormattingEditProvider('javascript', {
     return formatter(document, range);
   },
 });
+
 languages.registerDocumentRangeFormattingEditProvider('javascript', {
   provideDocumentRangeFormattingEdits(document, range) {
     return formatter(document, range);
