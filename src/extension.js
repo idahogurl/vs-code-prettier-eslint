@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable import/no-unresolved */
 import {
-  languages, window, Range, TextEdit,
+  languages, window, TextEdit,
 } from 'vscode';
 
 import format from './formatter';
@@ -21,20 +21,16 @@ function formatter(document, range) {
   }
 }
 
-languages.registerDocumentFormattingEditProvider('javascript', {
-  provideDocumentFormattingEdits(document) {
-    const firstLine = document.lineAt(0);
-    const lastLine = document.lineAt(document.lineCount - 1);
-    const range = new Range(firstLine.range.start, lastLine.range.end);
-    return formatter(document, range);
-  },
-});
-
-languages.registerDocumentRangeFormattingEditProvider('javascript', {
+const formattingProvider = {
   provideDocumentRangeFormattingEdits(document, range) {
     return formatter(document, range);
   },
-});
+};
+
+languages.registerDocumentRangeFormattingEditProvider('javascript', formattingProvider);
+languages.registerDocumentRangeFormattingEditProvider('javascriptreact', formattingProvider);
+languages.registerDocumentRangeFormattingEditProvider('typescript', formattingProvider);
+languages.registerDocumentRangeFormattingEditProvider('typescriptreact', formattingProvider);
 
 // Create output channel for error logging
 outputChannel = window.createOutputChannel('Prettier Eslint');

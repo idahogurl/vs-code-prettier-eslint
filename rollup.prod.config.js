@@ -15,5 +15,5 @@ export default {
     resolve({ preferBuiltins: true }),
     commonjs({ ignore: ['conditional-runtime-dependency'] }),
   ],
-  external: ['vscode'],
+  external: ['vscode', 'prettier-eslint'],
 };
