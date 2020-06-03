@@ -13,9 +13,9 @@ function run() {
   const testsRoot = path.resolve(__dirname, '..');
 
   return new Promise((c, e) => {
-    glob('**/**.test.js', { cwd: testsRoot }, (err, files) => {
-      if (err) {
-        return e(err);
+    glob('**/**.test.js', { cwd: testsRoot }, (globError, files) => {
+      if (globError) {
+        return e(globError);
       }
 
       // Add files to the test suite
@@ -30,9 +30,9 @@ function run() {
             c();
           }
         });
-      } catch (err) {
-        console.error(err);
-        e(err);
+      } catch (mochaError) {
+        console.error(mochaError);
+        e(mochaError);
       }
     });
   });
