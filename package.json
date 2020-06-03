@@ -24,7 +24,9 @@
 	"main": "./dist/extension.js",
 	"activationEvents": [
 		"onLanguage:javascript",
-		"onLanguage:javascriptreact"
+		"onLanguage:javascriptreact",
+		"onLanguage:typescript",
+		"onLanguage:typescriptreact"
 	],
 	"scripts": {
 		"lint": "eslint .",
