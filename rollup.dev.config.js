@@ -11,7 +11,7 @@ export default {
   },
   plugins: [
     resolve({ preferBuiltins: true }),
-    commonjs({ ignore: ['conditional-runtime-dependency'] }),
+    commonjs(),
   ],
-  external: ['vscode'],
+  external: ['vscode', 'prettier-eslint'],
 };

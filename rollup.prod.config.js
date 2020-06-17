@@ -13,7 +13,7 @@ export default {
   },
   plugins: [
     resolve({ preferBuiltins: true }),
-    commonjs({ ignore: ['conditional-runtime-dependency'] }),
+    commonjs(),
   ],
   external: ['vscode', 'prettier-eslint'],
 };
