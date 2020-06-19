@@ -12,4 +12,8 @@
 ### Added
 - Support JavaScript Eslint config files
 ### Removed
-- Need for settings
+- Need for settings 
+
+## [0.2.6] - 2020-06-19
+### Added
+- Support latest ESLint package
