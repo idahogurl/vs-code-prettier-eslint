@@ -9,9 +9,6 @@ export default {
     format: 'cjs',
     sourcemap: true,
   },
-  plugins: [
-    resolve({ preferBuiltins: true }),
-    commonjs(),
-  ],
-  external: ['vscode', 'prettier-eslint'],
+  plugins: [resolve({ preferBuiltins: true }), commonjs()],
+  external: ['vscode', 'fs', 'path', 'module'],
 };
