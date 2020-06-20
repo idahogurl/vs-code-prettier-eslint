@@ -9,6 +9,9 @@ export default {
     format: 'cjs',
     sourcemap: true,
   },
-  plugins: [resolve({ preferBuiltins: true }), commonjs()],
+  plugins: [
+    resolve({ preferBuiltins: true }),
+    commonjs({ ignore: ['conditional-runtime-dependency'] }),
+  ],
   external: ['vscode', 'fs', 'path', 'module'],
 };
