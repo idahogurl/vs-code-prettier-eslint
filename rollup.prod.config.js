@@ -11,6 +11,9 @@ export default {
     sourcemap: false,
     plugins: [terser()],
   },
-  plugins: [resolve({ preferBuiltins: true }), commonjs()],
-  external: ['vscode', 'fs', 'path', 'module'],
+  plugins: [
+    resolve({ preferBuiltins: true }),
+    commonjs({ ignore: ['conditional-runtime-dependency'] }),
+  ],
+  external: ['vscode'],
 };
