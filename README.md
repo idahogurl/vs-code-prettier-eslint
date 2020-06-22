@@ -4,6 +4,10 @@
 
 A Visual Studio Extension to format JavaScript code using the [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
 
+## Prerequisites
+
+Like `prettier-eslint`, this plugin requires both `prettier` and `eslint` to be installed either locally or globally.
+
 ## Configuration
 
 The extension uses your ESLint and Prettier configuration files. These files are resolved starting from the location of the file being formatted, and searching up the file tree until a config file is (or isn't) found.
@@ -31,8 +35,15 @@ Once installed, open a JavaScript file. Press `CTRL + CMD + P` (macOS) or `CTRL 
 
 You can enable the "Format on Save" setting to avoid entering the command all the time.
 
-## Setup Format on Save
+## Default Formatter
+- Open the file you want to format
+- Press `CTRL-SHIFT-P` (Windows) or `CMD-SHIFT-P` (Mac)
+- Start typing `Format Document With` and select it
+- Choose the bottom item `Configure Default Formatter`
+- Choose `Prettier ESLint`
 
+## Setup Format on Save
+- Set `Prettier Eslint` as the default formatter as detailed above
 - Open User or Workspace settings
   - On Windows/Linux - File > Preferences > Settings
   - On macOS - Code > Preferences > Settings
