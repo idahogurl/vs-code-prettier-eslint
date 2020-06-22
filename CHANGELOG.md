@@ -16,4 +16,4 @@
 
 ## [0.2.6] - 2020-06-19
 ### Added
-- Support latest ESLint package
+- Support Typescript and Typescript React
