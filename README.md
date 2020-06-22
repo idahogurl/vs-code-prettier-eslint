@@ -6,7 +6,7 @@ A Visual Studio Extension to format JavaScript code using the [prettier-eslint](
 
 ## Prerequisites
 
-Like `prettier-eslint`, this plugin requires both `prettier` and `eslint` to be installed either locally or globally.
+Like `prettier-eslint`, this plugin requires both `prettier` and `eslint` packages to be installed either locally or globally.
 
 ## Configuration
 
@@ -33,11 +33,11 @@ Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for co
 
 Once installed, open a JavaScript file. Press `CTRL + CMD + P` (macOS) or `CTRL + Shift + P` (Windows/Linux) to format a file or a selection of code.
 
-You can enable the "Format on Save" setting to avoid entering the command all the time.
+You can enable the `Format on Save` setting to avoid entering the command all the time.
 
 ## Default Formatter
 - Open the file you want to format
-- Press `CTRL-SHIFT-P` (Windows) or `CMD-SHIFT-P` (Mac)
+- Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
 - Start typing `Format Document With` and select it
 - Choose the bottom item `Configure Default Formatter`
 - Choose `Prettier ESLint`
@@ -47,6 +47,7 @@ You can enable the "Format on Save" setting to avoid entering the command all th
 - Open User or Workspace settings
   - On Windows/Linux - File > Preferences > Settings
   - On macOS - Code > Preferences > Settings
-- Search for `"Format on "` and enable `"Format on Save"`.
-- Ensure both `"Format on Input"` and `"Format on Paste"` are disabled. They are not supported functionality.
-- Afterward, the file should format automatically once you save it.
+- Start typing `Format on` and select it
+- Check `Format on Save` (found mid-page in the right panel)
+- Ensure both `Format on Input` and `Format on Paste` are disabled. They are not supported functionality
+- Afterward, the file should format automatically once you save it
