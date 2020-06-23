@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import replace from '@rollup/plugin-replace';
 
 export default {
   input: './src/extension.js',
@@ -11,7 +12,12 @@ export default {
   },
   plugins: [
     resolve({ preferBuiltins: true }),
-    commonjs({ ignore: ['conditional-runtime-dependency'] }),
+    commonjs(),
+    replace({
+      exclude: 'node_modules/**',
+      'commonjsRequire.resolve': () => 'require.resolve',
+      'commonjsRequire(': () => 'require(',
+    }),
   ],
-  external: ['vscode', 'fs', 'path', 'module'],
+  external: ['vscode', 'fs', 'path', 'module', 'vue-eslint'],
 };

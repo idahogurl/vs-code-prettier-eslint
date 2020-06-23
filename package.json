@@ -14,7 +14,7 @@
 		"type": "git",
 		"url": "https://gitlab.com/idahogurl/vs-code-prettier-eslint"
 	},
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
@@ -39,6 +39,7 @@
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^11.0.2",
 		"@rollup/plugin-node-resolve": "^7.1.1",
+		"@rollup/plugin-replace": "^2.3.3",
 		"@types/glob": "^7.1.2",
 		"@types/mocha": "^7.0.1",
 		"@types/node": "^14.0.13",
