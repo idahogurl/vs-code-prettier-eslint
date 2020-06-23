@@ -2,12 +2,11 @@
 
 # VS Code Prettier ESLint
 
-A Visual Studio Extension to format JavaScript code using the [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
+A Visual Studio Code Extension to format JavaScript and TypeScript code using the [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
 
 ## Prerequisites
 
 Like `prettier-eslint`, this plugin requires both `prettier` and `eslint` packages to be installed either locally or globally.
-
 
 ## Configuration
 

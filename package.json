@@ -2,7 +2,7 @@
 	"publisher": "rvest",
 	"name": "vs-code-prettier-eslint",
 	"displayName": "Prettier ESLint",
-	"description": "Extension to format JavaScript code using prettier-eslint package",
+	"description": "A Visual Studio Extension to format JavaScript and Typescript code using prettier-eslint package",
 	"icon": "icon.png",
 	"keywords": [
 		"eslint",

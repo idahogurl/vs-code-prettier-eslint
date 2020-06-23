@@ -19,5 +19,5 @@ export default {
       'commonjsRequire(': () => 'require(',
     }),
   ],
-  external: ['vscode', 'fs', 'path', 'module', 'vue-eslint'],
+  external: ['vscode', 'fs', 'path', 'module'],
 };

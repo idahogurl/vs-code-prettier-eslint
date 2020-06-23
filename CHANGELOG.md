@@ -19,6 +19,6 @@
 - Support Typescript and Typescript React
 - Support latest ESLint
 
-## [0.3.1] - 2020-06-23
+## [0.3.2] - 2020-06-23
 ### Hotfix
 - Undo breaking build changes
