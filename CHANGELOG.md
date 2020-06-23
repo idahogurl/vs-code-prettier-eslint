@@ -14,6 +14,11 @@
 ### Removed
 - Need for settings 
 
-## [0.2.6] - 2020-06-19
+## [0.3.0] - 2020-06-22
 ### Added
 - Support Typescript and Typescript React
+- Support latest ESLint
+
+## [0.3.1] - 2020-06-23
+### Hotfix
+- Undo breaking build changes

@@ -8,6 +8,10 @@ A Visual Studio Extension to format JavaScript code using the [prettier-eslint](
 
 Like `prettier-eslint`, this plugin requires both `prettier` and `eslint` packages to be installed either locally or globally.
 
+## Prerequisites
+
+Like `prettier-eslint`, this plugin requires both `prettier` and `eslint` packages to be installed either locally or globally.
+
 ## Configuration
 
 The extension uses your ESLint and Prettier configuration files. These files are resolved starting from the location of the file being formatted, and searching up the file tree until a config file is (or isn't) found.
