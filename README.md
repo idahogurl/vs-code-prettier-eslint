@@ -8,9 +8,6 @@ A Visual Studio Extension to format JavaScript code using the [prettier-eslint](
 
 Like `prettier-eslint`, this plugin requires both `prettier` and `eslint` packages to be installed either locally or globally.
 
-## Prerequisites
-
-Like `prettier-eslint`, this plugin requires both `prettier` and `eslint` packages to be installed either locally or globally.
 
 ## Configuration
 
