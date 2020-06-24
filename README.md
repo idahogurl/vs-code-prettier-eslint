@@ -51,3 +51,8 @@ You can enable the `Format on Save` setting to avoid entering the command all th
 - Check `Format on Save` (found mid-page in the right panel)
 - Ensure both `Format on Input` and `Format on Paste` are disabled. They are not supported functionality
 - Afterward, the file should format automatically once you save it
+
+## Contributing
+
+If you have suggestions for how this extension could be improved, or want to report a bug, open an issue! We'd love all and any contributions. If you are interested in contributing to the project, check out the [Contributing Guide](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/raw/master/CONTRIBUTING.md).
+
