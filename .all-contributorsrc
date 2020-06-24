@@ -1,0 +1,27 @@
+{
+  "projectName": "vs-code-prettier-eslint",
+  "projectOwner": "idahogurl",
+  "repoType": "gitlab",
+  "repoHost": "https://gitlab.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [
+    {
+      "login": "idahogurl",
+      "name": "Rebecca Vest",
+      "avatar_url": "https://secure.gravatar.com/avatar/787139c4c697cfc33cc422566a4ccf78?s=80&d=identicon",
+      "profile": "https://gitlab.com/idahogurl",
+      "contributions": [
+        "question",
+        "code",
+        "doc",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
