@@ -54,5 +54,5 @@ You can enable the `Format on Save` setting to avoid entering the command all th
 
 ## Contributing
 
-If you have suggestions for how this extension could be improved, or want to report a bug, open an issue! We'd love all and any contributions. If you are interested in contributing to the project, check out the [Contributing Guide](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/raw/master/CONTRIBUTING.md).
+If you have suggestions for how this extension could be improved, or want to report a bug, open an issue! We'd love all and any contributions. If you are interested in contributing to the project, check out the [Contributing Guide](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/blob/master/CONTRIBUTING.md).
 
