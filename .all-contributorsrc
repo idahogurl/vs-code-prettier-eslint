@@ -19,7 +19,11 @@
         "question",
         "code",
         "doc",
-        "infra"
+        "infra",
+        "bug",
+        "ideas",
+        "review",
+        "test"
       ]
     }
   ],
