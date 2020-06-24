@@ -1,7 +1,7 @@
 ## Contributing
 
-[fork]: -/forks/new
-[mr]: -/merge_requests/new
+[fork]: https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/forks/new
+[mr]: https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/merge_requests/new
 [style]: https://github.com/airbnb/javascript
 [code-of-conduct]: CODE_OF_CONDUCT.md
 
