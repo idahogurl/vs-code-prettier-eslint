@@ -5,17 +5,22 @@
 [style]: https://github.com/airbnb/javascript
 [code-of-conduct]: CODE_OF_CONDUCT.md
 
-Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
+Hi there! I'm thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
 Please note that this project is released with a [Contributor Code of Conduct][code-of-conduct]. By participating in this project you agree to abide by its terms.
 
-## Issues and MRs
+## Issues and Merge Requests
 
-If you have suggestions for how this project could be improved, or want to report a bug, open an issue! We'd love all and any contributions. If you have questions, too, we'd love to hear them.
+If you have suggestions for how this project could be improved, or want to report a bug, open an issue! I'd love all and any contributions. 
+If you have questions, too, I'd love to hear them.
 
-We'd also love MRs. If you're thinking of a large MR, we advise opening up an issue first to talk about it, though! Look at the links below if you're not sure how to open a MR.
+I'd also love merge requests. If you're thinking of a large merge request, please consider opening up an issue first to talk about it first! 
+Look at the links below if you're not sure how to open a merge request.
 
-## Submitting a pull request
+Feel free to look at [Issues](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/issues) to find outstanding issues. 
+I've marked some as "Good first issue" for those wanting to get their feet wet.
+
+## Submitting a merge request
 
 1. [Fork][fork] and clone the repository.
 1. Configure and install the dependencies: `yarn install`.
