@@ -17,8 +17,8 @@ If you have questions, too, I'd love to hear them.
 I'd also love merge requests. If you're thinking of a large merge request, please consider opening up an issue first to talk about it first! 
 Look at the links below if you're not sure how to open a merge request.
 
-Feel free to look at [Issues](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/issues) to find outstanding issues. 
-I've marked some as "Good first issue" for those wanting to get their feet wet.
+Feel free to look at [issues](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/issues) to find outstanding issues. 
+I've marked some as "Good first issue" for those wanting to get their feet wet. I also need people willing to review merge requests or update documentation.
 
 ## Submitting a merge request
 
