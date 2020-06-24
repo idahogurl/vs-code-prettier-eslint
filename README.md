@@ -1,6 +1,6 @@
 ![](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/raw/5b0d100df2eef87a3cb8ec7d8e125f6c5e5e6a9b/icon.png)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # VS Code Prettier ESLint
@@ -70,6 +70,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://gitlab.com/idahogurl"><img src="https://secure.gravatar.com/avatar/787139c4c697cfc33cc422566a4ccf78?s=80&d=identicon" width="100px;" alt=""/><br /><sub><b>Rebecca Vest</b></sub></a><br /><a href="#question-idahogurl" title="Answering Questions">💬</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Code">💻</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Documentation">📖</a> <a href="#infra-idahogurl" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/issues?author_username=idahogurl" title="Bug reports">🐛</a> <a href="#ideas-idahogurl" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/merge_requests?scope=all&state=all&approver_usernames[]=idahogurl" title="Reviewed Pull Requests">👀</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://gitlab.com/quentez"><img src="https://secure.gravatar.com/avatar/35c83f3e614ef0fe8ec1234568c88744?s=80&d=identicon" width="100px;" alt=""/><br /><sub><b>Quentin Calvez</b></sub></a><br /><a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Code">💻</a></td>
   </tr>
 </table>
 

@@ -25,6 +25,15 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "quentez",
+      "name": "Quentin Calvez",
+      "avatar_url": "https://secure.gravatar.com/avatar/35c83f3e614ef0fe8ec1234568c88744?s=80&d=identicon",
+      "profile": "https://gitlab.com/quentez",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
