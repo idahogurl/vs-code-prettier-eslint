@@ -34,7 +34,9 @@
 		"test": "node ./test/runTest.js",
 		"dev": "NODE_ENV=dev yarn rollup --config rollup.dev.config.js --watch",
 		"build": "NODE_ENV=prod yarn rollup --config rollup.prod.config.js",
-		"package": "yarn build && vsce package --yarn"
+		"package": "yarn build && vsce package --yarn",
+		"contributors:add": "all-contributors add",
+		"contributors:generate": "all-contributors generate"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^11.0.2",
@@ -44,6 +46,7 @@
 		"@types/mocha": "^7.0.1",
 		"@types/node": "^14.0.13",
 		"@types/vscode": "^1.42.0",
+		"all-contributors-cli": "^6.16.0",
 		"eslint": "^6.8.0",
 		"eslint-config-airbnb-base": "^14.0.0",
 		"eslint-plugin-import": "^2.20.1",

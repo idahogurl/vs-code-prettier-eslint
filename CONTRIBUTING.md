@@ -11,14 +11,23 @@ Please note that this project is released with a [Contributor Code of Conduct][c
 
 ## Issues and Merge Requests
 
-If you have suggestions for how this project could be improved, or want to report a bug, open an issue! I'd love all and any contributions. 
-If you have questions, too, I'd love to hear them.
+If you have suggestions for how this project could be improved, or want to report a bug, open an issue! I'd love all and any contributions. If you have questions, too, I'd love to hear them.
 
-Feel free to look at [issues](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/issues) to find outstanding issues. 
-I've marked some as "Good first issue" for those wanting to get their feet wet. I also need people willing to review merge requests or update documentation.
+Feel free to look at [issues](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/issues) to find outstanding issues. I've marked some as "Good first issue" for those wanting to get their feet wet. I also need people willing to review merge requests or update documentation.
 
-I'd also love merge requests. If you're thinking of a large merge request, please consider opening up an issue first to talk about it first! 
-Look at the links below if you're not sure how to open a merge request.
+I'd also love merge requests. If you're thinking of a large merge request, please consider opening up an issue first to talk about it first! Look at the links below if you're not sure how to open a merge request.
+
+## Add yourself as a contributor
+
+This project follows the all contributors specification. To add yourself to the table of contributors on the README.md, please run the automated scripts as part of your merge request:
+
+`yarn contributors:add`
+
+followed by
+
+`yarn contributors:generate`
+
+Commit .all-contributorsrc and README.md in the merge request. If you've already added yourself to the list and are making a new type of contribution, you can run it again and select the added contribution type.
 
 ## Submitting a merge request
 
