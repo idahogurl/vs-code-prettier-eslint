@@ -39,8 +39,8 @@
 		"contributors:generate": "all-contributors generate"
 	},
 	"devDependencies": {
-		"@rollup/plugin-commonjs": "^11.0.2",
-		"@rollup/plugin-node-resolve": "^7.1.1",
+		"@rollup/plugin-commonjs": "^13.0.0",
+		"@rollup/plugin-node-resolve": "^8.1.0",
 		"@rollup/plugin-replace": "^2.3.3",
 		"@types/glob": "^7.1.2",
 		"@types/mocha": "^7.0.1",
@@ -53,7 +53,7 @@
 		"glob": "^7.1.6",
 		"mocha": "^7.0.1",
 		"prettier": "^1.19.1",
-		"rollup": "^1.31.0",
+		"rollup": "^2.18.2",
 		"rollup-plugin-terser": "^5.2.0",
 		"typescript": "^3.9.5",
 		"vsce": "^1.77.0",

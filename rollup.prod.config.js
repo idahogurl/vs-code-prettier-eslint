@@ -16,8 +16,8 @@ export default {
     commonjs(),
     replace({
       exclude: 'node_modules/**',
-      'commonjsRequire.resolve': () => 'require.resolve',
-      'commonjsRequire(': () => 'require(',
+      'function commonjsRequire': 'function commonJsRequire',
+      commonjsRequire: 'require',
     }),
     terser(),
   ],
