@@ -9,7 +9,7 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 ## Prerequisites
 
-Like `prettier-eslint`, this extension requires both `prettier` and `eslint` packages to be installed either locally or globally.
+This extension requires `prettier`, `eslint`, `prettier-eslint` packages to be installed either locally or globally.
 
 ## Configuration
 
