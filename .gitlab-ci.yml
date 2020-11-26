@@ -7,22 +7,9 @@ before_script:
 
 Deploy:
   script:
-    # update our distro and add git.
-    - apk update && apk add git
-    # configure our newly-installed git to use our user name and email
-    - git config user.email $GITLAB_USER_EMAIL
-    - git config user.name $GITLAB_USER_NAME
-    # Run build
-    - yarn build
-    # Gitlab checks out the commit, not the branch, putting any committed changes into a detatched-head scenario.
-    # this gets the commit SHA and stores it in the $CUR_HEAD variable.
-    - CUR_HEAD=$(git rev-parse HEAD)
-    # checkout master and merge in our detatched head
-    - git checkout master && git merge $CUR_HEAD
-    # GITLAB_USER_LOGIN is your gitlab user name, and GL_PAT will be the Gitlab Personal Access Token you created earlier. We are pushing our current HEAD to the master branch
-    # on the quoted repo URL
-    - git push --follow-tags "https://${GITLAB_USER_LOGIN}:${GL_PAT}@gitlab.com/idahogurl/vs-code-prettier-eslint.git" HEAD:master
-    # finally, publish our extension by passing in our $PAT token.
+    - apk update
+    - yarn package
+    # publish our extension by passing in our $PAT token.
     - vsce publish -p $PAT
 
   only:
