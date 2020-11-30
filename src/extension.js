@@ -1,8 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable import/no-unresolved */
-import {
-  languages, window, TextEdit,
-} from 'vscode';
+import { languages, window, TextEdit } from 'vscode';
 
 import format from './formatter';
 
@@ -27,10 +24,26 @@ const formattingProvider = {
   },
 };
 
-languages.registerDocumentRangeFormattingEditProvider('javascript', formattingProvider);
-languages.registerDocumentRangeFormattingEditProvider('javascriptreact', formattingProvider);
-languages.registerDocumentRangeFormattingEditProvider('typescript', formattingProvider);
-languages.registerDocumentRangeFormattingEditProvider('typescriptreact', formattingProvider);
+const supportedLanguages = [
+  'css',
+  'graphql',
+  'html',
+  'javascript',
+  'javascriptreact',
+  'json',
+  'jsonc',
+  'less',
+  'markdown',
+  'scss',
+  'typescript',
+  'typescriptreact',
+  'vue',
+  'yaml',
+];
+
+supportedLanguages.forEach((language) => {
+  languages.registerDocumentRangeFormattingEditProvider(language, formattingProvider);
+});
 
 // Create output channel for error logging
 outputChannel = window.createOutputChannel('Prettier Eslint');

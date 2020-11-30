@@ -22,3 +22,6 @@
 ## [0.3.2] - 2020-06-23
 ### Hotfix
 - Undo breaking build changes
+
+## [0.4.0] - 2020-11-25
+- Support CSS, GraphQL, HTML, JSON, LESS, Markdown, SCSS, Vue & YAML
