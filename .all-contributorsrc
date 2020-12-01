@@ -34,6 +34,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "basaran",
+      "name": "basaran",
+      "avatar_url": "https://secure.gravatar.com/avatar/7e549d0714b87693162f9ea96d2b8b21?s=80&d=identicon",
+      "profile": "https://gitlab.com/basaran",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7
