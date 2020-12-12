@@ -33,6 +33,7 @@
 		"onLanguage:less",
 		"onLanguage:markdown",
 		"onLanguage:scss",
+		"onLanguage:svelte",
 		"onLanguage:typescript",
 		"onLanguage:typescriptreact",
 		"onLanguage:vue",
