@@ -24,4 +24,9 @@
 - Undo breaking build changes
 
 ## [0.4.0] - 2020-11-25
+### Added
 - Support CSS, GraphQL, HTML, JSON, LESS, Markdown, SCSS, Vue & YAML
+
+## [0.4.1] - 2020-12-17
+### Added
+- Support Svelte
