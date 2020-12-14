@@ -35,6 +35,7 @@ const supportedLanguages = [
   'less',
   'markdown',
   'scss',
+  'svelte',
   'typescript',
   'typescriptreact',
   'vue',
