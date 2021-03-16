@@ -30,3 +30,11 @@
 ## [0.4.1] - 2020-12-17
 ### Added
 - Support Svelte
+
+## [1.0.0] - 2021-03-15
+### Added
+- Upgrade to Prettier v2.0
+
+### Breaking Changes
+- Prettier v2.0 is now required
+
