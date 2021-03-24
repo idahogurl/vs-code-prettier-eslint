@@ -3,13 +3,13 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# VS Code Prettier ESLint
+# [VS Code Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
 
 A Visual Studio Code Extension to format JavaScript and TypeScript code using the [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
 
 ## Prerequisites
 
-This extension requires `prettier:^2.0.0`, `eslint:^6.8.9`, `prettier-eslint:^11.0.0` packages to be installed either locally or globally.
+This extension requires `prettier:^2.0.0`, `eslint:^7.0.0`, `prettier-eslint:^12.0.0` packages to be installed either locally or globally.
 
 
 ## Configuration

@@ -1,3 +1,2 @@
 dist/
-temp.js
-temp2.js
+test/fixtures/*.js
