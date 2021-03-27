@@ -15,11 +15,12 @@ export default {
     resolve({ preferBuiltins: true }),
     commonjs(),
     replace({
+      preventAssignment: true,
       exclude: 'node_modules/**',
       'function commonjsRequire': 'function commonJsRequire',
       commonjsRequire: 'require',
     }),
     terser(),
   ],
-  external: ['vscode', 'fs', 'path', 'module'],
+  external: ['vscode', 'fs', 'path', 'module', 'util'],
 };
