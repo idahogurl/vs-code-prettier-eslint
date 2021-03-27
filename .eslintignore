@@ -1,2 +1,2 @@
 dist/
-test/fixtures/*.js
+**/*/.eslintrc.js
