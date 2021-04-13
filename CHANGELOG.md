@@ -45,7 +45,7 @@
 ### Breaking Changes
 - ESLint 7+ is now required
 
-## [2.0.0] - 2021-03-26
+## [2.1.0] - 2021-03-26
 
 ### Added
 - Abide by `.eslintignore` & `.prettierignore` files
