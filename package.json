@@ -14,7 +14,7 @@
 		"type": "git",
 		"url": "https://gitlab.com/idahogurl/vs-code-prettier-eslint"
 	},
-	"version": "2.1.0",
+	"version": "3.0.0",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
@@ -60,14 +60,14 @@
 		"@types/node": "^14.0.13",
 		"@types/vscode": "^1.42.0",
 		"all-contributors-cli": "^6.16.0",
-		"eslint": "^7.22.0",
-		"eslint-config-airbnb-base": "^14.2.1",
-		"eslint-plugin-import": "^2.22.1",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb-base": "^14.0.0",
+		"eslint-plugin-import": "^2.20.1",
 		"expect": "^26.6.2",
-		"expect-mocha-snapshot": "^2.0.1",
+		"expect-mocha-snapshot": "^2.1.1",
 		"glob": "^7.1.6",
 		"mocha": "^8.3.2",
-		"prettier": "^2.2.1",
+		"prettier": "^1.19.1",
 		"rollup": "^2.18.2",
 		"rollup-plugin-terser": "^5.2.0",
 		"typescript": "^3.9.5",

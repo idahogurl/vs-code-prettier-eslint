@@ -1,7 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
 const vscode = require('vscode');
-const path = require('path');
-const fs = require('fs');
 
 async function changeConfig(section, settings) {
   const config = vscode.workspace.getConfiguration();
@@ -19,20 +17,8 @@ async function openFile(filePath) {
   return document;
 }
 
-async function closeFile() {
-  await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
-}
-
-function writeFile(fileName, content) {
-  const filePath = path.join(__dirname, '..', 'fixtures', fileName);
-  fs.writeFileSync(filePath, content, { overwrite: true });
-  return filePath;
-}
-
 module.exports = {
   changeConfig,
   clearConfig,
   openFile,
-  closeFile,
-  writeFile,
 };

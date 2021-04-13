@@ -22,25 +22,3 @@ exports[`Extension Test Suite Formats document using .eslintrc 1`] = `
 export { options };
 "
 `;
-
-exports[`Extension Test Suite Ignores document using .eslintrcignore 1`] = `
-"const options = {
-    first: \\"hello, world\\",
-    second: true,
-    internationalizing: true,
-};
-
-export { options };
-"
-`;
-
-exports[`Extension Test Suite Ignores document using .prettierignore 1`] = `
-"const options = {
-    first: \\"hello, world\\",
-    second: true,
-    internationalizing: true,
-};
-
-export { options };
-"
-`;

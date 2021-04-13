@@ -11,7 +11,14 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 This extension requires `prettier:^2.0.0`, `eslint:^7.0.0`, `prettier-eslint:^12.0.0` packages to be installed either locally or globally.
 
+## Troubleshooting
+_Error: Cannot find module 'prettier'_ OR _Error: Cannot find module 'eslint'_
+1. Quit Visual Studio Code
+2. Open terminal and run `rm -rf node_modules` to erase your local `node_modules`
+3. Run `npm install` or `yarn install` to reinstall your `node_modules`
+3. Install Prettier and ESLint locally
 
+**Please create an issue before adding a rating.** I am the only contributor currently. https://gitlab.com/idahogurl/vs-code-prettier-eslint/issues
 ## Configuration
 
 The extension uses your ESLint and Prettier configuration files. These files are resolved starting from the location of the file being formatted, and searching up the file tree until a config file is (or isn't) found.
@@ -61,7 +68,7 @@ You can enable the `Format on Save` setting to avoid entering the command all th
 If you have suggestions for how this extension could be improved, or want to report a bug, open an issue! I'd love all and any contributions. If you are interested in contributing to the project, check out the [Contributing Guide](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/blob/master/CONTRIBUTING.md).
 
 
-## Contributors ✨
+## Current Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -71,9 +78,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://gitlab.com/idahogurl"><img src="https://secure.gravatar.com/avatar/787139c4c697cfc33cc422566a4ccf78?s=80&d=identicon" width="100px;" alt=""/><br /><sub><b>Rebecca Vest</b></sub></a><br /><a href="#question-idahogurl" title="Answering Questions">💬</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Code">💻</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Documentation">📖</a> <a href="#infra-idahogurl" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/issues?author_username=idahogurl" title="Bug reports">🐛</a> <a href="#ideas-idahogurl" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/merge_requests?scope=all&state=all&approver_usernames[]=idahogurl" title="Reviewed Pull Requests">👀</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://gitlab.com/quentez"><img src="https://secure.gravatar.com/avatar/35c83f3e614ef0fe8ec1234568c88744?s=80&d=identicon" width="100px;" alt=""/><br /><sub><b>Quentin Calvez</b></sub></a><br /><a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Code">💻</a></td>
-    <td align="center"><a href="https://gitlab.com/basaran"><img src="https://secure.gravatar.com/avatar/7e549d0714b87693162f9ea96d2b8b21?s=80&d=identicon" width="100px;" alt=""/><br /><sub><b>basaran</b></sub></a><br /><a href="#question-basaran" title="Answering Questions">💬</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Code">💻</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/merge_requests?scope=all&state=all&approver_usernames[]=basaran" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://gitlab.com/aewing"><img src="https://secure.gravatar.com/avatar/eb392e9e5ba95c0c61d75e69253594f6?s=80&d=identicon" width="100px;" alt=""/><br /><sub><b>Andrew Ewing</b></sub></a><br /><a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Code">💻</a></td>
   </tr>
 </table>
 

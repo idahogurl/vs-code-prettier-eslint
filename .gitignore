@@ -4,5 +4,5 @@ node_modules
 .vscode
 .DS_Store
 dist/
-test/fixtures/temp*.js
-test/fixtures/temp*.ts
+test/fixtures/temp.js
+test/fixtures/temp2.js

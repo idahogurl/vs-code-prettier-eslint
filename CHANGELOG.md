@@ -45,8 +45,18 @@
 ### Breaking Changes
 - ESLint 7+ is now required
 
-## [2.0.0] - 2021-03-26
+## [2.1.0] - 2021-03-26
 
 ### Added
 - Abide by `.eslintignore` & `.prettierignore` files
 - Fix `module missing utils` error
+
+## [3.0.0] - 2021-04-13
+
+### Hotfix
+- Undo breaking changes introduced by upgrading Prettier and ESLint
+- Undo applying `.eslintignore` & `.prettierignore` files
+
+### Breaking Changes
+- Prettier v2.0 is not supported
+- ESLint v7.0 is not supported
