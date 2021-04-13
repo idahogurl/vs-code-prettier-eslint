@@ -25,26 +25,6 @@
         "review",
         "test"
       ]
-    },
-    {
-      "login": "quentez",
-      "name": "Quentin Calvez",
-      "avatar_url": "https://secure.gravatar.com/avatar/35c83f3e614ef0fe8ec1234568c88744?s=80&d=identicon",
-      "profile": "https://gitlab.com/quentez",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "basaran",
-      "name": "basaran",
-      "avatar_url": "https://secure.gravatar.com/avatar/7e549d0714b87693162f9ea96d2b8b21?s=80&d=identicon",
-      "profile": "https://gitlab.com/basaran",
-      "contributions": [
-        "question",
-        "code",
-        "review"
-      ]
     }
   ],
   "contributorsPerLine": 7

@@ -56,3 +56,7 @@
 ### Hotfix
 - Undo breaking changes introduced by upgrading Prettier and ESLint
 - Undo applying `.eslintignore` & `.prettierignore` files
+
+### Breaking Changes
+- Prettier v2.0 is not supported
+- ESLint v7.0 is not supported
