@@ -65,3 +65,8 @@
 
 ### Added
 - Updated README
+
+## [3.0.2] - 2021-04-13
+
+### Hotfix
+- Revert prettier-eslint version to 10.1.0
