@@ -1,6 +1,6 @@
 ![](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/raw/5b0d100df2eef87a3cb8ec7d8e125f6c5e5e6a9b/icon.png)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # [VS Code Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
@@ -9,9 +9,10 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 ## Prerequisites
 
-This extension requires `prettier:^2.0.0`, `eslint:^7.0.0`, `prettier-eslint:^12.0.0` packages to be installed either locally or globally.
+This extension requires `prettier:^1.9.1`, `eslint:^6.8.0`, `prettier-eslint:^10.1.0` packages to be installed either locally or globally.
 
 ## Troubleshooting
+
 _Error: Cannot find module 'prettier'_ OR _Error: Cannot find module 'eslint'_
 1. Quit Visual Studio Code
 2. Open terminal and run `rm -rf node_modules` to erase your local `node_modules`

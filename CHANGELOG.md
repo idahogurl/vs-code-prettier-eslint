@@ -60,3 +60,8 @@
 ### Breaking Changes
 - Prettier v2.0 is not supported
 - ESLint v7.0 is not supported
+
+## [3.0.1] - 2021-04-13
+
+### Added
+- Updated README
