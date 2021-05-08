@@ -15,6 +15,7 @@ This extension requires `prettier:^1.9.1`, `eslint:^6.8.0`, `prettier-eslint:^10
 
 ### Obtain the Error
 <img src="/uploads/25aa85517789ac4cc2701c103d652692/troubleshooting.png" width="500">
+
 1. Open the `View` menu and click `Output`
 2. Select `Prettier ESLint`
 3. Open a JavaScript file. Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
@@ -22,10 +23,8 @@ This extension requires `prettier:^1.9.1`, `eslint:^6.8.0`, `prettier-eslint:^10
 5. View the `Output` panel to check for an error.
 
 _Error: Cannot find module 'prettier'_ OR _Error: Cannot find module 'eslint'_
-1. Quit Visual Studio Code
-2. Open terminal and run `rm -rf node_modules` to erase your local `node_modules`
-3. Run `npm install` or `yarn install` to reinstall your `node_modules`
-3. Install Prettier and ESLint locally
+1. Restart Visual Studio Code
+2. Install Prettier and ESLint locally
 
 **Please create an issue before adding a rating.** I am the only contributor currently. https://gitlab.com/idahogurl/vs-code-prettier-eslint/issues
 ## Configuration
