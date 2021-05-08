@@ -24,7 +24,7 @@ This extension requires `prettier:^1.9.1`, `eslint:^6.8.0`, `prettier-eslint:^10
 
 _Error: Cannot find module 'prettier'_ OR _Error: Cannot find module 'eslint'_
 1. Restart Visual Studio Code
-2. Install Prettier and ESLint locally
+2. Install Prettier and ESLint locally and restart Visual Studio Code
 
 **Please create an issue before adding a rating.** I am the only contributor currently. https://gitlab.com/idahogurl/vs-code-prettier-eslint/issues
 ## Configuration
