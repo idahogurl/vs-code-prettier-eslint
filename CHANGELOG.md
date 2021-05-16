@@ -70,3 +70,6 @@
 
 ### Hotfix
 - Revert prettier-eslint version to 10.1.0
+
+## [3.0.1] - 2021-05-15
+- Improve setup instructions

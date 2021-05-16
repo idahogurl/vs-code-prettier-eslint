@@ -7,26 +7,83 @@
 
 A Visual Studio Code Extension to format JavaScript and TypeScript code using the [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
 
+**Please** [create an issue](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/issues) before adding a rating. Keep in mind that I work full-time and I am the only contributor currently. I'd love to have more contributors. See the **Contributing** section below.
+
 ## Prerequisites
 
-This extension requires `prettier:^1.9.1`, `eslint:^6.8.0`, `prettier-eslint:^10.1.0` packages to be installed either locally or globally.
+This extension requires the following packages to be installed either locally or globally:
+- `prettier:^1.9.1`
+- `eslint:^6.8.0`
+- `prettier-eslint:^10.1.0` 
+
+It is compatible with the following packages:
+- `@typescript-eslint/parser@^3.0.0`
+- `typescript@^3.9.3`
+- `vue-eslint-parser@~7.1.0`
 
 ## Troubleshooting
 
-### Obtain the Error
+1. Check for an error by opening the `View` menu and click `Output`
+2. Select `Prettier ESLint`
+
 <img src="/uploads/25aa85517789ac4cc2701c103d652692/troubleshooting.png" width="500">
 
-1. Open the `View` menu and click `Output`
-2. Select `Prettier ESLint`
 3. Open a JavaScript file. Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
 4. Start typing `Format Document With` and select `Prettier ESLint`
-5. View the `Output` panel to check for an error.
+5. Click on `Output` to open the panel
+6. If you see *Error: Cannot find module*, quit and restart Visual Studio Code
+7. If restarting did not work: 
+    - Make sure you have `eslint@6.8.0` and `prettier@1.9.1` installed locally (global installations don't work sometimes)
+    - Repeat Step 6.
 
-_Error: Cannot find module 'prettier'_ OR _Error: Cannot find module 'eslint'_
-1. Restart Visual Studio Code
-2. Install Prettier and ESLint locally and restart Visual Studio Code
+## Installation
 
-**Please create an issue before adding a rating.** I am the only contributor currently. https://gitlab.com/idahogurl/vs-code-prettier-eslint/issues
+**Notes**: 
+- The [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) is not required. 
+
+- The [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is not required. However, it is needed to have lint errors show while editting your file.
+
+### Install Dependencies
+1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint:^10.1.0`  as `devDependencies`
+2. Additionally install `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files) and `vue-eslint-parser@~7.1.0` for Vue projects. (`.vue` files)
+
+### Install the Extension
+1. Install the extension
+2. Quit VS Code
+3. Restart VS Code
+
+### Set as Default Formatter
+1. Open the file you want to format
+2. Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
+3. Start typing `Format Document With` and select it
+4. Choose the bottom item `Configure Default Formatter`
+5. Choose `Prettier ESLint`
+
+### Run the Formatter
+
+Once installed, open a JavaScript (`.js` or `.jsx`) or TypeScript (`.ts` or .`tsx`) file. Press `SHIFT + OPTION + F` (macOS) or `SHIFT + ALT + F` (Windows/Linux) to format a file.
+
+You can enable the `Format on Save` setting to avoid entering the command all the time.
+
+## Setup Format on Save
+
+1. Set `Prettier Eslint` as the default formatter as detailed above
+2. Open User or Workspace settings
+  - On Windows/Linux - File > Preferences > Settings
+  - On MacOS - Code > Preferences > Settings
+3. Start typing `Format on` and select it
+4. Check `Format on Save` (found mid-page in the right panel)
+5. Ensure both `Format on Input` and `Format on Paste` are disabled. They are not supported functionality
+
+Afterward, the file should format automatically once you save it
+
+For the best performance, change `Auto Save` to `onFocusChanged`.  This will have the editor save changes when you switch to another file or another program. The default setting makes the file save after you stop typing for an interval. This causes the formatter to run frequently thus taking more computer resources.
+
+1. Open User or Workspace settings
+  - On Windows/Linux - File > Preferences > Settings
+  - On macOS - Code > Preferences > Settings
+2. Start typing `Auto Save` and select `onFocusChanged`
+ 
 ## Configuration
 
 The extension uses your ESLint and Prettier configuration files. These files are resolved starting from the location of the file being formatted, and searching up the file tree until a config file is (or isn't) found.
@@ -47,29 +104,6 @@ Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for co
 - A `.prettierrc` file, written in JSON or YAML, with optional extensions: `.json/.yaml/.yml` (without extension takes precedence).
 - A `.prettierrc.js` or `prettier.config.js` file that exports an object.
 - A `.prettierrc.toml` file, written in TOML (the `.toml` extension is _required_).
-
-## Running Formatter
-
-Once installed, open a JavaScript file. Press `CTRL + CMD + P` (macOS) or `CTRL + Shift + P` (Windows/Linux) to format a file.
-
-You can enable the `Format on Save` setting to avoid entering the command all the time.
-
-## Default Formatter
-- Open the file you want to format
-- Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
-- Start typing `Format Document With` and select it
-- Choose the bottom item `Configure Default Formatter`
-- Choose `Prettier ESLint`
-
-## Setup Format on Save
-- Set `Prettier Eslint` as the default formatter as detailed above
-- Open User or Workspace settings
-  - On Windows/Linux - File > Preferences > Settings
-  - On macOS - Code > Preferences > Settings
-- Start typing `Format on` and select it
-- Check `Format on Save` (found mid-page in the right panel)
-- Ensure both `Format on Input` and `Format on Paste` are disabled. They are not supported functionality
-- Afterward, the file should format automatically once you save it
 
 ## Contributing
 
