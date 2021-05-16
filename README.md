@@ -1,6 +1,9 @@
 ![](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/raw/5b0d100df2eef87a3cb8ec7d8e125f6c5e5e6a9b/icon.png)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # [VS Code Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
@@ -12,11 +15,13 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 ## Prerequisites
 
 This extension requires the following packages to be installed either locally or globally:
+
 - `prettier:^1.9.1`
 - `eslint:^6.8.0`
-- `prettier-eslint:^10.1.0` 
+- `prettier-eslint:^10.1.0`
 
 It is compatible with the following packages:
+
 - `@typescript-eslint/parser@^3.0.0`
 - `typescript@^3.9.3`
 - `vue-eslint-parser@~7.1.0`
@@ -26,33 +31,37 @@ It is compatible with the following packages:
 1. Check for an error by opening the `View` menu and click `Output`
 2. Select `Prettier ESLint`
 
-<img src="/uploads/25aa85517789ac4cc2701c103d652692/troubleshooting.png" width="500">
+<img src="https://gitlab.com/idahogurl/vs-code-prettier-eslint/uploads/25aa85517789ac4cc2701c103d652692/troubleshooting.png" width="500">
 
 3. Open a JavaScript file. Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
 4. Start typing `Format Document With` and select `Prettier ESLint`
 5. Click on `Output` to open the panel
-6. If you see *Error: Cannot find module*, quit and restart Visual Studio Code
-7. If restarting did not work: 
-    - Make sure you have `eslint@6.8.0` and `prettier@1.9.1` installed locally (global installations don't work sometimes)
-    - Repeat Step 6.
+6. If you see _Error: Cannot find module_, quit and restart Visual Studio Code
+7. If restarting did not work:
+   - Make sure you have `eslint@6.8.0` and `prettier@1.9.1` installed locally (global installations don't work sometimes)
+   - Repeat Step 6.
 
 ## Installation
 
-**Notes**: 
-- The [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) is not required. 
+**Notes**:
+
+- The [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) is not required.
 
 - The [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is not required. However, it is needed to have lint errors show while editting your file.
 
 ### Install Dependencies
-1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint:^10.1.0`  as `devDependencies`
+
+1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint:^10.1.0` as `devDependencies`
 2. Additionally install `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files) and `vue-eslint-parser@~7.1.0` for Vue projects. (`.vue` files)
 
 ### Install the Extension
+
 1. Install the extension
 2. Quit VS Code
 3. Restart VS Code
 
 ### Set as Default Formatter
+
 1. Open the file you want to format
 2. Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
 3. Start typing `Format Document With` and select it
@@ -69,21 +78,25 @@ You can enable the `Format on Save` setting to avoid entering the command all th
 
 1. Set `Prettier Eslint` as the default formatter as detailed above
 2. Open User or Workspace settings
-  - On Windows/Linux - File > Preferences > Settings
-  - On MacOS - Code > Preferences > Settings
+
+- On Windows/Linux - File > Preferences > Settings
+- On MacOS - Code > Preferences > Settings
+
 3. Start typing `Format on` and select it
 4. Check `Format on Save` (found mid-page in the right panel)
 5. Ensure both `Format on Input` and `Format on Paste` are disabled. They are not supported functionality
 
 Afterward, the file should format automatically once you save it
 
-For the best performance, change `Auto Save` to `onFocusChanged`.  This will have the editor save changes when you switch to another file or another program. The default setting makes the file save after you stop typing for an interval. This causes the formatter to run frequently thus taking more computer resources.
+For the best performance, change `Auto Save` to `onFocusChanged`. This will have the editor save changes when you switch to another file or another program. The default setting makes the file save after you stop typing for an interval. This causes the formatter to run frequently thus taking more computer resources.
 
 1. Open User or Workspace settings
-  - On Windows/Linux - File > Preferences > Settings
-  - On macOS - Code > Preferences > Settings
+
+- On Windows/Linux - File > Preferences > Settings
+- On macOS - Code > Preferences > Settings
+
 2. Start typing `Auto Save` and select `onFocusChanged`
- 
+
 ## Configuration
 
 The extension uses your ESLint and Prettier configuration files. These files are resolved starting from the location of the file being formatted, and searching up the file tree until a config file is (or isn't) found.
@@ -109,7 +122,6 @@ Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for co
 
 If you have suggestions for how this extension could be improved, or want to report a bug, open an issue! I'd love all and any contributions. If you are interested in contributing to the project, check out the [Contributing Guide](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/blob/master/CONTRIBUTING.md).
 
-
 ## Current Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -125,6 +137,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
