@@ -16,26 +16,28 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 This extension requires the following packages to be installed either locally or globally:
 
-- `prettier@^1.9.1`
+- `prettier@1.9.1`
 - `eslint@6.8.0`
-- `prettier-eslint@^10.1.0`
-- `@typescript-eslint/parser@^3.0.0` and `typescript@^3.9.3` (Only for TypeScript projects)
-- `vue-eslint-parser@~7.1.0` (Only for Vue projects)
+- `prettier-eslint@10.1.0`
+
+- `@typescript-eslint/parser@^3.0.0` and `typescript@^3.9.3` **(Only for TypeScript projects)**
+- `vue-eslint-parser@~7.1.0` **(Only for Vue projects)**
 
 ## Troubleshooting
 
 1. Check for an error by opening the `View` menu and click `Output`
-2. Select `Prettier ESLint`
+2. Select `Prettier ESLint` from the dropdown to the right
 
 <img src="https://gitlab.com/idahogurl/vs-code-prettier-eslint/uploads/25aa85517789ac4cc2701c103d652692/troubleshooting.png" width="500">
 
-3. Open a JavaScript file. Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
-4. Start typing `Format Document With` and select `Prettier ESLint`
-5. Click on `Output` to open the panel
-6. If you see _Error: Cannot find module_, quit and restart Visual Studio Code
-7. If restarting did not work:
-   - Make sure you have the require packages installed locally (global installations don't work sometimes)
-   - Repeat Step 6.
+3. Open a JavaScript (`.js` or `.jsx`) or TypeScript (`.ts` or .`tsx`) file
+4. Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
+5. Start typing `Format Document With` and select `Prettier ESLint`
+6. Click on `Output` to open the panel
+7. If you see _Error: Cannot find module_, quit and restart Visual Studio Code
+8. If restarting did not work:
+   - Make sure you have the required packages installed locally (global installations don't work sometimes)
+   - Repeat Step 8
 
 ## Installation
 
@@ -43,14 +45,14 @@ This extension requires the following packages to be installed either locally or
 
 - The [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) is not required.
 
-- The [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is not required. However, it is needed to have lint errors show while editting your file.
+- The [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is not required. However, it is needed to have lint errors show while editing your file.
 
 ### Install Dependencies
 
 1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint:^10.1.0` as `devDependencies`
 2. Additionally install:
    - `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files)
-   - `vue-eslint-parser@~7.1.0` for Vue projects. (`.vue` files)
+   - `vue-eslint-parser@~7.1.0` for Vue projects (`.vue` files)
 
 ### Install the Extension
 
