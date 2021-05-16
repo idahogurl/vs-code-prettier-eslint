@@ -16,15 +16,11 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 This extension requires the following packages to be installed either locally or globally:
 
-- `prettier:^1.9.1`
-- `eslint:^6.8.0`
-- `prettier-eslint:^10.1.0`
-
-It is compatible with the following packages:
-
-- `@typescript-eslint/parser@^3.0.0`
-- `typescript@^3.9.3`
-- `vue-eslint-parser@~7.1.0`
+- `prettier@^1.9.1`
+- `eslint@6.8.0`
+- `prettier-eslint@^10.1.0`
+- `@typescript-eslint/parser@^3.0.0` and `typescript@^3.9.3` (Only for TypeScript projects)
+- `vue-eslint-parser@~7.1.0` (Only for Vue projects)
 
 ## Troubleshooting
 
@@ -38,7 +34,7 @@ It is compatible with the following packages:
 5. Click on `Output` to open the panel
 6. If you see _Error: Cannot find module_, quit and restart Visual Studio Code
 7. If restarting did not work:
-   - Make sure you have `eslint@6.8.0` and `prettier@1.9.1` installed locally (global installations don't work sometimes)
+   - Make sure you have the require packages installed locally (global installations don't work sometimes)
    - Repeat Step 6.
 
 ## Installation
@@ -52,7 +48,9 @@ It is compatible with the following packages:
 ### Install Dependencies
 
 1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint:^10.1.0` as `devDependencies`
-2. Additionally install `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files) and `vue-eslint-parser@~7.1.0` for Vue projects. (`.vue` files)
+2. Additionally install:
+   - `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files)
+   - `vue-eslint-parser@~7.1.0` for Vue projects. (`.vue` files)
 
 ### Install the Extension
 
