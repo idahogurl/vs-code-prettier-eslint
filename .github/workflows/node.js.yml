@@ -21,7 +21,6 @@ jobs:
         node-version: 12
     - run: yarn
     - run: yarn package
+    - run: yarn vsce publish -p "$PAT"
       env:
         PAT: ${{ secrets.PAT }}
-    - run: echo "$PAT"
-    - run: yarn vsce publish -p "$PAT"
