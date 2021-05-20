@@ -19,9 +19,8 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: 12
-    - run: yarn global add vsce
     - run: yarn
     - run: yarn package
       env:
         PAT: ${{ secrets.PAT }}
-    - run: vsce publish -p "$PAT"
+    - run: yarn vsce publish -p "$PAT"
