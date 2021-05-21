@@ -1,4 +1,4 @@
-![](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/raw/5b0d100df2eef87a3cb8ec7d8e125f6c5e5e6a9b/icon.png)
+![](https://github.com/idahogurl/vs-code-prettier-eslint/blob/deploy/icon.png?raw=true)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
@@ -10,7 +10,7 @@
 
 A Visual Studio Code Extension to format JavaScript and TypeScript code using the [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
 
-**Please** [create an issue](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/issues) before adding a rating. Keep in mind that I work full-time and I am the only contributor currently. I'd love to have more contributors. See the **Contributing** section below.
+**Please** [create an issue](https://github.com/idahogurl/vs-code-prettier-eslint/issues) before adding a rating. Keep in mind that I work full-time and I am the only contributor currently. I'd LOVE to have more contributors. See the **Contributing** section below.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ This extension requires the following packages to be installed either locally or
 1. Check for an error by opening the `View` menu and click `Output`
 2. Select `Prettier ESLint` from the dropdown to the right
 
-<img src="https://gitlab.com/idahogurl/vs-code-prettier-eslint/uploads/25aa85517789ac4cc2701c103d652692/troubleshooting.png" width="500">
+<img width="500" alt="troubleshooting" src="https://user-images.githubusercontent.com/10620169/119163604-c9a5cd80-ba18-11eb-91af-fe4d2efe8567.png">
 
 3. Open a JavaScript (`.js` or `.jsx`) or TypeScript (`.ts` or .`tsx`) file
 4. Press `CTRL + SHIFT + P` (Windows/Linux) or `CMD + SHIFT + P` (macOS) to open the command palette
@@ -77,10 +77,10 @@ You can enable the `Format on Save` setting to avoid entering the command all th
 ## Setup Format on Save
 
 1. Set `Prettier Eslint` as the default formatter as detailed above
-2. Open User or Workspace settings
+2. Open `User` or `Workspace` settings
 
-- On Windows/Linux - File > Preferences > Settings
-- On MacOS - Code > Preferences > Settings
+- On Windows/Linux - `File > Preferences > Settings`
+- On MacOS - `Code > Preferences > Settings`
 
 3. Start typing `Format on` and select it
 4. Check `Format on Save` (found mid-page in the right panel)
@@ -90,10 +90,10 @@ Afterward, the file should format automatically once you save it
 
 For the best performance, change `Auto Save` to `onFocusChanged`. This will have the editor save changes when you switch to another file or another program. The default setting makes the file save after you stop typing for an interval. This causes the formatter to run frequently thus taking more computer resources.
 
-1. Open User or Workspace settings
+1. Open `User` or `Workspace` settings
 
-- On Windows/Linux - File > Preferences > Settings
-- On macOS - Code > Preferences > Settings
+- On Windows/Linux - `File > Preferences > Settings`
+- On macOS - `Code > Preferences > Settings`
 
 2. Start typing `Auto Save` and select `onFocusChanged`
 
@@ -120,7 +120,7 @@ Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for co
 
 ## Contributing
 
-If you have suggestions for how this extension could be improved, or want to report a bug, open an issue! I'd love all and any contributions. If you are interested in contributing to the project, check out the [Contributing Guide](https://gitlab.com/idahogurl/vs-code-prettier-eslint/-/blob/master/CONTRIBUTING.md).
+If you have suggestions for how this extension could be improved, or want to report a bug, open an issue! I'd love all and any contributions. If you are interested in contributing to the project, check out the [Contributing Guide](https://github.com/idahogurl/vs-code-prettier-eslint/blob/deploy/CONTRIBUTING.md).
 
 ## Current Contributors ✨
 
@@ -131,7 +131,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://gitlab.com/idahogurl"><img src="https://secure.gravatar.com/avatar/787139c4c697cfc33cc422566a4ccf78?s=80&d=identicon" width="100px;" alt=""/><br /><sub><b>Rebecca Vest</b></sub></a><br /><a href="#question-idahogurl" title="Answering Questions">💬</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Code">💻</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Documentation">📖</a> <a href="#infra-idahogurl" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/issues?author_username=idahogurl" title="Bug reports">🐛</a> <a href="#ideas-idahogurl" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/merge_requests?scope=all&state=all&approver_usernames[]=idahogurl" title="Reviewed Pull Requests">👀</a> <a href="https://gitlab.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/idahogurl"><img src="https://secure.gravatar.com/avatar/787139c4c697cfc33cc422566a4ccf78?s=80&d=identicon" width="100px;" alt=""/><br /><sub><b>Rebecca Vest</b></sub></a><br /><a href="#question-idahogurl" title="Answering Questions">💬</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Code">💻</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Documentation">📖</a> <a href="#infra-idahogurl" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/issues/idahogurl" title="Bug reports">🐛</a> <a href="#ideas-idahogurl" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/pulls/idahogurl" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits/master" title="Tests">⚠️</a></td>
   </tr>
 </table>
 

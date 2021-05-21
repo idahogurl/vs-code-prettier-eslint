@@ -12,9 +12,9 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://gitlab.com/idahogurl/vs-code-prettier-eslint"
+		"url": "https://github.com/idahogurl/vs-code-prettier-eslint"
 	},
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
