@@ -2,7 +2,7 @@
   <!-- eslint-disable-next-line -->
   <div></div>
 </template>
-<script>
+<script lang="ts">
 /* eslint-disable */
 // prettier-ignore
 function foo() { return "foo" }
