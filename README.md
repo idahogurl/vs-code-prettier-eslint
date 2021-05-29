@@ -23,6 +23,15 @@ This extension requires the following packages to be installed either locally or
 - `@typescript-eslint/parser@^3.0.0` and `typescript@^3.9.3` **(Only for TypeScript projects)**
 - `vue-eslint-parser@~7.1.0` **(Only for Vue projects)**
 
+## Example Projects
+
+These projects are setup to work with the VS Code Prettier ESLint extension. Use them as a boilerplate for your project or as a reference for an existing project. If you don't see an example for your tech stack, create a PR of a working example.
+
+- [JavaScript](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/javascript)
+- [JavaScript with Vue](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/javascript-vue)
+- [TypeScript](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript)
+- [TypeScript with Vue](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript-vue)
+
 ## Troubleshooting
 
 1. Check for an error by opening the `View` menu and click `Output`

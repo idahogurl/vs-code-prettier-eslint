@@ -1,0 +1,12 @@
+{
+  "name": "javascript-vue-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-plugin-vue": "^7.10.0",
+    "prettier": "^2.3.0",
+    "vue-eslint-parser": "^7.6.0"
+  }
+}
