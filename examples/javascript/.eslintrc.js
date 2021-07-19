@@ -1,13 +1,15 @@
 module.exports = {
   env: {
-    es2021: true,
-    node: true,
+    browser: true,
+    es6: true
+  },
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
   },
   parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
+    ecmaVersion: 2018,
+    sourceType: "module"
   },
-  rules: {
-    'comma-dangle': 2,
-  },
-};
+  rules: {}
+}
