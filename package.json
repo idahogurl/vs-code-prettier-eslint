@@ -3,6 +3,7 @@
 	"name": "vs-code-prettier-eslint",
 	"displayName": "Prettier ESLint",
 	"description": "A Visual Studio Extension to format JavaScript and Typescript code using prettier-eslint package",
+	"license": "MIT",
 	"icon": "icon.png",
 	"keywords": [
 		"eslint",
