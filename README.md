@@ -16,12 +16,11 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 This extension requires the following packages to be installed either locally or globally:
 
-- `prettier@1.9.1`
-- `eslint@6.8.0`
-- `prettier-eslint@10.1.0`
+- `prettier@^2.4.1`
+- `eslint@^7.32.0` **(ESLint 8 has breaking changes thus not supported)**
 
-- `@typescript-eslint/parser@^3.0.0` and `typescript@^3.9.3` **(Only for TypeScript projects)**
-- `vue-eslint-parser@~7.1.0` **(Only for Vue projects)**
+- `@typescript-eslint/parser@^5.0.1` and `typescript@^4.4.4` **(Only for TypeScript projects)**
+- `vue-eslint-parser@^8.0.0` **(Only for Vue projects)**
 
 ## Example Projects
 
