@@ -24,7 +24,7 @@ This extension requires the following packages to be installed either locally or
 - `vue-eslint-parser@~7.1.0` **(Only for Vue projects)**
 
 ## Beta Download
-Support for Prettier 2 and ESLint 7 ([Download](vs-code-prettier-eslint-4.0.0-beta.vsix))
+Support for Prettier 2 and ESLint 7 ([Download](https://github.com/idahogurl/vs-code-prettier-eslint/raw/master/vs-code-prettier-eslint-4.0.0-beta.vsix))
 ### Installation 
 
 Click **Extensions** > **...** > **Install from VSIX**
