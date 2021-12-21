@@ -33,6 +33,7 @@
 		"onLanguage:jsonc",
 		"onLanguage:less",
 		"onLanguage:markdown",
+		"onLanguage:mdx",
 		"onLanguage:scss",
 		"onLanguage:svelte",
 		"onLanguage:typescript",
