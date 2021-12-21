@@ -25,6 +25,15 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "tbekaert",
+      "name": "Thomas Bekaert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11920484?v=4",
+      "profile": "https://github.com/tbekaert",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
