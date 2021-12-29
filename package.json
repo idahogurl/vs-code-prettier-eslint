@@ -15,7 +15,7 @@
 		"type": "git",
 		"url": "https://github.com/idahogurl/vs-code-prettier-eslint"
 	},
-	"version": "3.0.4",
+	"version": "3.1.0",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
