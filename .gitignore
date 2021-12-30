@@ -1,7 +1,5 @@
 node_modules
 .vscode-test/
-*.vsix
-.vscode
 .DS_Store
 dist/
 test/fixtures/temp.js
