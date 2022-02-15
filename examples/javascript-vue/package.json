@@ -1,12 +1,22 @@
 {
-  "name": "javascript-vue-example",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "javascript-vue",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5050",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "vue": "^3.2.29"
+  },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^7.19.1",
-    "prettier": "^2.4.1",
-    "vue-eslint-parser": "^8.0.0"
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-vue": "^2.1.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "prettier": "^2.5.1",
+    "vite": "^2.7.13"
   }
 }

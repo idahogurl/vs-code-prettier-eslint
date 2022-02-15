@@ -1,7 +1,10 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string;
-}>();
+<script setup>
+defineProps({
+  msg: {
+    type: String,
+    required: true
+  }
+})
 </script>
 
 <template>
