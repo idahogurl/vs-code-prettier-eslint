@@ -20,8 +20,6 @@ This extension requires the following packages to be installed either locally or
 - `@typescript-eslint/parser@^5.0.1` and `typescript@^4.4.4` **(Only for TypeScript projects)**
 - `vue-eslint-parser@^8.0.0` **(Only for Vue projects)**
 
-## Beta Download
-Support for Prettier 2 and ESLint 7 ([Download](https://github.com/idahogurl/vs-code-prettier-eslint/raw/master/vs-code-prettier-eslint-4.0.0-beta.vsix))
 ### Installation 
 
 Click **Extensions** > **...** > **Install from VSIX**
@@ -29,7 +27,7 @@ Click **Extensions** > **...** > **Install from VSIX**
 [README](https://github.com/idahogurl/vs-code-prettier-eslint/blob/3152147dd3ee03b14883f5a6520afdec16b4e1f8/README.md)
 ## Example Projects
 
-These projects are setup to work with the VS Code Prettier ESLint extension. Use them as a boilerplate for your project or as a reference for an existing project. If you don't see an example for your tech stack, create a PR of a working example.
+These projects are setup to work with the VS Code Prettier ESLint extension. Use them to help troubleshoot or as a boilerplate for your project. If you don't see an example for your tech stack, create a PR of a working example.
 
 - [JavaScript](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/javascript)
 - [JavaScript with Vue](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/javascript-vue)
@@ -49,8 +47,9 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 6. Click on `Output` to open the panel
 7. If you see _Error: Cannot find module_, quit and restart Visual Studio Code
 8. If restarting did not work:
+   - If you saw _Error: Cannot find module '@typescript-eslint/parser'_, view the [TypeScript project](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript) for a working example.
    - Make sure you have the required packages installed locally (global installations don't work sometimes)
-   - Repeat Step 8
+
 
 ## Installation
 
@@ -62,10 +61,7 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 
 ### Install Dependencies
 
-1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint:^10.1.0` as `devDependencies`
-2. Additionally install:
-   - `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files)
-   - `vue-eslint-parser@~7.1.0` for Vue projects (`.vue` files)
+See [Prerequisites](#prerequisites) above.
 
 ### Install the Extension
 
