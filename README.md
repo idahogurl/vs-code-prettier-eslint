@@ -20,11 +20,6 @@ This extension requires the following packages to be installed either locally or
 - `@typescript-eslint/parser@^5.0.1` and `typescript@^4.4.4` **(Only for TypeScript projects)**
 - `vue-eslint-parser@^8.0.0` **(Only for Vue projects)**
 
-### Installation 
-
-Click **Extensions** > **...** > **Install from VSIX**
-
-[README](https://github.com/idahogurl/vs-code-prettier-eslint/blob/3152147dd3ee03b14883f5a6520afdec16b4e1f8/README.md)
 ## Example Projects
 
 These projects are setup to work with the VS Code Prettier ESLint extension. Use them to help troubleshoot or as a boilerplate for your project. If you don't see an example for your tech stack, create a PR of a working example.
@@ -35,7 +30,6 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 - [TypeScript with Vue](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript-vue)
 
 ## Troubleshooting
-
 1. Check for an error by opening the `View` menu and click `Output`
 2. Select `Prettier ESLint` from the dropdown to the right
 
@@ -50,6 +44,13 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
    - If you saw _Error: Cannot find module '@typescript-eslint/parser'_, view the [TypeScript project](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript) for a working example.
    - Make sure you have the required packages installed locally (global installations don't work sometimes)
 
+**Note**: Most issues are caused by using an unsupported ESLint version or an invalid ESLint configuration.
+
+Running your files through the [Prettier ESLint CLI](https://github.com/prettier/prettier-eslint-cli) first is a good way to determine if it's the extension, the `prettier-eslint` package, or your configuration. 
+
+You can run `eslint --print-config .eslintrc.js` to check your ESLint configuration. This prints out the configuration being used after it applies plugins & extended configurations.
+
+**Note**: There are known performance issues with quad-core or slower processors. The slowness comes from ESLint CLI which the 'prettier-eslint' package because uses.
 
 ## Installation
 
