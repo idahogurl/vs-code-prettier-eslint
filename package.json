@@ -17,7 +17,7 @@
 	},
 	"version": "4.1.0",
 	"engines": {
-		"vscode": "^1.42.0"
+		"vscode": "^1.63.0"
 	},
 	"categories": [
 		"Formatters"
@@ -74,7 +74,7 @@
 		"rollup": "^2.18.2",
 		"rollup-plugin-terser": "^5.2.0",
 		"typescript": "^3.9.5",
-		"vsce": "^1.100.1",
+		"vsce": "^2.6.7",
 		"vscode-test": "^1.3.0"
 	},
 	"dependencies": {
