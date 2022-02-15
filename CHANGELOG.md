@@ -77,3 +77,7 @@
 
 ## [3.0.4] - 2021-05-21
 - Moved repository from github to GitHub
+
+## [3.1.0] - 2021-05-21
+### Added
+- Add MDX support

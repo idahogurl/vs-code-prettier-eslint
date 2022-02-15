@@ -44,6 +44,7 @@ const supportedLanguages = [
   'jsonc',
   'less',
   'markdown',
+  'mdx',
   'scss',
   'svelte',
   'typescript',
