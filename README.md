@@ -16,7 +16,6 @@ This extension requires the following npm packages to be installed either locall
 
 - `prettier@1.9.1`
 - `eslint@6.8.0`
-- `prettier-eslint@10.1.0`
 
 - `@typescript-eslint/parser@^3.0.0` and `typescript@^3.9.3` **(Only for TypeScript projects)**
 - `vue-eslint-parser@~7.1.0` **(Only for Vue projects)**
@@ -63,10 +62,14 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 
 ### Install Dependencies
 
-1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint@^10.1.0` as `devDependencies`
-2. Additionally install:
-   - `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files)
-   - `vue-eslint-parser@~7.1.0` for Vue projects (`.vue` files)
+1. In your project, install the base devDependencies:
+```sh
+npm install --save-dev eslint@6.8.0 prettier@1.9.1
+```
+2. Optionally install TypeScript (`.ts` & `.tsx` files) and Vue (`.vue` files) devDependencies:
+```sh
+npm install --save-dev @typescript-eslint/parser@^3.0.0 vue-eslint-parser@~7.1.0 
+```
 
 ### Install the Extension
 
