@@ -12,7 +12,7 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 ## Prerequisites
 
-This extension requires the following packages to be installed either locally or globally:
+This extension requires the following npm packages to be installed either locally or globally:
 
 - `prettier@1.9.1`
 - `eslint@6.8.0`
@@ -63,7 +63,7 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 
 ### Install Dependencies
 
-1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint:^10.1.0` as `devDependencies`
+1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint@^10.1.0` as `devDependencies`
 2. Additionally install:
    - `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files)
    - `vue-eslint-parser@~7.1.0` for Vue projects (`.vue` files)
