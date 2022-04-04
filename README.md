@@ -65,7 +65,6 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 1. In your project, install the base devDependencies:
 ```sh
 npm install --save-dev eslint@6.8.0 prettier@1.9.1
-```
 2. Optionally install TypeScript (`.ts` & `.tsx` files) devDependencies:
 ```sh
 npm install --save-dev @typescript-eslint/parser@^3.0.0
