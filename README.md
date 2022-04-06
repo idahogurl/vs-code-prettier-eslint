@@ -1,4 +1,4 @@
-![](https://github.com/idahogurl/vs-code-prettier-eslint/blob/deploy/icon.png?raw=true)
+![](https://github.com/idahogurl/vs-code-prettier-eslint/blob/master/icon.png?raw=true)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
@@ -12,22 +12,26 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 ## Prerequisites
 
-This extension requires the following packages to be installed either locally or globally:
+This extension requires the following NPM packages to be installed either locally or globally:
 
 - `prettier@1.9.1`
 - `eslint@6.8.0`
-- `prettier-eslint@10.1.0`
-
 - `@typescript-eslint/parser@^3.0.0` and `typescript@^3.9.3` **(Only for TypeScript projects)**
 - `vue-eslint-parser@~7.1.0` **(Only for Vue projects)**
 
-## Beta Download
-Support for Prettier 2 and ESLint 7 ([Download](https://github.com/idahogurl/vs-code-prettier-eslint/raw/master/vs-code-prettier-eslint-4.0.0-beta.vsix))
-### Installation 
+## Pre-Release Version
+Support for Prettier 2 and ESLint 7 
 
-Click **Extensions** > **...** > **Install from VSIX**
+[README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.0.0-beta)
+### Installation
+1. Open **Extensions**
+2. Search **Prettier ESLint**
+3. For a new installation, click down arrow next to **Install** button. Choose **Install Pre-Release Version**
+<img width="683" alt="install-pre-release" src="https://user-images.githubusercontent.com/10620169/162022815-96d1ef83-2847-412c-8517-5a177c56330b.png">
+4. For existing installation, click **Prettier ESLint**. In the right screen, click **Switch to Pre-Release Version** button 
+<img width="1087" alt="switch-pre-release" src="https://user-images.githubusercontent.com/10620169/162022828-0a5aaf90-43fa-42f9-93ff-88b9c96f9519.png">
 
-[README](https://github.com/idahogurl/vs-code-prettier-eslint/blob/3152147dd3ee03b14883f5a6520afdec16b4e1f8/README.md)
+
 ## Example Projects
 
 These projects are setup to work with the VS Code Prettier ESLint extension. Use them as a boilerplate for your project or as a reference for an existing project. If you don't see an example for your tech stack, create a PR of a working example.
@@ -63,11 +67,32 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 
 ### Install Dependencies
 
-1. In your project, install `eslint@6.8.0`, `prettier@1.9.1`, & `prettier-eslint:^10.1.0` as `devDependencies`
-2. Additionally install:
-   - `@typescript-eslint/parser@^3.0.0` for TypeScript projects (`.ts` & `.tsx` files)
-   - `vue-eslint-parser@~7.1.0` for Vue projects (`.vue` files)
+1. In your project, install devDependencies
+    ```sh
+    npm install --save-dev eslint@6.8.0 prettier@1.9.1
+    ```
+    OR
+    ```sh
+    yarn add -D eslint@6.8.0 prettier@1.9.1
+    ```
+2. For TypeScript projects (`.ts` & `.tsx` files) install additional package under devDependencies
+    ```sh
+    npm install --save-dev @typescript-eslint/parser@^3.0.0
+    ``` 
+    OR
+    ```sh
+    yarn add -D @typescript-eslint/parser@^3.0.0
+    ``` 
+   
+3. For Vue projects (`.vue` files) install additional package under devDependencies 
+    ```sh
+    npm install --save-dev vue-eslint-parser@~7.1.0
+    ``` 
+    OR
 
+    ```sh
+    yarn add -D vue-eslint-parser@~7.1.0
+    ``` 
 ### Install the Extension
 
 1. Install the extension
