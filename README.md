@@ -28,6 +28,7 @@ Support for Prettier 2 and ESLint 7
 2. Search **Prettier ESLint**
 3. For a new installation, click down arrow next to **Install** button. Choose **Install Pre-Release Version**
 <img width="683" alt="install-pre-release" src="https://user-images.githubusercontent.com/10620169/162022815-96d1ef83-2847-412c-8517-5a177c56330b.png">
+
 4. For existing installation, click **Prettier ESLint**. In the right screen, click **Switch to Pre-Release Version** button 
 <img width="1087" alt="switch-pre-release" src="https://user-images.githubusercontent.com/10620169/162022828-0a5aaf90-43fa-42f9-93ff-88b9c96f9519.png">
 
