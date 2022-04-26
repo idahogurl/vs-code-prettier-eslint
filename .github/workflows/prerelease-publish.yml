@@ -5,9 +5,9 @@ name: Prerelease Publish
 
 on:
   push:
-    branches: [ prerelease ]
+    branches: [ 4.0.0-beta ]
   pull_request:
-    branches: [ prerelease ]
+    branches: [ 4.0.0-beta ]
 
 jobs:
   build:
