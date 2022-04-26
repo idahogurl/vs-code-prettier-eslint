@@ -2,6 +2,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
+import json from '@rollup/plugin-json';
 
 export default {
   input: './src/extension.js',
@@ -19,6 +20,7 @@ export default {
       'function commonjsRequire': 'function commonJsRequire',
       commonjsRequire: 'require',
     }),
+    json(),
   ],
   external: ['vscode', 'fs', 'path', 'module', 'util'],
 };

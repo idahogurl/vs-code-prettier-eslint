@@ -1,4 +1,4 @@
-![](https://github.com/idahogurl/vs-code-prettier-eslint/blob/deploy/icon.png?raw=true)
+![](https://github.com/idahogurl/vs-code-prettier-eslint/blob/master/icon.png?raw=true)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
@@ -12,10 +12,10 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 ## Prerequisites
 
-This extension requires the following packages to be installed either locally or globally:
+This extension requires the following NPM packages to be installed either locally or globally:
 
-- `prettier@^2.4.1`
-- `eslint@^7.32.0` **(ESLint 8 has breaking changes thus not supported)**
+- `prettier@^2.5.1`
+- `eslint@^8.7.0`
 
 - `@typescript-eslint/parser@^5.0.1` and `typescript@^4.4.4` **(Only for TypeScript projects)**
 - `vue-eslint-parser@^8.0.0` **(Only for Vue projects)**
