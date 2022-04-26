@@ -22,7 +22,7 @@ This extension requires the following NPM packages to be installed either locall
 ## Pre-Release Version
 Support for Prettier 2 and ESLint 8 
 
-[README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.0.0-beta)
+[README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/prerelease)
 ### Installation
 1. Open **Extensions**
 2. Search **Prettier ESLint**
