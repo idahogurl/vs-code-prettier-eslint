@@ -20,7 +20,7 @@ This extension requires the following NPM packages to be installed either locall
 - `vue-eslint-parser@~7.1.0` **(Only for Vue projects)**
 
 ## Pre-Release Version
-Support for Prettier 2 and ESLint 7 
+Support for Prettier 2 and ESLint 8 
 
 [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.0.0-beta)
 ### Installation
