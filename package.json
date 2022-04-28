@@ -15,7 +15,7 @@
 		"type": "git",
 		"url": "https://github.com/idahogurl/vs-code-prettier-eslint"
 	},
-	"version": "5.0.0",
+	"version": "5.0.1",
 	"engines": {
 		"vscode": "^1.63.0",
 		"node": "^16.13.0"
@@ -50,7 +50,6 @@
 		"dev": "NODE_ENV=dev node ./scripts/build.js",
 		"watch": "NODE_ENV=dev,watch node ./scripts/build.js",
 		"build": "NODE_ENV=prod node ./scripts/build.js",
-		"vscode:prepublish": "yarn build",
 		"package": "vsce package --yarn",
 		"contributors:add": "all-contributors add",
 		"contributors:generate": "all-contributors generate"
@@ -62,6 +61,7 @@
 		"@types/vscode": "^1.42.0",
 		"all-contributors-cli": "^6.16.0",
 		"esbuild": "^0.14.38",
+		"esbuild-plugin-text-replace": "^1.2.0",
 		"eslint": "^8.14.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.26.0",
@@ -76,8 +76,9 @@
 	},
 	"dependencies": {
 		"core-js": "^3.9.1",
+		"espree": "^9.3.1",
 		"find-up": "^5.0.0",
 		"ignore": "^5.1.8",
-		"prettier-eslint": "^14.0.1"
+		"prettier-eslint": "^14.0.2"
 	}
 }
