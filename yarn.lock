@@ -822,6 +822,11 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.npmjs.org/copy-descriptor/-/copy-descriptor-0.1.1.tgz"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
+core-js@^3.4.1:
+  version "3.22.2"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.2.tgz#3ea0a245b0895fa39d1faa15fe75d91ade504a01"
+  integrity sha512-Z5I2vzDnEIqO2YhELVMFcL1An2CIsFe9Q7byZhs8c/QxummxZlAHw33TUHbIte987LkisOgL0LwQ1P9D6VISnA==
+
 core-js@^3.9.1:
   version "3.18.3"
   resolved "https://registry.npmjs.org/core-js/-/core-js-3.18.3.tgz"
@@ -1209,6 +1214,13 @@ esbuild-openbsd-64@0.14.38:
   version "0.14.38"
   resolved "https://registry.yarnpkg.com/esbuild-openbsd-64/-/esbuild-openbsd-64-0.14.38.tgz#1ca29bb7a2bf09592dcc26afdb45108f08a2cdbd"
   integrity sha512-CDswYr2PWPGEPpLDUO50mL3WO/07EMjnZDNKpmaxUPsrW+kVM3LoAqr/CE8UbzugpEiflYqJsGPLirThRB18IQ==
+
+esbuild-plugin-text-replace@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/esbuild-plugin-text-replace/-/esbuild-plugin-text-replace-1.2.0.tgz#43d87d88c5c1314151d8046d490aa21605fe1feb"
+  integrity sha512-04kdAMjxqGG+TEV/F+uGQVMFZlh65Eb11xo8b532io8FjOg5x2faoCXGicJo97BovXYARCPUhiZEECKZrFQq7Q==
+  dependencies:
+    ts-replace-all "^1.0.0"
 
 esbuild-sunos-64@0.14.38:
   version "0.14.38"
@@ -3294,10 +3306,10 @@ prelude-ls@^1.2.1:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier-eslint@^14.0.1:
-  version "14.0.1"
-  resolved "https://registry.yarnpkg.com/prettier-eslint/-/prettier-eslint-14.0.1.tgz#982ebc5a314bcf63d068e81ce1d00d6acc33c5ec"
-  integrity sha512-crsXH/dZ2uWxUZI43md0euicqGAJcojUamdMHJolotF/+BV8g2ULKpisiROGCvQXWtjNF869qFElcqnvO6fZdQ==
+prettier-eslint@^14.0.2:
+  version "14.0.2"
+  resolved "https://registry.yarnpkg.com/prettier-eslint/-/prettier-eslint-14.0.2.tgz#22450cf62dfed4536100c2d31e883de4c3cc6d13"
+  integrity sha512-bU0fKT5xNLk/WQQkNeVApe5OU8I834MzP5AcTpGPOHfjffU3HmRXW8dsD35dUhPTl3/qkgrTPTnHF90YZIuKGw==
   dependencies:
     "@typescript-eslint/parser" "^5.10.0"
     common-tags "^1.4.0"
@@ -4055,6 +4067,13 @@ tr46@~0.0.3:
   version "0.3.9"
   resolved "https://registry.npmjs.org/traverse/-/traverse-0.3.9.tgz"
   integrity sha1-cXuPIgzAu3tE5AUUwisui7xw2Lk=
+
+ts-replace-all@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ts-replace-all/-/ts-replace-all-1.0.0.tgz#ef28283ccdb4da7d69fb03cf543e09e51711659b"
+  integrity sha512-6uBtdkw3jHXkPtx/e9xB/5vcngMm17CyJYsS2YZeQ+9FdRnt6Ev5g931Sg2p+dxbtMGoCm13m3ax/obicTZIkQ==
+  dependencies:
+    core-js "^3.4.1"
 
 tsconfig-paths@^3.14.1:
   version "3.14.1"
