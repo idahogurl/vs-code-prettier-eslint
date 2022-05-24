@@ -1,0 +1,21 @@
+name: 3.x Publish
+
+on:
+  push:
+    branches: [ 3.x ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - run: yarn
+      - run: yarn vsce publish -p "$VSCE_PAT"
+        env:
+          PAT: ${{ secrets.VSCE_PAT }}
+      - run: yarn ovsx publish -p "$OVSX_PAT"
+        env:
+          PAT: ${{ secrets.OVSX_PAT }}
