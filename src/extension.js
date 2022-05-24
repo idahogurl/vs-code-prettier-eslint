@@ -2,29 +2,29 @@
 import { languages, window, TextEdit } from 'vscode';
 
 import format from './formatter';
-import { isFilePathMatchedByEslintignore, isFilePathMatchedByPrettierignore } from './ignore';
+import { isFilePathMatchedByEslintIgnore, isFilePathMatchedByPrettierIgnore } from './ignore';
 
 let outputChannel;
 
-function formatter(document, range) {
+async function formatter(document, range) {
   try {
     if (
-      isFilePathMatchedByEslintignore(document.fileName)
-      || isFilePathMatchedByPrettierignore(document.fileName)
+      isFilePathMatchedByEslintIgnore(document.fileName)
+      || isFilePathMatchedByPrettierIgnore(document.fileName)
       // eslint-disable-next-line no-empty
     ) {
       console.log('File ignored.');
       outputChannel.appendLine('File ignored. Matches entry in .eslintignore or .prettierignore');
     } else {
       const text = document.getText(range);
-      const formatted = format({
+      const formatted = await format({
         text,
         filePath: document.fileName,
       });
       return [TextEdit.replace(range, formatted)];
     }
   } catch (err) {
-    outputChannel.appendLine(`Error: ${err.message}`);
+    outputChannel.appendLine(`Error: ${err.message} \n${err.stack}`);
   }
 }
 

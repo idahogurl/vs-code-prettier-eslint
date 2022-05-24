@@ -3,56 +3,40 @@ import path from 'path';
 import findUp from 'find-up';
 import nodeIgnore from 'ignore';
 
-const LINE_SEPERATOR_REGEX = /(\r|\n|\r\n)/;
-
-function findUpEslintignoreSync(filename, cwd) {
-  return findUp.sync('.eslintignore', { cwd });
-}
-
-function findUpPrettierignoreSync(filename, cwd) {
-  return findUp.sync('.prettierignore', { cwd });
-}
+const LINE_SEPARATOR_REGEX = /(\r|\n|\r\n)/;
 
 function getIsIgnored(filename) {
   const ignoreLines = fs
     .readFileSync(filename, 'utf8')
-    .split(LINE_SEPERATOR_REGEX)
+    .split(LINE_SEPARATOR_REGEX)
     .filter((line) => Boolean(line.trim()));
   const instance = nodeIgnore();
   instance.add(ignoreLines);
   return instance.ignores.bind(instance);
 }
 
-function getNearestEslintignorePath(filePath) {
+export function isFilePathMatchedByEslintIgnore(filePath) {
   const { dir } = path.parse(filePath);
-  return findUpEslintignoreSync('.eslintignore', dir);
-}
-
-export function isFilePathMatchedByEslintignore(filePath) {
-  const eslintignorePath = getNearestEslintignorePath(filePath);
-  if (!eslintignorePath) {
+  const eslintIgnorePath = findUp.sync('.eslintignore', { cwd: dir });
+  if (!eslintIgnorePath) {
     return false;
   }
 
-  const eslintignoreDir = path.parse(eslintignorePath).dir;
-  const filePathRelativeToEslintignoreDir = path.relative(eslintignoreDir, filePath);
-  const isIgnored = getIsIgnored(eslintignorePath);
-  return isIgnored(filePathRelativeToEslintignoreDir);
+  const eslintIgnoreDir = path.parse(eslintIgnorePath).dir;
+  const filePathRelativeToEslintIgnoreDir = path.relative(eslintIgnoreDir, filePath);
+  const isIgnored = getIsIgnored(eslintIgnorePath);
+  return isIgnored(filePathRelativeToEslintIgnoreDir);
 }
 
-function getNearestPrettierignorePath(filePath) {
+export function isFilePathMatchedByPrettierIgnore(filePath) {
   const { dir } = path.parse(filePath);
-  return findUpPrettierignoreSync('.prettierignore', dir);
-}
-
-export function isFilePathMatchedByPrettierignore(filePath) {
-  const prettierignorePath = getNearestPrettierignorePath(filePath);
-  if (!prettierignorePath) {
+  const prettierIgnorePath = findUp.sync('.prettierignore', { cwd: dir });
+  if (!prettierIgnorePath) {
     return false;
   }
 
-  const prettierignoreDir = path.parse(prettierignorePath).dir;
-  const filePathRelativeToPrettierignoreDir = path.relative(prettierignoreDir, filePath);
-  const isIgnored = getIsIgnored(prettierignorePath);
-  return isIgnored(filePathRelativeToPrettierignoreDir);
+  const prettierIgnoreDir = path.parse(prettierIgnorePath).dir;
+  const filePathRelativeToPrettierIgnoreDir = path.relative(prettierIgnoreDir, filePath);
+  const isIgnored = getIsIgnored(prettierIgnorePath);
+  return isIgnored(filePathRelativeToPrettierIgnoreDir);
 }
