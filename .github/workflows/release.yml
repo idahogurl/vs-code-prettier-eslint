@@ -1,3 +1,5 @@
+name: Release Publish
+
 on:
   push:
     branches: [ deploy ]
@@ -16,4 +18,4 @@ jobs:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - run: yarn ovsx publish -p "$OVSX_PAT"
         env:
-          PAT: ${{ secrets.OVSX_PAT }}
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
