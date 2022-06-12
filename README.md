@@ -21,10 +21,10 @@ This extension requires the following NPM packages to be installed either locall
 - `vue-eslint-parser@^8.0.0` **(Only for Vue projects)**
 
 ### Support for Earlier Versions
-For Prettier 1.9 & ESLint 6.8 support use version 3.1
 
-[DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | 
-[README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x)
+- Prettier 1.9 & ESLint 6.8 - Version 3.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x))
+- Prettier 2.0 & ESLint 7.0 - Version 4.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/4.1.0/vspackage) | 
+[README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.x))
 
 ## Example Projects
 
