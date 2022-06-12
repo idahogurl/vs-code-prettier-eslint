@@ -13,9 +13,8 @@ jobs:
         with:
           node-version: 16
       - run: yarn
-      - run: yarn vsce publish -p "$VSCE_PAT"
+      - run: yarn semantic-release
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-      - run: yarn ovsx publish -p "$OVSX_PAT"
-        env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

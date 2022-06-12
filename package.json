@@ -50,8 +50,7 @@
 		"dev": "NODE_ENV=dev node ./scripts/build.js",
 		"watch": "NODE_ENV=dev,watch node ./scripts/build.js",
 		"build": "NODE_ENV=prod node ./scripts/build.js",
-		"vscode:prepublish": "yarn build",
-		"package": "vsce package --yarn",
+		"package": "yarn build && vsce package --yarn",
 		"contributors:add": "all-contributors add",
 		"contributors:generate": "all-contributors generate"
 	},
