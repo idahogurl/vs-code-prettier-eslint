@@ -81,3 +81,22 @@
 ## [3.1.0] - 2021-05-21
 ### Added
 - Add MDX support
+
+## [4.1.0] - 2022-02-15
+
+### Added
+- Upgraded to support Prettier 2 & ESLint 7
+- Updated 'example' projects
+
+## [5.0.0] - 2022-04-26
+
+### Added
+- Upgraded to support ESLint 8
+
+### Breaking Changes
+- ESLint 8+ is now required
+
+## [5.0.1] - 2022-04-27 
+
+### Hotfix
+- Fix extension activation error
