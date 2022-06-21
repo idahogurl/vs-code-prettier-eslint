@@ -1,3 +1,5 @@
+## [5.0.2](https://github.com/idahogurl/vs-code-prettier-eslint/compare/v5.0.1...v5.0.2) (2022-06-21)
+
 # Change Log
 
 ## [Unreleased]
