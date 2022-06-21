@@ -23,8 +23,8 @@ module.exports = {
       {
         publishCmd:
           process.env.BRANCH === 'deploy'
-            ? './publish.sh ${nextRelease.version}'
-            : './prerelease-publish.sh ${nextRelease.version}',
+            ? './scripts/publish.sh ${nextRelease.version}'
+            : './scripts/prerelease-publish.sh ${nextRelease.version}',
       },
     ],
     '@semantic-release/git',
