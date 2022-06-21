@@ -6,8 +6,8 @@ module.exports = {
       '@semantic-release/commit-analyzer',
       {
         releaseRules: [
-          { tag: 'docs', scope: 'README', release: 'patch' },
-          { tag: 'chore', scope: 'pre-release', release: 'patch' },
+          { type: 'docs', scope: 'README', release: 'patch' },
+          { type: 'chore', scope: 'pre-release', release: 'patch' },
         ],
       },
     ],
