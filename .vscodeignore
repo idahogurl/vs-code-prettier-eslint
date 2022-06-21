@@ -4,7 +4,7 @@ test/
 .gitignore
 vsc-extension-quickstart.md
 jsconfig.json
-*.map
+dist/extension.js.map
 node_modules
 .all-contributorsrc
 .eslintignore
@@ -19,3 +19,4 @@ examples/
 scripts/
 yarn.lock
 pseudo-code.md
+package.json

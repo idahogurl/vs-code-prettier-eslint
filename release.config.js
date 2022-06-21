@@ -1,13 +1,21 @@
 /* eslint-disable no-template-curly-in-string */
 module.exports = {
-  branches: ['deploy', '+([0-9])?(.{+([0-9]),x}).x'],
+  branches: ['deploy', '+([0-9])?(.{+([0-9]),x}).x', 'prerelease'],
   plugins: [
-    '@semantic-release/commit-analyzer',
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        releaseRules: [
+          { tag: 'docs', scope: 'README', release: 'patch' },
+          { tag: 'chore', scope: 'release', release: 'patch' },
+        ],
+      },
+    ],
     '@semantic-release/release-notes-generator',
     [
       '@semantic-release/changelog',
       {
-        changelogFile: 'docs/CHANGELOG.md',
+        changelogFile: 'CHANGELOG.md',
       },
     ],
     [
