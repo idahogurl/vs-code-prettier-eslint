@@ -22,8 +22,8 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        publishCmd:
-          process.env.BRANCH === 'deploy'
+        prepareCmd:
+          process.env.GITHUB_REF_NAME === 'deploy'
             ? './scripts/publish.sh ${nextRelease.version}'
             : './scripts/prerelease-publish.sh ${nextRelease.version}',
       },
