@@ -7,7 +7,7 @@ module.exports = {
       {
         releaseRules: [
           { tag: 'docs', scope: 'README', release: 'patch' },
-          { tag: 'chore', scope: 'release', release: 'patch' },
+          { tag: 'chore', scope: 'pre-release', release: 'patch' },
         ],
       },
     ],
