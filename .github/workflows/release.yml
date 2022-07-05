@@ -1,0 +1,20 @@
+name: Release Publish
+
+on:
+  push:
+    branches: [ deploy ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: yarn
+      - run: yarn semantic-release
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
