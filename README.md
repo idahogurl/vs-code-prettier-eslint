@@ -20,13 +20,12 @@ This extension requires the following packages to be installed either locally or
 - `@typescript-eslint/parser@^5.0.1` and `typescript@^4.4.4` **(Only for TypeScript projects)**
 - `vue-eslint-parser@^8.0.0` **(Only for Vue projects)**
 
-## Beta Download
-Support for Prettier 2 and ESLint 7 ([Download](https://github.com/idahogurl/vs-code-prettier-eslint/raw/master/vs-code-prettier-eslint-4.0.0-beta.vsix))
-### Installation 
+### Support for Earlier Versions
+For Prettier 1.9 & ESLint 6.8 support use version 3.1
 
-Click **Extensions** > **...** > **Install from VSIX**
+[DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | 
+[README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x)
 
-[README](https://github.com/idahogurl/vs-code-prettier-eslint/blob/3152147dd3ee03b14883f5a6520afdec16b4e1f8/README.md)
 ## Example Projects
 
 These projects are setup to work with the VS Code Prettier ESLint extension. Use them as a boilerplate for your project or as a reference for an existing project. If you don't see an example for your tech stack, create a PR of a working example.
