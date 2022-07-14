@@ -74,8 +74,6 @@ This extension requires the following NPM packages to be installed either locall
 
 4. **Restart VsCode**  
 
----
-
 ## Configuration
 
 The extension uses your ESLint and Prettier configuration files. These files are resolved starting from the location of the file being formatted, and searching up the file tree until a config file is (or isn't) found.
@@ -97,8 +95,6 @@ Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for co
 - A `.prettierrc.js` or `prettier.config.js` file that exports an object.
 - A `.prettierrc.toml` file, written in TOML (the `.toml` extension is _required_).
 
----
-
 ## Example Projects
 
 These projects are setup to work with the VS Code Prettier ESLint extension. Use them to help troubleshoot or as a boilerplate for your project. If you don't see an example for your tech stack, create a PR of a working example.
@@ -107,8 +103,6 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 - [JavaScript with Vue](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/javascript-vue)
 - [TypeScript](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript)
 - [TypeScript with Vue](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript-vue)
-
----
 
 ## Troubleshooting
 1. Check for an error by opening the `View` menu and click `Output`
@@ -133,15 +127,11 @@ You can run `eslint --print-config .eslintrc.js` to check your ESLint configurat
 
 **Note**: There are known performance issues with quad-core or slower processors. The slowness comes from ESLint CLI which the 'prettier-eslint' package uses.
 
----
-
 ## Support for Earlier Versions
 
 - Prettier 1.9 & ESLint 6.8 - Version 3.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x))
 - Prettier 2.0 & ESLint 7.0 - Version 4.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/4.1.0/vspackage) | 
 [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.x))
-
----
 
 ## Contributing
 
