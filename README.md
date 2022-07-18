@@ -22,57 +22,52 @@ This extension requires the following NPM packages to be installed either locall
 
 ## Installation
 
+[Download the extension](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint) if you haven't already.
+
 **Notes**:
 
 - The [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) is **not** required.
 
 - The [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is **not** required. However, it is needed to have lint errors show while editing your file.
 
-### Quick start
+## Install dependencies
 
-#### 1. **[download the extension](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)** if you haven't already.
+Now we need to install `prettier` and `eslint` as dev dependencies in our project. Run one of the following commands based on your project requirements. The commands listed below use `yarn` but you can also use `npm`. Just replace `yarn add` with `npm i`
 
-#### 2. **Install dependencies**
+```bash 
+## minimum requirements
+yarn add -D prettier@^2.5.1 eslint@^8.7.0
 
-    ```bash
-    # In the root directory of your project
+## if your project uses typescript
+yarn add -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
+```
 
-    # Using yarn
-    yarn add -D prettier@^2.5.1 eslint@^8.7.0
+## Project settings 
 
-    ## with typescript
-    yarn add -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
+Now we need to configure your project to use the extension. To do that, we're going to open or create a `settings.json` file at the root of your project. If you already have a `.vscode/settings.json` file in your project, you can skip the first two steps below and jump straight to step 3. 
 
-    # Using npm
-    npm i -D prettier@^2.5.1 eslint@^8.7.0
+1. Open the command palette in vscode by typing:
+  - `CMD + SHIFT + P` (Mac OS)
+  - `CTRL + SHIFT + P` (Windows) 
 
-    ## with typescript
-    npm i -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
-    ```
-#### 3. **Edit settings.json**
+2. In the command palette type `Preferences: Open Workspace Settings (JSON)`. 
 
-    Next we're going to open or create a `settings.json` file at the root of your project. 
+3. In the `.vscode/settings.json` file we just opened, copy and paste the following settings
 
-    Open the command palette in vscode by typing:
-      - `CMD + SHIFT + P` (Mac OS)
-      - `CTRL + SHIFT + P` (Windows) 
-
-    In the command palette type `Preferences: Open Workspace Settings (JSON)`. 
-
-    In the file we just opened, copy and paste the following settings
-
-    ```json
+    ```jsonc
     {
       "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-      "editor.formatOnPaste": false,
-      "editor.formatOnType": false,
-      "editor.formatOnSave": true,
-      "editor.formatOnSaveMode": "file",
-      "files.autoSave": "onFocusChange"
+      "editor.formatOnPaste": false, // required 
+      "editor.formatOnType": false, // required
+      "editor.formatOnSave": true, // optional 
+      "editor.formatOnSaveMode": "file", // required to format on save
+      "files.autoSave": "onFocusChange" // optional but recommended
     }
     ```
 
-#### 4. **Restart VsCode**  
+4. **Restart VsCode**  
+
+With settings listed above, your project should now be setup to automatically format your code when you save. If you run into any problems, check the [troubleshooting](https://github.com/idahogurl/vs-code-prettier-eslint/#troubleshooting) guide below.
 
 ## Configuration
 
@@ -82,18 +77,18 @@ The extension uses your ESLint and Prettier configuration files. These files are
 
 (From https://eslint.org/docs/user-guide/configuring)
 
-Use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an [`.eslintrc.*`](https://eslint.org/docs/user-guide/configuring#configuration-file-formats) file or an `eslintConfig` field in a [`package.json`](https://docs.npmjs.com/files/package.json) file.
+> Use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an [`.eslintrc.*`](https://eslint.org/docs/user-guide/configuring#configuration-file-formats) file or an `eslintConfig` field in a [`package.json`](https://docs.npmjs.com/files/package.json) file, both of which ESLint will look for and read automatically.
 
 ### Prettier Configuration File
 
 (From https://prettier.io/docs/en/configuration.html)
 
-Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for configuration file support. This means you can configure prettier via (in order of precedence):
+> Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for configuration file support. This means you can configure prettier via (in order of precedence):
+> - A `"prettier"` key in your `package.json` file.
+> - A `.prettierrc` file, written in JSON or YAML, with optional extensions: `.json/.yaml/.yml` (without extension takes precedence).
+> - A `.prettierrc.js` or `prettier.config.js` file that exports an object.
+> - A `.prettierrc.toml` file, written in TOML (the `.toml` extension is _required_).
 
-- A `"prettier"` key in your `package.json` file.
-- A `.prettierrc` file, written in JSON or YAML, with optional extensions: `.json/.yaml/.yml` (without extension takes precedence).
-- A `.prettierrc.js` or `prettier.config.js` file that exports an object.
-- A `.prettierrc.toml` file, written in TOML (the `.toml` extension is _required_).
 
 ## Example Projects
 
@@ -105,6 +100,7 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 - [TypeScript with Vue](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript-vue)
 
 ## Troubleshooting
+
 1. Check for an error by opening the `View` menu and click `Output`
 2. Select `Prettier ESLint` from the dropdown to the right
 
