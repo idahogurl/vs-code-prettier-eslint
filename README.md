@@ -30,9 +30,9 @@ This extension requires the following NPM packages to be installed either locall
 
 ### Quick start
 
-1. **[download the extension](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)** if you haven't already.
+#### 1. **[download the extension](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)** if you haven't already.
 
-2. **Install dependencies**
+#### 2. **Install dependencies**
 
     ```bash
     # In the root directory of your project
@@ -49,7 +49,7 @@ This extension requires the following NPM packages to be installed either locall
     ## with typescript
     npm i -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
     ```
-3. **Edit settings.json**
+#### 3. **Edit settings.json**
 
     Next we're going to open or create a `settings.json` file at the root of your project. 
 
@@ -72,7 +72,7 @@ This extension requires the following NPM packages to be installed either locall
     }
     ```
 
-4. **Restart VsCode**  
+#### 4. **Restart VsCode**  
 
 ## Configuration
 
