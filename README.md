@@ -34,10 +34,9 @@ This extension requires the following NPM packages to be installed either locall
 
 First we need to install `prettier` and `eslint` as dev dependencies in your project. Run one of the following commands based on your project requirements. The commands listed below use `yarn` but you can also use `npm`. Just replace `yarn add` with `npm i`
 
+### Minimum Requirements
 ```bash 
-## minimum requirements
 yarn add -D prettier@^2.5.1 eslint@^8.7.0
-
 ### TypeScript Projects
 ```bash
 yarn add -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
