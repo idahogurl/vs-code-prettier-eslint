@@ -46,7 +46,7 @@ yarn add -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 types
 
 Next we need to configure your project to use the extension. To do that, we're going to open or create a `settings.json` file at the root of your project. If you already have a `.vscode/settings.json` file in your project, you can skip the first two steps below and jump straight to step 3. 
 
-1. Open the command palette in vscode by typing:
+1. Open the command palette in VS Code by typing:
   - `CMD + SHIFT + P` (Mac OS)
   - `CTRL + SHIFT + P` (Windows) 
 
@@ -65,7 +65,7 @@ Next we need to configure your project to use the extension. To do that, we're g
     }
     ```
 
-4. **Restart VsCode**  
+4. **Restart VS Code**  
 
 With settings listed above, your project should now be setup to automatically format your code when you save. If you run into any problems, check the [troubleshooting](https://github.com/idahogurl/vs-code-prettier-eslint/#troubleshooting) guide below.
 
