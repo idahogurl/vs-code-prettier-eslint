@@ -30,7 +30,7 @@ This extension requires the following NPM packages to be installed either locall
 
 - The [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is **not** required. However, it is needed to have lint errors show while editing your file.
 
-## Install dependencies
+## Install Dependencies
 
 First we need to install `prettier` and `eslint` as dev dependencies in your project. Run one of the following commands based on your project requirements. The commands listed below use `yarn` but you can also use `npm`. Just replace `yarn add` with `npm i`
 
