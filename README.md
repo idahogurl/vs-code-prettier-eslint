@@ -119,9 +119,9 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 
 Running your files through the [Prettier ESLint CLI](https://github.com/prettier/prettier-eslint-cli) first is a good way to determine if it's the extension, the `prettier-eslint` package, or your configuration. 
 
-You can run `eslint --print-config .eslintrc.js` to check your ESLint configuration. This prints out the configuration being used after it applies plugins & extended configurations.
+You can run `npx eslint --print-config .eslintrc.js` to check your ESLint configuration. This prints out the configuration being used after it applies plugins & extended configurations.
 
-**Note**: There are known performance issues with quad-core or slower processors. The slowness comes from ESLint CLI which the 'prettier-eslint' package uses.
+**Note**: There are known performance issues with quad-core or slower processors. The slowness comes from the 'prettier-eslint' package the extension uses.
 
 ## Support for Earlier Versions
 
