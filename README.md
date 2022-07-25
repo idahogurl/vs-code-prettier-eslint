@@ -38,9 +38,9 @@ First we need to install `prettier` and `eslint` as dev dependencies in your pro
 ## minimum requirements
 yarn add -D prettier@^2.5.1 eslint@^8.7.0
 
-## if your project uses typescript
+### TypeScript Projects
+```bash
 yarn add -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
-```
 
 ## Project settings 
 
