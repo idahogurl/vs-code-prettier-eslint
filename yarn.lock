@@ -2332,10 +2332,10 @@ expand-template@^2.0.3:
   resolved "https://registry.npmjs.org/expand-template/-/expand-template-2.0.3.tgz"
   integrity sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==
 
-expect-mocha-snapshot@^2.1.1:
-  version "2.1.4"
-  resolved "https://registry.npmjs.org/expect-mocha-snapshot/-/expect-mocha-snapshot-2.1.4.tgz"
-  integrity sha512-X9MaDqxQdLqtUl1ih/0SAVNoCeE0iSA61UOsu7PjlTDMfEbwuChe70d9PDD3PzkV1BRiHQ2bMps2crDj17AQeQ==
+expect-mocha-snapshot@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/expect-mocha-snapshot/-/expect-mocha-snapshot-2.1.5.tgz#6e056ac12d2b6da17ef45f970d8e6fbfc379042e"
+  integrity sha512-+EV0wxiOQSe6cFr2XR9NswwcQ01HfPNxSPXRISF0zIEPKGUicLFH/w4jmaELgpt2EHaGNP7vzAofBiSm8XSlWQ==
   dependencies:
     expect "^1.20.2"
     jest-snapshot "^26.1.0"
