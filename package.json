@@ -71,7 +71,7 @@
 		"eslint-plugin-import": "^2.26.0",
 		"expect": "^26.6.2",
 		"expect-mocha-snapshot": "^2.1.5",
-		"glob": "^7.1.6",
+		"glob": "^7.2.3",
 		"mocha": "^8.3.2",
 		"ovsx": "^0.5.1",
 		"prettier": "^2.4.1",
