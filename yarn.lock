@@ -531,6 +531,19 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/eslint@^8.4.2":
+  version "8.4.5"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.4.5.tgz#acdfb7dd36b91cc5d812d7c093811a8f3d9b31e4"
+  integrity sha512-dhsC09y1gpJWnK+Ff4SGvCuSnk9DaU0BJZSzOwa6GVSg65XtTugLBITDAAzRU5duGBoXBHpdR/9jHGxJjNflJQ==
+  dependencies:
+    "@types/estree" "*"
+    "@types/json-schema" "*"
+
+"@types/estree@*":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.0.tgz#5fb2e536c1ae9bf35366eed879e827fa59ca41c2"
+  integrity sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==
+
 "@types/glob@^7.1.2":
   version "7.1.4"
   resolved "https://registry.npmjs.org/@types/glob/-/glob-7.1.4.tgz"
@@ -564,6 +577,11 @@
   integrity sha512-c3mAZEuK0lvBp8tmuL74XRKn1+y2dcwOUpH7x4WrF6gk1GIgiluDRgMYQtw2OFcBvAJWlt6ASU3tSqxp0Uu0Aw==
   dependencies:
     "@types/istanbul-lib-report" "*"
+
+"@types/json-schema@*":
+  version "7.0.11"
+  resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
+  integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -604,6 +622,11 @@
   version "2.4.1"
   resolved "https://registry.npmjs.org/@types/prettier/-/prettier-2.4.1.tgz"
   integrity sha512-Fo79ojj3vdEZOHg3wR9ksAMRz4P3S5fDB5e/YWZiFnyFQI1WY2Vftu9XoXVVtJfxB7Bpce/QTqWSSntkz2Znrw==
+
+"@types/prettier@^2.6.0":
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.6.4.tgz#ad899dad022bab6b5a9f0a0fe67c2f7a4a8950ed"
+  integrity sha512-fOwvpvQYStpb/zHMx0Cauwywu9yLDmzWiiQBC7gJyq5tYLUXFZvDG7VK1B7WBxxjBJNKFOZ0zLoOQn8vmATbhw==
 
 "@types/retry@0.12.0":
   version "0.12.0"
@@ -5272,11 +5295,13 @@ prelude-ls@^1.2.1:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier-eslint@^14.0.2:
-  version "14.0.2"
-  resolved "https://registry.npmjs.org/prettier-eslint/-/prettier-eslint-14.0.2.tgz"
-  integrity sha512-bU0fKT5xNLk/WQQkNeVApe5OU8I834MzP5AcTpGPOHfjffU3HmRXW8dsD35dUhPTl3/qkgrTPTnHF90YZIuKGw==
+prettier-eslint@^14.1.0:
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/prettier-eslint/-/prettier-eslint-14.1.0.tgz#12e0e834efe5b2359f8bb523eeb9a32cb479c630"
+  integrity sha512-K0TRVaAUXtI5xz1ZaVZfvGMmunDNyIGXFkE845hVl6FzSxzRN9E03YmK3IiapcRFv3w4PyAL25LIPsy2sRz2tw==
   dependencies:
+    "@types/eslint" "^8.4.2"
+    "@types/prettier" "^2.6.0"
     "@typescript-eslint/parser" "^5.10.0"
     common-tags "^1.4.0"
     dlv "^1.1.0"
