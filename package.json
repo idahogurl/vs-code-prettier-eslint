@@ -85,6 +85,6 @@
 		"espree": "^9.3.3",
 		"find-up": "^5.0.0",
 		"ignore": "^5.2.0",
-		"prettier-eslint": "^14.1.0"
+		"prettier-eslint": "^15.0.1"
 	}
 }
