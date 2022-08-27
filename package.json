@@ -82,7 +82,7 @@
 	},
 	"dependencies": {
 		"core-js": "^3.24.1",
-		"espree": "^9.3.3",
+		"espree": "^9.4.0",
 		"find-up": "^5.0.0",
 		"ignore": "^5.2.0",
 		"prettier-eslint": "^15.0.1"
