@@ -27,29 +27,30 @@ followed by
 
 `yarn contributors:generate`
 
-Commit .all-contributorsrc and README.md in the pull request. If you've already added yourself to the list and are making a new type of contribution, you can run it again and select the added contribution type.
+Commit `.all-contributorsrc` and `README.md` in the pull request. If you've already added yourself to the list and are making a new type of contribution, you can run it again and select the added contribution type.
 
 ## Submitting a pull request
 
 1. [Fork][fork] and clone the repository.
-1. Configure and install the dependencies: `yarn install`.
-1. Make sure the tests pass on your machine: `yarn test`, note: these tests also apply the linter, so there's no need to lint separately.
-1. Create a new branch: `git checkout -b my-branch-name`.
-1. Make your change, add tests, and make sure the tests still pass.
-1. Push to your fork and [submit a pull request][mr].
-1. Pat your self on the back and wait for your pull request to be reviewed and merged.
+2. Configure and install the dependencies: `yarn install`.
+3. Make sure the tests pass on your machine: `yarn test`, note: these tests also apply the linter, so there's no need to lint separately.
+4. Create a new branch: `git checkout -b my-branch-name`.
+5. Make your change, add tests, and make sure the tests still pass.
+6. Push to your fork and [submit a pull request][pulls].
+7. Pat your self on the back and wait for your pull request to be reviewed and merged.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
 
 - Follow the [style guide][style] which is using standard. Any linting errors should be shown when running `yarn test`.
 - Write and update tests.
 - Keep your changes as focused as possible. If there are multiple changes you would like to make that are not dependent upon each other, consider submitting them as separate pull requests.
-- Write a [good commit message](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
 
-Work in Progress (WIP) Pull Requests are also welcome to get feedback early on, or if there is something stumping you.
+This project uses [semantic-release](https://npmjs.com/package/semantic-release) to do automatic releases and generate a changelog based on the commit history. Commit messages should follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) convention. You don't have to follow this convention if you don't want, but know I'll use "Squash and Merge" to change the commit message :)
+
+Draft Pull Requests are also welcome to get feedback early on, or if there is something stumping you.
 
 ## Resources
 
 - [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
 - [Using Pull Requests](https://docs.github.com/ee/user/project/merge_requests/getting_started.html)
-- [github Help](https://about.github.com/get-help/)
+- [GithHub Help](https://about.github.com/get-help/)

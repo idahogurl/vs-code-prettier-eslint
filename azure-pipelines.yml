@@ -1,12 +1,13 @@
 trigger:
   branches:
     include:
-    - master
+      - master
   tags:
     include:
-    - v*
-  pr:
-    - master
+      - v*
+
+pr:
+  - master
 
 strategy:
   matrix:
@@ -21,21 +22,20 @@ pool:
   vmImage: $(imageName)
 
 steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '16.x'
+    displayName: 'Install Node.js'
 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.x'
-  displayName: 'Install Node.js'
+  - bash: |
+      /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+      echo ">>> Started xvfb"
+    displayName: Start xvfb
+    condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
 
-- bash: |
-    /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-    echo ">>> Started xvfb"
-  displayName: Start xvfb
-  condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
-
-- bash: |
-    echo ">>> Compile vscode-test"
-    yarn install --frozen-locakfile && yarn build && yarn test
-  displayName: Run Tests
-  env:
-    DISPLAY: ':99.0'
+  - bash: |
+      echo ">>> Compile vscode-test"
+      yarn install --frozen-locakfile && yarn build && yarn test
+    displayName: Run Tests
+    env:
+      DISPLAY: ':99.0'
