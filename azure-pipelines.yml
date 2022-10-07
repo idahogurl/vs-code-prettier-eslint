@@ -33,6 +33,14 @@ steps:
     displayName: Start xvfb
     condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
 
+  - task: CacheBeta@0
+    inputs:
+      key: |
+        $(Agent.OS)
+        $(Build.SourcesDirectory)/yarn.lock
+      path: $(Pipeline.Workspace)/.cache/yarn
+    displayName: 'Cache yarn'
+
   - bash: |
       echo ">>> Compile vscode-test"
       yarn install --frozen-locakfile && yarn build && yarn test
