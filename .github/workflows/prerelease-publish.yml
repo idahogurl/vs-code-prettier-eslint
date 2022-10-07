@@ -4,8 +4,7 @@
 name: Prerelease Publish
 
 on:
-  push:
-    branches: [ prerelease ]
+  workflow_dispatch
 
 jobs:
   build:

@@ -43,7 +43,7 @@
 		"onLanguage:yaml"
 	],
 	"scripts": {
-		"lint": "eslint .",
+		"lint": "eslint . -c .eslintrc.json",
 		"pretest": "yarn lint",
 		"test": "node ./test/runTest.js",
 		"test:update": "SNAPSHOT_UPDATE=true node ./test/runTest.js",
