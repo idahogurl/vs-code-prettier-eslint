@@ -5,6 +5,8 @@ trigger:
   tags:
     include:
     - v*
+  pr:
+    - master
 
 strategy:
   matrix:
