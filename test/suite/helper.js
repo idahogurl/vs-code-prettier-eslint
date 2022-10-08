@@ -11,8 +11,8 @@ async function clearConfig(section) {
 }
 
 async function openFile(filePath) {
-  const openPath = vscode.Uri.file(filePath);
-  const document = await vscode.workspace.openTextDocument(openPath);
+  const fileUri = vscode.Uri.file(filePath);
+  const document = await vscode.workspace.openTextDocument(fileUri);
   await vscode.window.showTextDocument(document);
   return document;
 }

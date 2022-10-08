@@ -1,16 +1,23 @@
 /* eslint-disable import/no-unresolved */
-import { languages, window, TextEdit } from 'vscode';
+import {
+  languages, window, TextEdit, workspace,
+} from 'vscode';
 
 import format from './formatter';
 import { isFilePathMatchedByEslintIgnore, isFilePathMatchedByPrettierIgnore } from './ignore';
 
+const path = require('path');
+
 let outputChannel;
 
 async function formatter(document, range) {
+  const documentPath = path.dirname(document.fileName);
+  const workspaceDir = workspace?.workspaceFolders.find((w) => w.uri.path === documentPath)?.uri
+    .path;
   try {
     if (
-      isFilePathMatchedByEslintIgnore(document.fileName)
-      || isFilePathMatchedByPrettierIgnore(document.fileName)
+      isFilePathMatchedByEslintIgnore(document.fileName, workspaceDir)
+      || isFilePathMatchedByPrettierIgnore(document.fileName, workspaceDir)
       // eslint-disable-next-line no-empty
     ) {
       console.log('File ignored.');
