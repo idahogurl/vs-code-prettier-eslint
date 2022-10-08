@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
 const vscode = require('vscode');
-const path = require('path');
 
 async function changeConfig(section, settings) {
   const config = vscode.workspace.getConfiguration();
