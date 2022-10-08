@@ -1,5 +1,5 @@
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
+jest.setTimeout(20000);
+
 const path = require('path');
 const fs = require('fs');
 const helper = require('./helper');
@@ -19,10 +19,8 @@ describe('Extension Test Suite', () => {
   });
 
   test('Formats document using .eslintrc', async () => {
-    const sourceDocument = await helper.openFile(sourceFile);
-    const content = sourceDocument.getText().replace('/* eslint-disable */\n', '');
+    const content = fs.readFileSync(sourceFile).toString().replace('/* eslint-disable */\n', '');
     const filePath = `${basePath}/temp.js`;
-
     fs.writeFileSync(filePath, content, { overwrite: true });
     const document = await helper.openFile(filePath);
     await vscode.commands.executeCommand('editor.action.formatDocument');
@@ -32,11 +30,7 @@ describe('Extension Test Suite', () => {
   });
 
   test('Format document using .prettierrc', async () => {
-    const sourceDocument = await helper.openFile(sourceFile);
-    const content = sourceDocument.getText().replace('// prettier-ignore\n', '');
-    const filePath = `${basePath}/temp2.js`;
-    fs.writeFileSync(filePath, content, { overwrite: true });
-    const document = await helper.openFile(filePath);
+    const document = await helper.openFile(sourceFile);
     await vscode.commands.executeCommand('editor.action.formatDocument');
     const formatted = document.getText();
 
