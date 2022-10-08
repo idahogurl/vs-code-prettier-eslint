@@ -30,13 +30,8 @@ jobs:
         if: ${{ matrix.os }} == 'ubuntu-latest'
         shell: bash
         run: |
-          set -e
-          # Start X server
-          /etc/init.d/xvfb start
-          # Start dbus session
-          DBUS_LAUNCH_RESULT=$(sudo dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address)
-          echo "##vso[task.setvariable variable=DBUS_SESSION_BUS_ADDRESS]$DBUS_LAUNCH_RESULT"
+          xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24"
       - run: yarn test
-        env:
-          DISPLAY: ':99.0'
-          DBUS_SESSION_BUS_ADDRESS: 'disabled:'
+      #  env:
+      #    DISPLAY: ':99.0'
+      #   DBUS_SESSION_BUS_ADDRESS: 'disabled:'
