@@ -26,12 +26,16 @@ jobs:
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
       - run: yarn build
-      - name: Start xvfb
+      - name: Setup system services
         if: ${{ matrix.os }} == 'ubuntu-latest'
         shell: bash
         run: |
-          /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-          echo ">>> Started xvfb"
+          set -e
+          # Start X server
+          /etc/init.d/xvfb start
+          # Start dbus session
+          DBUS_LAUNCH_RESULT=$(sudo dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address)
+          echo "##vso[task.setvariable variable=DBUS_SESSION_BUS_ADDRESS]$DBUS_LAUNCH_RESULT"
       - run: yarn test
         env:
           DISPLAY: ':99.0'
