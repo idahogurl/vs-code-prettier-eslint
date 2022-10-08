@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const esbuild = require('esbuild');
-const textReplace = require('esbuild-plugin-text-replace');
 
 const buildEnv = {
   dev: false,
@@ -19,18 +18,18 @@ const options = {
   outfile: './dist/extension.js',
   format: 'cjs',
   platform: 'node',
-  external: ['vscode', '@typescript-eslint/parser', 'vue-eslint-parser'],
+  external: ['vscode', '@typescript-eslint/parser', 'vue-eslint-parser', 'espree'],
   bundle: true,
   sourcemap: buildEnv.dev,
   minify: buildEnv.prod,
   watch: buildEnv.watch,
-  plugins: [
-    textReplace({
-      include: /rule-tester/,
-      // TODO: Until I figure out how to resolve
-      pattern: [['const espreePath = require.resolve("espree");', 'const espreePath = ""']],
-    }),
-  ],
+  // plugins: [
+  //   textReplace({
+  //     include: /rule-tester/,
+  //     // TODO: Until I figure out how to resolve
+  //     pattern: [['const espreePath = require.resolve("espree");', 'const espreePath = ""']],
+  //   }),
+  // ],
 };
 
 esbuild.build(options).catch((err) => {

@@ -1,6 +1,6 @@
 const path = require('path');
 
-const { runTests } = require('vscode-test');
+const { runTests } = require('@vscode/test-electron');
 
 async function main() {
   try {
@@ -18,9 +18,11 @@ async function main() {
     await runTests({
       extensionDevelopmentPath,
       extensionTestsPath,
-      launchArgs: [testWorkspace,
+      launchArgs: [
+        testWorkspace,
         // This disables all extensions except the one being tested
-        '--disable-extensions'],
+        '--disable-extensions',
+      ],
     });
   } catch (err) {
     console.error('Failed to run tests');

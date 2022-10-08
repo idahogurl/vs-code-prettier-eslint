@@ -4,16 +4,15 @@
 		"commonjs": true,
 		"es6": true,
 		"node": true,
-		"mocha": true
+		"jest": true
 	},
+	"globals": {"vscode": "readonly" },
 	"parserOptions": {
-		"ecmaVersion": 2018,
-		"ecmaFeatures": {
-			"jsx": true
-		},
+		"ecmaVersion": 2020,
 		"sourceType": "module"
 	},
 	"extends": "airbnb-base",
+	"plugins": ["jest"],
 	"rules": {
 		"no-const-assign": "warn",
 		"no-this-before-super": "warn",

@@ -1,41 +1,35 @@
+const { runCLI } = require('jest');
+
 const path = require('path');
-const Mocha = require('mocha');
-const glob = require('glob');
-
-function run() {
-  // Create the mocha test
-  const mocha = new Mocha({
-    ui: 'tdd',
-  });
-
-  const testsRoot = path.resolve(__dirname, '..');
-
-  return new Promise((c, e) => {
-    glob('**/**.test.js', { cwd: testsRoot }, (globError, files) => {
-      if (globError) {
-        return e(globError);
-      }
-
-      // Add files to the test suite
-      files.forEach((f) => mocha.addFile(path.resolve(testsRoot, f)));
-
-      try {
-        // Run the mocha test
-        mocha.run((failures) => {
-          if (failures > 0) {
-            e(new Error(`${failures} tests failed.`));
-          } else {
-            c();
-          }
-        });
-      } catch (mochaError) {
-        console.error(mochaError);
-        e(mochaError);
-      }
-    });
-  });
-}
 
 module.exports = {
-  run,
+  run: (_, reportTestResults) => {
+    const projectRootPath = process.cwd();
+    const config = path.join(projectRootPath, 'jest.config.js');
+    const runArgV = { config };
+    if (process.env.SNAPSHOT_UPDATE) {
+      runArgV.updateSnapshot = true;
+    }
+    runCLI(runArgV, [projectRootPath])
+      .then((jestCliCallResult) => {
+        jestCliCallResult.results.testResults.forEach((testResult) => {
+          testResult.testResults
+            .filter((assertionResult) => assertionResult.status === 'passed')
+            .forEach(({ ancestorTitles, title, status }) => {
+              console.info(`  ● ${ancestorTitles} > ${title} (${status})`);
+            });
+        });
+
+        jestCliCallResult.results.testResults.forEach((testResult) => {
+          if (testResult.failureMessage) {
+            console.error(testResult.failureMessage);
+          }
+        });
+
+        reportTestResults(undefined, jestCliCallResult.results.numFailedTests);
+      })
+      .catch((errorCaughtByJestRunner) => {
+        reportTestResults(errorCaughtByJestRunner, 0);
+      });
+  },
 };

@@ -3,7 +3,7 @@
 exports[`Extension Test Suite Format document using .prettierrc 1`] = `
 "/* eslint-disable */
 const options = {
-    first: \\"hello, world\\",
+    first: "hello, world",
     second: true,
     internationalizing: true,
 }
