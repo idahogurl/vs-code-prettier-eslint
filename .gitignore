@@ -4,3 +4,4 @@ node_modules
 dist/
 test/fixtures/temp.js
 test/fixtures/temp2.js
+coverage/

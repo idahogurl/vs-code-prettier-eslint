@@ -13,7 +13,6 @@ describe('Extension Test Suite', () => {
   vscode.window.showInformationMessage('Start all tests.');
 
   beforeAll(async () => {
-    await helper.openWorkspace(basePath);
     await helper.changeConfig('[javascript]', {
       'editor.defaultFormatter': 'rvest.vs-code-prettier-eslint',
     });
