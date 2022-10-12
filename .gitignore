@@ -2,6 +2,5 @@ node_modules
 .vscode-test/
 .DS_Store
 dist/
-test/fixtures/temp.js
-test/fixtures/temp2.js
+test/fixtures/temp
 coverage/

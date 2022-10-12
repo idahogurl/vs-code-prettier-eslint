@@ -46,7 +46,7 @@
 		"lint": "eslint . --ignore-pattern test/fixtures/",
 		"pretest": "yarn lint",
 		"test": "node ./test/runTest.js",
-		"test:update": "SNAPSHOT_UPDATE=true COVERAGE=true node ./test/runTest.js",
+		"test:update": "SNAPSHOT_UPDATE=true node ./test/runTest.js",
 		"dev": "NODE_ENV=dev node ./scripts/build.js",
 		"watch": "NODE_ENV=dev,watch node ./scripts/build.js",
 		"build": "NODE_ENV=prod node ./scripts/build.js",

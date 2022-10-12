@@ -20,7 +20,7 @@ describe('Extension Test Suite', () => {
 
   test('Formats document using .eslintrc', async () => {
     const content = fs.readFileSync(sourceFile).toString().replace('/* eslint-disable */\n', '');
-    const filePath = `${basePath}/temp.js`;
+    const filePath = `${basePath}/temp/test.js`;
     fs.writeFileSync(filePath, content, { overwrite: true });
     const document = await helper.openFile(filePath);
     await vscode.commands.executeCommand('editor.action.formatDocument');
