@@ -60,7 +60,7 @@
 		"@semantic-release/exec": "^6.0.3",
 		"@semantic-release/git": "^10.0.1",
 		"@vscode/test-electron": "^2.1.5",
-		"all-contributors-cli": "^6.23.1",
+		"all-contributors-cli": "^6.24.0",
 		"esbuild": "^0.15.10",
 		"esbuild-plugin-text-replace": "^1.2.0",
 		"eslint": "^8.25.0",
