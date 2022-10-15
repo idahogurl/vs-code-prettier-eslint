@@ -12,8 +12,8 @@ let outputChannel;
 
 async function formatter(document, range) {
   const documentPath = path.dirname(document.fileName);
-  const workspaceDir = workspace?.workspaceFolders.find((w) => w.uri.path === documentPath)?.uri
-    .path;
+  const workspaceDir = workspace?.workspaceFolders.find((w) => documentPath.startsWith(w.uri.path))
+    ?.uri.path;
   try {
     if (
       isFilePathMatchedByEslintIgnore(document.fileName, workspaceDir)
