@@ -76,7 +76,7 @@
 	},
 	"dependencies": {
 		"find-up": "^6.3.0",
-		"ignore": "^5.2.1",
+		"ignore": "^5.2.4",
 		"prettier-eslint": "^15.0.1"
 	}
 }
