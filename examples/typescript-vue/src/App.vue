@@ -1,64 +1,87 @@
+<script setup lang="ts">
+import HelloWorld from "./components/HelloWorld.vue";
+import TheWelcome from "./components/TheWelcome.vue";
+</script>
+
 <template>
-  <view class="header">
-    <view
-      class="header-bg"
-      :style="cHeaderStyle"
-    >
-      <uni-nav-bar
-        :title="title"
-        left-icon="left"
-        background-color="#0fcdc1"
-        color="#fff"
-        :border="false"
-        @clickLeft="Util.navigateBack()"
-      />
-      <slot name="row" />
-    </view>
-    <view
-      class="header-card"
-      :style="{ height: cardHeight + 'px', marginTop: -cardHeight / 2 + 'px' }"
-    >
-      <slot name="card" />
-    </view>
-    <slot />
-  </view>
+  <header>
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="./assets/logo.svg"
+      width="125"
+      height="125"
+    />
+
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
+    </div>
+  </header>
+
+  <main>
+    <TheWelcome />
+  </main>
 </template>
 
-<script setup lang="ts">
-import { reactive, watch, computed } from 'vue';
+<style>
+@import "./assets/base.css";
 
-const props = defineProps({
-  title: {
-    type: String,
-    default: '标题',
-  },
-  headerStyle: {
-    type: Object,
-    default() {
-      return {};
-    },
-  },
-  cardHeight: {
-    type: [Number],
-    default: 80,
-  },
-});
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
 
-const cHeaderStyle = computed(() => ({
-  paddingBottom: `${props.cardHeight / 2}px`,
-  minHeight: '120px',
-  ...props.headerStyle,
-}));
-</script>
+  font-weight: normal;
+}
 
-<script lang="ts">
-export default {
-  options: {
-    styleIsolation: 'isolated', // 组件样式隔离 isolated 互不影响 apply-shared页面影响组件  share互相影响
-    multipleSlots: true, // 为true时才能使用具名插槽
-    // addGlobalClass: true,
-    virtualHost: true,
-  },
-};
-</script>
-<style lang="scss" scoped></style>
+header {
+  line-height: 1.5;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+}
+</style>
