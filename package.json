@@ -78,5 +78,17 @@
 		"find-up": "^6.3.0",
 		"ignore": "^5.2.4",
 		"prettier-eslint": "^15.0.1"
+	},
+	"contributes": {
+		"configuration": {
+			"title": "Prettier Eslint",
+			"properties": {
+				"vs-code-prettier-eslint.prettierLast": {
+					"type": "boolean",
+					"default": true,
+					"description": "Run Prettier Last"
+				}
+			}
+		}
 	}
 }
