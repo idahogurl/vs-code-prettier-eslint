@@ -36,6 +36,19 @@ describe('Extension Test Suite', () => {
 
     expect(formatted).toMatchSnapshot();
   });
+
+  test('setting "prettierLast" makes prettier run last', async () => {
+    await helper.changeConfig(undefined, { 'vscode-prettier-eslint.prettierLast': 'true' });
+    const content = fs.readFileSync(sourceFile).toString().replace('/* eslint-disable */\n', '');
+    const filePath = `${basePath}/temp/test.js`;
+    fs.writeFileSync(filePath, content, { overwrite: true });
+    const document = await helper.openFile(filePath);
+    await vscode.commands.executeCommand('editor.action.formatDocument');
+    await helper.changeConfig(undefined, { 'vscode-prettier-eslint.prettierLast': 'false' });
+
+    const formatted = document.getText();
+    expect(formatted).toMatchSnapshot();
+  });
   afterAll(() => {
     helper.clearConfig('[javascript]');
   });
