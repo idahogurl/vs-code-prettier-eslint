@@ -85,17 +85,17 @@
     "prettier-eslint": "^15.0.1"
   },
   "contributes": {
-		"configuration": {
-			"title": "Prettier Eslint",
-			"properties": {
-				"vs-code-prettier-eslint.prettierLast": {
-					"type": "boolean",
-					"default": false,
-					"description": "Run Prettier Last"
-				}
-			}
-		}
-	},
+    "configuration": {
+      "title": "Prettier Eslint",
+      "properties": {
+        "vs-code-prettier-eslint.prettierLast": {
+          "type": "boolean",
+          "default": false,
+          "description": "Run Prettier Last"
+        }
+      }
+    }
+  },
   "__metadata": {
     "id": "d4b06bd6-36a0-469f-be55-c0a73413b688",
     "publisherDisplayName": "Rebecca Vest",
