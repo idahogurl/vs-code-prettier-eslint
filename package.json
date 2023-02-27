@@ -85,10 +85,16 @@
 			"properties": {
 				"vs-code-prettier-eslint.prettierLast": {
 					"type": "boolean",
-					"default": true,
+					"default": false,
 					"description": "Run Prettier Last"
 				}
 			}
 		}
+	},
+	"__metadata": {
+		"id": "d4b06bd6-36a0-469f-be55-c0a73413b688",
+		"publisherDisplayName": "Rebecca Vest",
+		"publisherId": "b95e678b-a11b-44b4-b281-6b521c2005bc",
+		"isPreReleaseVersion": false
 	}
 }
