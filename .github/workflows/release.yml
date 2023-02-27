@@ -19,7 +19,6 @@ jobs:
       - run: |
           yarn install --frozen-lockfile
           git fetch --tags
-          git tags
           npx auto shipit
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
