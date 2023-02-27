@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    "first-time-contributor",
+    "released",
+    [
+      "exec",
+      {
+        "version": "yarn version --new-version $ARG_0 --no-git-tag-version",
+        "publish": "yarn package && yarn vsce publish -p $VSCE_PAT && yarn ovsx publish -p $OVSX_PAT"
+      }
+    ],
+    ["upload-assets", ["./*.vsix"]]
+  ],
+  "owner": "idahogurl",
+  "repo": "vs-code-prettier-eslint",
+  "name": "Rebecca Vest",
+  "email": "rvest@outlook.com",
+  "onlyPublishWithReleaseLabel": true
+}
