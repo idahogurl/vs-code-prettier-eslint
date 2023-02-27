@@ -25,11 +25,11 @@ export { options };
 
 exports[`Extension Test Suite setting "prettierLast" makes prettier run last 1`] = `
 "const options = {
-    first:              'hello, world',
-    second:             true,
+    first: "hello, world",
+    second: true,
     internationalizing: true,
-};
+}
 
-export { options };
+export { options }
 "
 `;
