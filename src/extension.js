@@ -1,4 +1,8 @@
 /* eslint-disable import/no-unresolved */
+/**
+ * @typedef {import('vscode')}
+ */
+
 import {
   languages, window, TextEdit, workspace,
 } from 'vscode';
@@ -24,9 +28,11 @@ async function formatter(document, range) {
       outputChannel.appendLine('File ignored. Matches entry in .eslintignore or .prettierignore');
     } else {
       const text = document.getText(range);
+      const extensionConfig = workspace?.getConfiguration('vs-code-prettier-eslint');
       const formatted = await format({
         text,
         filePath: document.fileName,
+        extensionConfig,
       });
       return [TextEdit.replace(range, formatted)];
     }
