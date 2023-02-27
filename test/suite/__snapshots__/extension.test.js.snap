@@ -22,3 +22,14 @@ exports[`Extension Test Suite Formats document using .eslintrc 1`] = `
 export { options };
 "
 `;
+
+exports[`Extension Test Suite setting "prettierLast" makes prettier run last 1`] = `
+"const options = {
+    first: "hello, world",
+    second: true,
+    internationalizing: true,
+}
+
+export { options }
+"
+`;
