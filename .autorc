@@ -19,6 +19,10 @@
     {
       "name": "continuous integration",
       "changelogTitle": ":bricks: Continuous Integration"
+    },
+    {
+      "name": "ignore release",
+      "releaseType": "skip"
     }
   ]
 }
