@@ -5,7 +5,6 @@
     [
       "exec",
       {
-        "version": "yarn version --new-version $ARG_0 --no-git-tag-version",
         "publish": "yarn package && yarn vsce publish -p $VSCE_PAT && yarn ovsx publish -p $OVSX_PAT"
       }
     ],
@@ -15,5 +14,10 @@
   "repo": "vs-code-prettier-eslint",
   "name": "Rebecca Vest",
   "email": "olserebe@hotmail.com",
-  "onlyPublishWithReleaseLabel": true
+  "labels": [
+    {
+      "name": "continuous integration",
+      "changelogTitle": ":bricks: Continuous Integration"
+    }
+  ]
 }
