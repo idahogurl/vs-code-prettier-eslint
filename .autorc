@@ -5,8 +5,8 @@
     [
       "exec",
       {
-        "version": "output=$(eval \"yarn version --$ARG_0 --no-git-tag-version\") && echo $output",
-        "publish": "yarn package && yarn vsce publish -p $VSCE_PAT && yarn ovsx publish -p $OVSX_PAT"
+        "version": "yarn version",
+        "publish": "yarn package"
       }
     ],
     ["upload-assets", ["./*.vsix"]]
