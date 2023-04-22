@@ -1,7 +1,9 @@
 <img src="https://github.com/idahogurl/vs-code-prettier-eslint/blob/master/icon.png?raw=true" width="150">
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # [VS Code Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
@@ -11,7 +13,6 @@
 - [Configuration](https://github.com/idahogurl/vs-code-prettier-eslint#configuration)
 - [Example Projects](https://github.com/idahogurl/vs-code-prettier-eslint#example-projects)
 - [Troubleshooting](https://github.com/idahogurl/vs-code-prettier-eslint#troubleshooting)
-
 
 A Visual Studio Code Extension to format JavaScript and TypeScript code using the [prettier-eslint](https://github.com/prettier/prettier-eslint) package.
 
@@ -60,31 +61,32 @@ yarn add -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 types
 yarn add -D prettier@^2.5.1 eslint@^8.7.0 vue-eslint-parser@^8.0.0
 ```
 
-### Project Settings 
+### Project Settings
 
-Next we need to configure your project to use the extension. To do that, we're going to open or create a `settings.json` file at the root of your project. If you already have a `.vscode/settings.json` file in your project, you can skip the first two steps below and jump straight to step 3. 
+Next we need to configure your project to use the extension. To do that, we're going to open or create a `settings.json` file at the root of your project. If you already have a `.vscode/settings.json` file in your project, you can skip the first two steps below and jump straight to step 3.
 
 1. Open the command palette in VS Code by typing:
-  - `CMD + SHIFT + P` (Mac OS)
-  - `CTRL + SHIFT + P` (Windows) 
 
-2. In the command palette type `Preferences: Open Workspace Settings (JSON)`. 
+   - `CMD + SHIFT + P` (Mac OS)
+   - `CTRL + SHIFT + P` (Windows)
+
+2. In the command palette type `Preferences: Open Workspace Settings (JSON)`.
 
 3. In the `.vscode/settings.json` file we just opened, copy and paste the following settings
 
-    ```jsonc
-    {
-      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-      "editor.formatOnPaste": false, // required 
-      "editor.formatOnType": false, // required
-      "editor.formatOnSave": true, // optional 
-      "editor.formatOnSaveMode": "file", // required to format on save
-      "files.autoSave": "onFocusChange", // optional but recommended
-      "vs-code-prettier-eslint.prettierLast": false // set as "true" to run 'prettier' last not first
-    }
-    ```
+   ```jsonc
+   {
+     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+     "editor.formatOnType": false, // required
+     "editor.formatOnPaste": true, // optional
+     "editor.formatOnSave": true, // optional
+     "editor.formatOnSaveMode": "file", // required to format on save
+     "files.autoSave": "onFocusChange", // optional but recommended
+     "vs-code-prettier-eslint.prettierLast": false // set as "true" to run 'prettier' last not first
+   }
+   ```
 
-4. **Restart VS Code**  
+4. **Restart VS Code**
 
 With settings listed above, your project should now be setup to automatically format your code when you save. If you run into any problems, check the [troubleshooting](https://github.com/idahogurl/vs-code-prettier-eslint/#troubleshooting) guide below.
 
@@ -103,11 +105,11 @@ The extension uses your ESLint and Prettier configuration files. These files are
 (From https://prettier.io/docs/en/configuration.html)
 
 > Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for configuration file support. This means you can configure prettier via (in order of precedence):
+>
 > - A `"prettier"` key in your `package.json` file.
 > - A `.prettierrc` file, written in JSON or YAML, with optional extensions: `.json/.yaml/.yml` (without extension takes precedence).
 > - A `.prettierrc.js` or `prettier.config.js` file that exports an object.
 > - A `.prettierrc.toml` file, written in TOML (the `.toml` extension is _required_).
-
 
 ## Example Projects
 
@@ -134,11 +136,10 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
    - If you saw _Error: Cannot find module '@typescript-eslint/parser'_, view the [TypeScript project](https://github.com/idahogurl/vs-code-prettier-eslint/tree/master/examples/typescript) for a working example.
    - Make sure you have the required packages installed locally (global installations don't work sometimes)
 
-**Notes**: 
+**Notes**:
+
 - Most issues are caused by using an unsupported ESLint version or an invalid ESLint configuration.
-   
   You can run `npx eslint --print-config .eslintrc.js` to check your ESLint configuration. This prints out the configuration being used after it applies plugins & extended configurations.
-  
 - Running your files through the [Prettier ESLint CLI](https://github.com/prettier/prettier-eslint-cli) first is a good way to determine if it's the extension, the `prettier-eslint` package, or your configuration.
 
 - There are known performance issues with quad-core or slower processors. The slowness comes from the `prettier-eslint` package the extension uses.
@@ -146,8 +147,8 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 ## Support for Earlier Versions
 
 - Prettier 1.9 & ESLint 6.8 - Version 3.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x))
-- Prettier 2.0 & ESLint 7.0 - Version 4.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/4.1.0/vspackage) | 
-[README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.x))
+- Prettier 2.0 & ESLint 7.0 - Version 4.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/4.1.0/vspackage) |
+  [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.x))
 
 ## Contributing
 
