@@ -4,7 +4,7 @@
  */
 
 import {
-  languages, window, TextEdit, workspace,
+  languages, window, TextEdit, Range, workspace,
 } from 'vscode';
 
 import format from './formatter';
@@ -14,7 +14,7 @@ const path = require('path');
 
 let outputChannel;
 
-async function formatter(document, range) {
+async function formatter(document) {
   const documentPath = path.dirname(document.fileName);
   const workspaceDir = workspace?.workspaceFolders.find((w) => documentPath.startsWith(w.uri.path))
     ?.uri.path;
@@ -27,6 +27,10 @@ async function formatter(document, range) {
       console.log('File ignored.');
       outputChannel.appendLine('File ignored. Matches entry in .eslintignore or .prettierignore');
     } else {
+      const startLine = document.lineAt(0);
+      const endLine = document.lineAt(document.lineCount - 1);
+      const range = new Range(startLine.range.start, endLine.range.end);
+
       const text = document.getText(range);
       const extensionConfig = workspace?.getConfiguration('vs-code-prettier-eslint');
       const formatted = await format({
@@ -42,8 +46,8 @@ async function formatter(document, range) {
 }
 
 const formattingProvider = {
-  provideDocumentRangeFormattingEdits(document, range) {
-    return formatter(document, range);
+  provideDocumentRangeFormattingEdits(document) {
+    return formatter(document);
   },
 };
 
