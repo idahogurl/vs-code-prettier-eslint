@@ -27,7 +27,7 @@ exports[`Extension Test Suite setting "eslintConfigPath" uses the target .eslint
 "const options = {
     first: "hello, world",
     second: true,
-    internationalizing: true,
+    internationalizing: true
 }
 
 export { options }
