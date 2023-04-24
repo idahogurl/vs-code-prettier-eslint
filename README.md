@@ -82,7 +82,8 @@ Next we need to configure your project to use the extension. To do that, we're g
      "editor.formatOnSave": true, // optional
      "editor.formatOnSaveMode": "file", // required to format on save
      "files.autoSave": "onFocusChange", // optional but recommended
-     "vs-code-prettier-eslint.prettierLast": false // set as "true" to run 'prettier' last not first
+     "vs-code-prettier-eslint.prettierLast": false, // set as "true" to run 'prettier' last not first
+     "vs-code-prettier-eslint.eslintConfigPath: "your-eslint-config-path"
    }
    ```
 

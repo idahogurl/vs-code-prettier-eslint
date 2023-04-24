@@ -50,6 +50,21 @@ describe('Extension Test Suite', () => {
     const formatted = document.getText();
     expect(formatted).toMatchSnapshot();
   });
+
+  test('setting "eslintConfigPath" uses the target .eslintrc', async () => {
+    const content = fs.readFileSync(sourceFile).toString().replace('/* eslint-disable */\n', '');
+    const filePath = `${basePath}/temp/test.js`;
+    fs.writeFileSync(filePath, content, { overwrite: true });
+    const document = await helper.openFile(filePath);
+    const config = vscode.workspace.getConfiguration('vs-code-prettier-eslint');
+    await config.update('eslintConfigPath', `${basePath}/.eslintrc.second.js`, vscode.ConfigurationTarget.Global);
+    await vscode.commands.executeCommand('editor.action.formatDocument');
+    await config.update('eslintConfigPath', undefined, vscode.ConfigurationTarget.Global);
+
+    const formatted = document.getText();
+    expect(formatted).toMatchSnapshot();
+  });
+
   afterAll(() => {
     helper.clearConfig('[javascript]');
   });
