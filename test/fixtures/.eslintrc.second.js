@@ -7,7 +7,7 @@ module.exports = {
                 imports:   'never',
                 exports:   'never',
                 arrays:    'always-multiline',
-                objects:   'never',
+                objects:   'never', // <-- changed from 'always-multiline' of .eslintrc.js
                 functions: 'always-multiline',
             },
         ]
