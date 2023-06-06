@@ -43,6 +43,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "jungwookim",
+      "name": "jungwoo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50188177?v=4",
+      "profile": "https://jungwookim.github.io/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
