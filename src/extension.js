@@ -12,6 +12,8 @@ import { isFilePathMatchedByEslintIgnore, isFilePathMatchedByPrettierIgnore } fr
 
 const path = require('path');
 
+const rawResolve = require.resolve;
+
 let outputChannel;
 
 async function formatter(document) {
@@ -33,15 +35,43 @@ async function formatter(document) {
 
       const text = document.getText(range);
       const extensionConfig = workspace?.getConfiguration('vs-code-prettier-eslint');
+
+      /**
+       * In some case, user cannot format his/her codes because of the error
+       * "cannot find module @typescript-eslint/parser".
+       *
+       * In order to solve this problem, firstly take a try to search
+       * "@typescript-eslint/parser" in node_modules of user's work directory.
+       *
+       * If find it successfully, intercept the `require.resolve` to redirect
+       * the resolved path.
+       */
+      try {
+        const typescriptEslintParserPath = require.resolve('@typescript-eslint/parser', {
+          paths: [path.join(workspaceDir, 'temp.js')],
+        });
+
+        require.resolve = function resolve(...args) {
+          const [moduleName] = args;
+          if (moduleName && moduleName === '@typescript-eslint/parser') return typescriptEslintParserPath;
+          return rawResolve(...args);
+        };
+      } catch (error) {
+        /** do nothing, just follow default action of require.resolve * */
+      }
+
       const formatted = await format({
         text,
         filePath: document.fileName,
         extensionConfig,
       });
+
       return [TextEdit.replace(range, formatted)];
     }
   } catch (err) {
     outputChannel.appendLine(`Error: ${err.message} \n${err.stack}`);
+  } finally {
+    require.resolve = rawResolve;
   }
 }
 
