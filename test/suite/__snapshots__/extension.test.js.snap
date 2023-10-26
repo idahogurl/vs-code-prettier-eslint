@@ -3,12 +3,12 @@
 exports[`Extension Test Suite Format document using .prettierrc 1`] = `
 "/* eslint-disable */
 const options = {
-    first: "hello, world",
+    first: 'hello, world',
     second: true,
     internationalizing: true,
-}
+};
 
-export { options }
+export { options };
 "
 `;
 
@@ -25,11 +25,11 @@ export { options };
 
 exports[`Extension Test Suite setting "prettierLast" makes prettier run last 1`] = `
 "const options = {
-    first: "hello, world",
+    first: 'hello, world',
     second: true,
     internationalizing: true,
-}
+};
 
-export { options }
+export { options };
 "
 `;

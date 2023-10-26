@@ -5,7 +5,6 @@ const textReplace = require('esbuild-plugin-text-replace');
 const buildEnv = {
   dev: false,
   prod: false,
-  watch: false,
 };
 const nodeEnv = process.env.NODE_ENV.split(',');
 
@@ -23,7 +22,6 @@ const options = {
   bundle: true,
   sourcemap: buildEnv.dev,
   minify: buildEnv.prod,
-  watch: buildEnv.watch,
   plugins: [
     textReplace({
       include: /rule-tester/,

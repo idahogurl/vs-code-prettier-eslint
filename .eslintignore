@@ -1,3 +1,4 @@
 dist/
 examples/
-test/fixtures/
+test/fixtures/node_modules/
+eslint.config.js

@@ -43,6 +43,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "cwilbur",
+      "name": "Charlton Wilbur",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2566621?v=4",
+      "profile": "https://github.com/cwilbur",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7
