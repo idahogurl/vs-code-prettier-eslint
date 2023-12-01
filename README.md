@@ -22,8 +22,9 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 This extension requires the following NPM packages to be installed either locally or globally:
 
-- `prettier@^2.5.1`
-- `eslint@^8.7.0`
+- `prettier@^3.0.3`
+- `eslint@^8.52.0`
+- `prettier-eslint@^16.1.2`
 - `@typescript-eslint/parser@^5.0.1` and `typescript@^4.4.4` **(Only for TypeScript projects)**
 - `vue-eslint-parser@^8.0.0` **(Only for Vue projects)**
 
@@ -41,24 +42,24 @@ This extension requires the following NPM packages to be installed either locall
 
 ### Install Dependencies
 
-First we need to install `prettier` and `eslint` as dev dependencies in your project. Run one of the following commands based on your project requirements. The commands listed below use `yarn` but you can also use `npm`. Just replace `yarn add` with `npm i`
+First we need to install `prettier`, `eslint`, and `prettier-eslint` as dev dependencies in your project. Run one of the following commands based on your project requirements. The commands listed below use `yarn` but you can also use `npm`. Just replace `yarn add` with `npm i`
 
 #### Minimum Requirements
 
 ```bash
-yarn add -D prettier@^2.5.1 eslint@^8.7.0
+yarn add -D prettier@^3.0.3 eslint@^8.52.0 prettier-eslint@^16.1.2
 ```
 
 #### TypeScript Projects
 
 ```bash
-yarn add -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
+yarn add -D prettier@^2.5.1 eslint@^8.7.0 prettier-eslint@^16.1.2 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
 ```
 
 #### Vue Projects
 
 ```bash
-yarn add -D prettier@^2.5.1 eslint@^8.7.0 vue-eslint-parser@^8.0.0
+yarn add -D prettier@^2.5.1 eslint@^8.7.0 prettier-eslint@^16.1.2 vue-eslint-parser@^8.0.0
 ```
 
 ### Project Settings
@@ -146,9 +147,10 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 
 ## Support for Earlier Versions
 
-- Prettier 1.9 & ESLint 6.8 - Version 3.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x))
-- Prettier 2.0 & ESLint 7.0 - Version 4.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/4.1.0/vspackage) |
+- Prettier 1.9 & ESLint 6.8 - Version 3.10.0 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x))
+- Prettier 2.0 & ESLint 7.0 - Version 4.10.0 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/4.1.0/vspackage) |
   [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.x))
+- Prettier 2.0 & ESLint 8.0 - Version 5.1.0 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/5.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/blob/5.x/README.md))
 
 ## Contributing
 

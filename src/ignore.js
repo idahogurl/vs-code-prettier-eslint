@@ -15,34 +15,18 @@ function getIsIgnored(filename) {
   return instance.ignores.bind(instance);
 }
 
-export function isFilePathMatchedByEslintIgnore(filePath, workspaceDir) {
+export default function isFilePathMatchedByIgnore(filePath, workspaceDirectory, ignoreFileName) {
   const options = { cwd: path.dirname(filePath) };
-  if (workspaceDir) {
-    options.stopAt = workspaceDir;
+  if (workspaceDirectory) {
+    options.stopAt = workspaceDirectory;
   }
-  const eslintIgnorePath = findUpSync('.eslintignore', options);
-  if (!eslintIgnorePath) {
+  const ignorePath = findUpSync(ignoreFileName, options);
+  if (!ignorePath) {
     return false;
   }
 
-  const eslintIgnoreDir = path.dirname(eslintIgnorePath);
-  const filePathRelativeToEslintIgnoreDir = path.relative(eslintIgnoreDir, filePath);
-  const isIgnored = getIsIgnored(eslintIgnorePath);
+  const ignoreDir = path.dirname(ignorePath);
+  const filePathRelativeToEslintIgnoreDir = path.relative(ignoreDir, filePath);
+  const isIgnored = getIsIgnored(ignorePath);
   return isIgnored(filePathRelativeToEslintIgnoreDir);
-}
-
-export function isFilePathMatchedByPrettierIgnore(filePath, workspaceDir) {
-  const options = { cwd: path.dirname(filePath) };
-  if (workspaceDir) {
-    options.stopAt = workspaceDir;
-  }
-  const prettierIgnorePath = findUpSync('.prettierignore', options);
-  if (!prettierIgnorePath) {
-    return false;
-  }
-
-  const prettierIgnoreDir = path.dirname(prettierIgnorePath);
-  const filePathRelativeToPrettierIgnoreDir = path.relative(prettierIgnoreDir, filePath);
-  const isIgnored = getIsIgnored(prettierIgnorePath);
-  return isIgnored(filePathRelativeToPrettierIgnoreDir);
 }

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const esbuild = require('esbuild');
 const textReplace = require('esbuild-plugin-text-replace');
+const { copy } = require('esbuild-plugin-copy');
 
 const buildEnv = {
   dev: false,
@@ -29,6 +30,14 @@ const options = {
       include: /rule-tester/,
       // TODO: Until I figure out how to resolve
       pattern: [['const espreePath = require.resolve("espree");', 'const espreePath = ""']],
+    }),
+    copy({
+      assets: [
+        {
+          from: ['./src/worker/*'],
+          to: ['./worker'],
+        },
+      ],
     }),
   ],
 };
