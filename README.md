@@ -22,7 +22,7 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 This extension requires the following NPM packages to be installed either locally or globally:
 
-- `prettier@^3.0.3`
+- `prettier@^3.1.0`
 - `eslint@^8.52.0`
 - `prettier-eslint@^16.1.2`
 - `@typescript-eslint/parser@^5.0.1` and `typescript@^4.4.4` **(Only for TypeScript projects)**
@@ -47,19 +47,19 @@ First we need to install `prettier`, `eslint`, and `prettier-eslint` as dev depe
 #### Minimum Requirements
 
 ```bash
-yarn add -D prettier@^3.0.3 eslint@^8.52.0 prettier-eslint@^16.1.2
+yarn add -D prettier@^3.1.0 eslint@^8.52.0 prettier-eslint@^16.1.2
 ```
 
 #### TypeScript Projects
 
 ```bash
-yarn add -D prettier@^2.5.1 eslint@^8.7.0 prettier-eslint@^16.1.2 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
+yarn add -D prettier@^3.1.0 eslint@^8.52.0 prettier-eslint@^16.1.2 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
 ```
 
 #### Vue Projects
 
 ```bash
-yarn add -D prettier@^2.5.1 eslint@^8.7.0 prettier-eslint@^16.1.2 vue-eslint-parser@^8.0.0
+yarn add -D prettier@^3.1.0 eslint@^8.52.0 prettier-eslint@^16.1.2 vue-eslint-parser@^8.0.0
 ```
 
 ### Project Settings
