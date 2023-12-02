@@ -15,14 +15,13 @@ import isFilePathMatchedByIgnore from './ignore';
 let outputChannel;
 
 /**
- * Starts a new worker with the given file path and worker data.
- * @param {string} filePath - The file path of the worker script.
+ * Starts a new worker with the given worker data.
  * @param {any} workerData - The data to pass to the worker.
  * @returns {Promise<any>} A promise that resolves with the worker's response message.
  */
-function startWorker(filePath, workerData) {
+function startWorker(workerData) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(filePath, { workerData });
+    const worker = new Worker(path.join(__dirname, './worker/index.js'), { workerData });
     worker.on('message', resolve);
     worker.on('error', reject);
   });
@@ -71,7 +70,7 @@ async function formatter(document) {
 
     const text = document.getText(range);
     const prettierLast = workspace.getConfiguration('vs-code-prettier-eslint').get('prettierLast');
-    const formatted = await startWorker(path.join(__dirname, './worker/index.js'), {
+    const formatted = await startWorker({
       text,
       prettierEslintPath: getModulePath(document.fileName, 'prettier-eslint'),
       filePath: document.fileName,
