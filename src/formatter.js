@@ -5,5 +5,8 @@ export default function formatText({ text, filePath, extensionConfig }) {
     text,
     filePath,
     prettierLast: extensionConfig?.prettierLast || false,
+    eslintConfig: {
+      overrideConfigFile: extensionConfig?.eslintConfigPath || null,
+    },
   });
 }

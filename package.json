@@ -92,6 +92,11 @@
           "type": "boolean",
           "default": false,
           "description": "Run Prettier Last"
+        },
+        "vs-code-prettier-eslint.eslintConfigPath": {
+          "type": "string",
+          "default": null,
+          "description": "Path to ESLint config file"
         }
       }
     }
