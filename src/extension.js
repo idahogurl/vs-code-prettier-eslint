@@ -37,28 +37,29 @@ async function formatter(document) {
       const extensionConfig = workspace?.getConfiguration('vs-code-prettier-eslint');
 
       /**
-       * In some case, user cannot format his/her codes because of the error
-       * "cannot find module @typescript-eslint/parser".
+       * In some case, user cannot format his/her codes and the error
+       * is "cannot find module XXX".
        *
-       * In order to solve this problem, firstly take a try to search
-       * "@typescript-eslint/parser" in node_modules of user's work directory.
+       * The reason is easy.This project depends on `prettier-eslint` which
+       * uses require.resolve API to search a module path, unfortunately, it
+       * doesn't search a module path under "<user_workspace>/node_modules" as
+       * expected.
        *
-       * If find it successfully, intercept the `require.resolve` to redirect
-       * the resolved path.
+       * To fix this bug, before we call `format`, we rewrite require.resolve,
+       * and take a try to search module path under "<user_workspace>/node_modules"
+       * firstly.When `format` is finished, restore require.resolve.
        */
-      try {
-        const typescriptEslintParserPath = require.resolve('@typescript-eslint/parser', {
-          paths: [path.join(workspaceDir, 'temp.js')],
-        });
 
-        require.resolve = function resolve(...args) {
-          const [moduleName] = args;
-          if (moduleName && moduleName === '@typescript-eslint/parser') return typescriptEslintParserPath;
-          return rawResolve(...args);
-        };
-      } catch (error) {
-        /** do nothing, just follow default action of require.resolve * */
-      }
+      require.resolve = function resolve(...args) {
+        const [moduleName] = args;
+        let modulePath = '';
+        try {
+          modulePath = rawResolve(moduleName, { paths: [workspaceDir] });
+        } catch (err) {
+          modulePath = rawResolve(...args);
+        }
+        return modulePath;
+      };
 
       const formatted = await format({
         text,
