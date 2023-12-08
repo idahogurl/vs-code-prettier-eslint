@@ -26,7 +26,7 @@ export default function isFilePathMatchedByIgnore(filePath, workspaceDirectory, 
   }
 
   const ignoreDir = path.dirname(ignorePath);
-  const filePathRelativeToEslintIgnoreDir = path.relative(ignoreDir, filePath);
+  const filePathRelativeToIgnoreDir = path.relative(ignoreDir, filePath);
   const isIgnored = getIsIgnored(ignorePath);
-  return isIgnored(filePathRelativeToEslintIgnoreDir);
+  return isIgnored(filePathRelativeToIgnoreDir);
 }
