@@ -2,16 +2,16 @@ name: Test
 
 on:
   push:
-    branches: ['master']
+    branches: ["master"]
   pull_request:
-    branches: ['master']
+    branches: ["master"]
 
 jobs:
   build:
     strategy:
       matrix:
         # os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-        os: ['ubuntu-latest']
+        os: ["ubuntu-latest"]
 
     runs-on: ${{ matrix.os }}
 
@@ -20,8 +20,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: 'yarn'
+          cache: "yarn"
       - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: yarn build && yarn build:worker
       - run: xvfb-run -a yarn test
         if: runner.os == 'Linux'
