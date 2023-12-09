@@ -48,7 +48,7 @@
     "pretest": "yarn lint",
     "test": "node ./test/runTest.js",
     "test:update": "SNAPSHOT_UPDATE=true node ./test/runTest.js",
-    "dev": "esbuild ./src/extension.js --bundle --platform=node --target=node16 --external:vscode --external:@typescript-eslint/parser --external:vue-eslint-parser --outfile=./dist/extension.js",
+    "dev": "esbuild ./src/extension.js --bundle --platform=node --target=node16 --external:vscode --external:./worker --outfile=./dist/extension.js",
     "dev:watch": "yarn dev --watch --sourcemap",
     "build": "yarn dev --minify",
     "build:worker": "esbuild ./src/worker.js --bundle --platform=node --target=node16 --outfile=./dist/worker.js",

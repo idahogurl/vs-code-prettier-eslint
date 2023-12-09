@@ -12,8 +12,8 @@ import requireRelative from 'require-relative';
 
 import isFilePathMatchedByIgnore from './ignore';
 
-let outputChannel;
-let formatText;
+const outputChannel = window.createOutputChannel('Prettier Eslint'); // create output channel for error logging
+const formatText = createSyncFn(require.resolve('./worker'));
 
 /**
  * Resolves the path of a module relative to a file path.
@@ -97,8 +97,3 @@ supportedLanguages.forEach((language) => {
     },
   });
 });
-
-// Create output channel for error logging
-outputChannel = window.createOutputChannel('Prettier Eslint');
-
-formatText = createSyncFn(require.resolve('./worker'));
