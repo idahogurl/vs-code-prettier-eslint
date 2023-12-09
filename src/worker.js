@@ -9,6 +9,6 @@ runAsWorker(async ({
     text,
     filePath,
     logLevel: 'info',
-    prettierLast: extensionConfig?.prettierLast || false,
+    prettierLast: extensionConfig?.prettierLast,
   });
 });
