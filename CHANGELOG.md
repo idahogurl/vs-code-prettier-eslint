@@ -2,7 +2,7 @@
 
 #### 🚀 Enhancement
 
-- fix: use worker_threads to support Prettier 3
+- fix: use `worker_threads` via [`synckit`](https://github.com/un-ts/synckit) to support Prettier 3
 
 #### ⚠️ Breaking Changes
 - `prettier-eslint` is now required as a dev dependency
