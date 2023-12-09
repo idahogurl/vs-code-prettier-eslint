@@ -13,6 +13,7 @@ import requireRelative from 'require-relative';
 import isFilePathMatchedByIgnore from './ignore';
 
 let outputChannel;
+let formatText;
 
 /**
  * Resolves the path of a module relative to a file path.
@@ -57,7 +58,6 @@ function formatter(document) {
     const text = document.getText(range);
     const prettierLast = workspace.getConfiguration('vs-code-prettier-eslint').get('prettierLast');
 
-    const formatText = createSyncFn(require.resolve('./worker'));
     const formatted = formatText({
       text,
       prettierEslintPath: getModulePath(document.fileName, 'prettier-eslint'),
@@ -100,3 +100,5 @@ supportedLanguages.forEach((language) => {
 
 // Create output channel for error logging
 outputChannel = window.createOutputChannel('Prettier Eslint');
+
+formatText = createSyncFn(require.resolve('./worker'));
