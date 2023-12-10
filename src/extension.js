@@ -33,7 +33,6 @@ const supportedLanguages = [
   'yaml',
 ];
 
-let prettierEslintPath;
 const formatText = createSyncFn(require.resolve('./worker'));
 
 /**
@@ -108,9 +107,9 @@ function waitForActiveSupportedDocument() {
         }
       });
     })
-  } else {
-    return Promise.resolve(window.activeTextEditor.document);
   }
+
+  return Promise.resolve(window.activeTextEditor.document);
 }
 
 /**
