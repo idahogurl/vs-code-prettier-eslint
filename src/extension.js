@@ -13,6 +13,27 @@ import requireRelative from 'require-relative';
 import isFilePathMatchedByIgnore from './ignore';
 
 const outputChannel = window.createOutputChannel('Prettier Eslint'); // create output channel for error logging
+
+const supportedLanguages = [
+  'css',
+  'graphql',
+  'html',
+  'javascript',
+  'javascriptreact',
+  'json',
+  'jsonc',
+  'less',
+  'markdown',
+  'mdx',
+  'scss',
+  'svelte',
+  'typescript',
+  'typescriptreact',
+  'vue',
+  'yaml',
+];
+
+let prettierEslintPath;
 const formatText = createSyncFn(require.resolve('./worker'));
 
 /**
@@ -71,24 +92,43 @@ function formatter(document) {
   }
 }
 
-const supportedLanguages = [
-  'css',
-  'graphql',
-  'html',
-  'javascript',
-  'javascriptreact',
-  'json',
-  'jsonc',
-  'less',
-  'markdown',
-  'mdx',
-  'scss',
-  'svelte',
-  'typescript',
-  'typescriptreact',
-  'vue',
-  'yaml',
-];
+/**
+ * Provides a promise that resolves as soon as there is an active text editor
+ * with a document open on a language this extension supports.
+ *
+ * @returns {Promise<TextDocument>}
+ */
+function waitForActiveSupportedDocument() {
+  if (!window.activeTextEditor && supportedLanguages.includes(window.activeTextEditor.document.languageId)) {
+    return new Promise((resolve) => {
+      const handler = window.onDidChangeActiveTextEditor(({ document }) => {
+        handler.dispose();
+        if (supportedLanguages.includes(document.languageId)) {
+          resolve(document);
+        }
+      });
+    })
+  } else {
+    return Promise.resolve(window.activeTextEditor.document);
+  }
+}
+
+/**
+ * Warms up the worker by running 'prettier-eslint' with some dummy data.
+ *
+ * @param {TextDocument} document - Used to resolve 'prettier-eslint', as well as needed
+ * by 'prettier-eslint' to resolve its internal dependencies (eslint and prettier).
+ */
+async function warmUpWorker(document) {
+  const prettierEslintPath = getModulePath(document.fileName, 'prettier-eslint');
+
+  formatText({
+    text: '',
+    prettierEslintPath,
+    filePath: document.fileName,
+  });
+}
+
 
 supportedLanguages.forEach((language) => {
   languages.registerDocumentRangeFormattingEditProvider(language, {
@@ -97,3 +137,13 @@ supportedLanguages.forEach((language) => {
     },
   });
 });
+
+waitForActiveSupportedDocument()
+  .then((document) => warmUpWorker(document))
+  .then(() => {
+    outputChannel.appendLine('Worker has been warmed up');
+  })
+  .catch((error) => {
+      console.error('Could not warm up worker with first available document:', error);
+      outputChannel.appendLine('Error: Could not warm up worker. First formatter call may take some time.');
+  });

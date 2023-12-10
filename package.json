@@ -41,7 +41,8 @@
     "onLanguage:typescript",
     "onLanguage:typescriptreact",
     "onLanguage:vue",
-    "onLanguage:yaml"
+    "onLanguage:yaml",
+    "onStartupFinished"
   ],
   "scripts": {
     "lint": "eslint . --ignore-pattern test/fixtures/",
