@@ -48,11 +48,13 @@
     "pretest": "yarn lint",
     "test": "node ./test/runTest.js",
     "test:update": "SNAPSHOT_UPDATE=true node ./test/runTest.js",
-    "dev": "esbuild ./src/extension.js --bundle --platform=node --target=node16 --external:vscode --external:./worker --outfile=./dist/extension.js",
     "dev:watch": "yarn dev --watch --sourcemap",
-    "build": "yarn dev --minify",
-    "build:worker": "esbuild ./src/worker.js --bundle --platform=node --target=node16 --outfile=./dist/worker.js",
-    "package": "yarn build && yarn build:worker && vsce package --yarn",
+    "build:dev": "yarn build:extension && yarn build:worker",
+    "build": "yarn build:extension --minify && yarn build:worker --minify",
+    "build:extension": "esbuild ./src/extension.js --bundle --platform=node --target=node16 --external:vscode --external:../worker.mjs --outfile=./dist/extension.js",
+    "build:worker": "esbuild ./src/worker.mjs --bundle --platform=node --format=esm --target=node16 --outfile=./dist/worker.mjs",
+    "package:dev": "yarn build:dev && vsce package",
+    "package": "yarn build && vsce package",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
@@ -97,6 +99,10 @@
         }
       }
     }
+  },
+  "vsce": {
+    "dependencies": false,
+    "yarn": true
   },
   "__metadata": {
     "id": "d4b06bd6-36a0-469f-be55-c0a73413b688",
