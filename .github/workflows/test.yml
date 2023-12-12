@@ -22,6 +22,6 @@ jobs:
           node-version: 16.x
           cache: "yarn"
       - run: yarn install --frozen-lockfile
-      - run: yarn build && yarn build:worker
+      - run: yarn build
       - run: xvfb-run -a yarn test
         if: runner.os == 'Linux'

@@ -33,7 +33,7 @@ const supportedLanguages = [
   'yaml',
 ];
 
-const formatText = createSyncFn(require.resolve('./worker'));
+const formatText = createSyncFn(require.resolve('./worker.mjs'));
 
 /**
  * Resolves the path of a module relative to a file path.
