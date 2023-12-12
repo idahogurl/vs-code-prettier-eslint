@@ -24,6 +24,9 @@
   "categories": [
     "Formatters"
   ],
+  "sponsor": {
+    "url": "https://github.com/sponsors/idahogurl"
+  },
   "main": "./dist/extension.js",
   "activationEvents": [
     "onLanguage:css",
@@ -48,7 +51,6 @@
     "pretest": "yarn lint",
     "test": "node ./test/runTest.js",
     "test:update": "SNAPSHOT_UPDATE=true node ./test/runTest.js",
-    "dev:watch": "yarn dev --watch --sourcemap",
     "build:dev": "yarn build:extension && yarn build:worker",
     "build": "yarn build:extension --minify && yarn build:worker --minify",
     "build:extension": "esbuild ./src/extension.js --bundle --platform=node --target=node16 --external:vscode --external:../worker.mjs --outfile=./dist/extension.js",
