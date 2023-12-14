@@ -78,11 +78,11 @@ function formatter(document) {
  * @returns {Promise<TextDocument>}
  */
 function waitForActiveSupportedDocument() {
-  if (!window.activeTextEditor && supportedLanguages.includes(window.activeTextEditor.document.languageId)) {
+  if (!window.activeTextEditor || !supportedLanguages.includes(window.activeTextEditor.document.languageId)) {
     return new Promise((resolve) => {
       const handler = window.onDidChangeActiveTextEditor(({ document }) => {
-        handler.dispose();
         if (supportedLanguages.includes(document.languageId)) {
+          handler.dispose();
           resolve(document);
         }
       });
