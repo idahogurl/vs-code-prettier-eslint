@@ -13,26 +13,6 @@ import requireRelative from 'require-relative';
 import isFilePathMatchedByIgnore from './ignore';
 
 const outputChannel = window.createOutputChannel('Prettier Eslint'); // create output channel for error logging
-
-const supportedLanguages = [
-  'css',
-  'graphql',
-  'html',
-  'javascript',
-  'javascriptreact',
-  'json',
-  'jsonc',
-  'less',
-  'markdown',
-  'mdx',
-  'scss',
-  'svelte',
-  'typescript',
-  'typescriptreact',
-  'vue',
-  'yaml',
-];
-
 const formatText = createSyncFn(require.resolve('./worker.mjs'));
 
 /**
@@ -128,6 +108,25 @@ async function warmUpWorker(document) {
   });
 }
 
+
+const supportedLanguages = [
+  'css',
+  'graphql',
+  'html',
+  'javascript',
+  'javascriptreact',
+  'json',
+  'jsonc',
+  'less',
+  'markdown',
+  'mdx',
+  'scss',
+  'svelte',
+  'typescript',
+  'typescriptreact',
+  'vue',
+  'yaml',
+];
 
 supportedLanguages.forEach((language) => {
   languages.registerDocumentRangeFormattingEditProvider(language, {
