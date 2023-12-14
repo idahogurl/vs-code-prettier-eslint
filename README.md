@@ -1,7 +1,7 @@
 <img src="https://github.com/idahogurl/vs-code-prettier-eslint/blob/master/icon.png?raw=true" width="150">
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # [VS Code Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
@@ -168,6 +168,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/tbekaert"><img src="https://avatars.githubusercontent.com/u/11920484?v=4?s=100" width="100px;" alt="Thomas Bekaert"/><br /><sub><b>Thomas Bekaert</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=tbekaert" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://mattbrannon.dev/"><img src="https://avatars.githubusercontent.com/u/36570183?v=4?s=100" width="100px;" alt="Matt Brannon"/><br /><sub><b>Matt Brannon</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=mattbrannon" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.1stg.me/"><img src="https://avatars.githubusercontent.com/u/8336744?v=4?s=100" width="100px;" alt="JounQin"/><br /><sub><b>JounQin</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=JounQin" title="Code">💻</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/pulls?q=is%3Apr+reviewed-by%3AJounQin" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://netux.site/"><img src="https://avatars.githubusercontent.com/u/6181929?v=4?s=100" width="100px;" alt="Martín Rodríguez"/><br /><sub><b>Martín Rodríguez</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=netux" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

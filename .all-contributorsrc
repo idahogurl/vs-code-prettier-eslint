@@ -53,6 +53,15 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "netux",
+      "name": "Martín Rodríguez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6181929?v=4",
+      "profile": "https://netux.site/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
