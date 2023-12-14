@@ -71,6 +71,44 @@ function formatter(document) {
   }
 }
 
+/**
+ * Provides a promise that resolves as soon as there is an active text editor
+ * with a document open on a language this extension supports.
+ *
+ * @returns {Promise<TextDocument>}
+ */
+function waitForActiveSupportedDocument() {
+  if (!window.activeTextEditor || !supportedLanguages.includes(window.activeTextEditor.document.languageId)) {
+    return new Promise((resolve) => {
+      const handler = window.onDidChangeActiveTextEditor(({ document }) => {
+        if (supportedLanguages.includes(document.languageId)) {
+          handler.dispose();
+          resolve(document);
+        }
+      });
+    })
+  }
+
+  return Promise.resolve(window.activeTextEditor.document);
+}
+
+/**
+ * Warms up the worker by running 'prettier-eslint' with some dummy data.
+ *
+ * @param {TextDocument} document - Used to resolve 'prettier-eslint', as well as needed
+ * by 'prettier-eslint' to resolve its internal dependencies (eslint and prettier).
+ */
+async function warmUpWorker(document) {
+  const prettierEslintPath = getModulePath(document.fileName, 'prettier-eslint');
+
+  formatText({
+    text: '',
+    prettierEslintPath,
+    filePath: document.fileName,
+  });
+}
+
+
 const supportedLanguages = [
   'css',
   'graphql',
@@ -97,3 +135,12 @@ supportedLanguages.forEach((language) => {
     },
   });
 });
+
+waitForActiveSupportedDocument()
+  .then((document) => warmUpWorker(document))
+  .then(() => {
+    outputChannel.appendLine('Worker has been warmed up');
+  })
+  .catch((error) => {
+      outputChannel.appendLine('Error: Could not warm up worker. Formatting a file for the first time may take longer than usual.\nStacktrace: ' + error.stack);
+  });
