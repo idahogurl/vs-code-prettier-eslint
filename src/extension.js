@@ -71,6 +71,25 @@ function formatter(document) {
   }
 }
 
+const supportedLanguages = [
+  'css',
+  'graphql',
+  'html',
+  'javascript',
+  'javascriptreact',
+  'json',
+  'jsonc',
+  'less',
+  'markdown',
+  'mdx',
+  'scss',
+  'svelte',
+  'typescript',
+  'typescriptreact',
+  'vue',
+  'yaml',
+];
+
 /**
  * Provides a promise that resolves as soon as there is an active text editor
  * with a document open on a language this extension supports.
@@ -78,7 +97,10 @@ function formatter(document) {
  * @returns {Promise<TextDocument>}
  */
 function waitForActiveSupportedDocument() {
-  if (!window.activeTextEditor || !supportedLanguages.includes(window.activeTextEditor.document.languageId)) {
+  if (
+    !window.activeTextEditor
+    || !supportedLanguages.includes(window.activeTextEditor.document.languageId)
+  ) {
     return new Promise((resolve) => {
       const handler = window.onDidChangeActiveTextEditor(({ document }) => {
         if (supportedLanguages.includes(document.languageId)) {
@@ -86,7 +108,7 @@ function waitForActiveSupportedDocument() {
           resolve(document);
         }
       });
-    })
+    });
   }
 
   return Promise.resolve(window.activeTextEditor.document);
@@ -108,26 +130,6 @@ async function warmUpWorker(document) {
   });
 }
 
-
-const supportedLanguages = [
-  'css',
-  'graphql',
-  'html',
-  'javascript',
-  'javascriptreact',
-  'json',
-  'jsonc',
-  'less',
-  'markdown',
-  'mdx',
-  'scss',
-  'svelte',
-  'typescript',
-  'typescriptreact',
-  'vue',
-  'yaml',
-];
-
 supportedLanguages.forEach((language) => {
   languages.registerDocumentRangeFormattingEditProvider(language, {
     provideDocumentRangeFormattingEdits(document) {
@@ -142,5 +144,7 @@ waitForActiveSupportedDocument()
     outputChannel.appendLine('Worker has been warmed up');
   })
   .catch((error) => {
-      outputChannel.appendLine('Error: Could not warm up worker. Formatting a file for the first time may take longer than usual.\nStacktrace: ' + error.stack);
+    outputChannel.appendLine(
+      `Error: Could not warm up worker. Formatting a file for the first time may take longer than usual.\nMessage: ${error.message}\nStacktrace: ${error.stack}`,
+    );
   });
