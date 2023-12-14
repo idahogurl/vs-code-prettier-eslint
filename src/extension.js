@@ -142,6 +142,5 @@ waitForActiveSupportedDocument()
     outputChannel.appendLine('Worker has been warmed up');
   })
   .catch((error) => {
-      console.error('Could not warm up worker with first available document:', error);
-      outputChannel.appendLine('Error: Could not warm up worker. First formatter call may take some time.');
+      outputChannel.appendLine('Error: Could not warm up worker. Formatting a file for the first time may take longer than usual.\nStacktrace: ' + error.stack);
   });
