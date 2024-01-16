@@ -1,3 +1,4 @@
+import { isAbsolute } from 'path';
 import { runAsWorker } from 'synckit';
 import { pathToFileURL } from 'url';
 
@@ -16,7 +17,7 @@ runAsWorker(
     text, prettierEslintPath, filePath, extensionConfig,
   }) => {
     const format = /** @type {typeof import('prettier-eslint')} */ (
-      (await import(pathToFileURL(prettierEslintPath))).default
+      (await import(isAbsolute(prettierEslintPath) ? pathToFileURL(prettierEslintPath) : prettierEslintPath)).default
     );
     return format({
       text,
