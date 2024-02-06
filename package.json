@@ -89,7 +89,7 @@
     "find-up": "^6.3.0",
     "ignore": "^5.2.4",
     "require-relative": "^0.8.7",
-    "synckit": "^0.8.6"
+    "synckit": "^0.9.0"
   },
   "contributes": {
     "configuration": {
