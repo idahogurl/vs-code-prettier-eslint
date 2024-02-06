@@ -43,6 +43,25 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "JounQin",
+      "name": "JounQin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8336744?v=4",
+      "profile": "https://www.1stg.me/",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "netux",
+      "name": "Martín Rodríguez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6181929?v=4",
+      "profile": "https://netux.site/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

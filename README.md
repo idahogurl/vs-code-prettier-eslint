@@ -1,9 +1,7 @@
 <img src="https://github.com/idahogurl/vs-code-prettier-eslint/blob/master/icon.png?raw=true" width="150">
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # [VS Code Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
@@ -22,8 +20,9 @@ A Visual Studio Code Extension to format JavaScript and TypeScript code using th
 
 This extension requires the following NPM packages to be installed either locally or globally:
 
-- `prettier@^2.5.1`
-- `eslint@^8.7.0`
+- `prettier@^3.1.0`
+- `eslint@^8.52.0`
+- `prettier-eslint@^16.1.2`
 - `@typescript-eslint/parser@^5.0.1` and `typescript@^4.4.4` **(Only for TypeScript projects)**
 - `vue-eslint-parser@^8.0.0` **(Only for Vue projects)**
 
@@ -41,24 +40,24 @@ This extension requires the following NPM packages to be installed either locall
 
 ### Install Dependencies
 
-First we need to install `prettier` and `eslint` as dev dependencies in your project. Run one of the following commands based on your project requirements. The commands listed below use `yarn` but you can also use `npm`. Just replace `yarn add` with `npm i`
+First we need to install `prettier`, `eslint`, and `prettier-eslint` as dev dependencies in your project. Run one of the following commands based on your project requirements. The commands listed below use `yarn` but you can also use `npm`. Just replace `yarn add` with `npm i`
 
 #### Minimum Requirements
 
 ```bash
-yarn add -D prettier@^2.5.1 eslint@^8.7.0
+yarn add -D prettier@^3.1.0 eslint@^8.52.0 prettier-eslint@^16.1.2
 ```
 
 #### TypeScript Projects
 
 ```bash
-yarn add -D prettier@^2.5.1 eslint@^8.7.0 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
+yarn add -D prettier@^3.1.0 eslint@^8.52.0 prettier-eslint@^16.1.2 @typescript-eslint/parser@^5.0.1 typescript@^4.4.4
 ```
 
 #### Vue Projects
 
 ```bash
-yarn add -D prettier@^2.5.1 eslint@^8.7.0 vue-eslint-parser@^8.0.0
+yarn add -D prettier@^3.1.0 eslint@^8.52.0 prettier-eslint@^16.1.2 vue-eslint-parser@^8.0.0
 ```
 
 ### Project Settings
@@ -146,9 +145,10 @@ These projects are setup to work with the VS Code Prettier ESLint extension. Use
 
 ## Support for Earlier Versions
 
-- Prettier 1.9 & ESLint 6.8 - Version 3.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x))
-- Prettier 2.0 & ESLint 7.0 - Version 4.10 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/4.1.0/vspackage) |
+- Prettier 1.9 & ESLint 6.8 - Version 3.10.0 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/3.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/3.x))
+- Prettier 2.0 & ESLint 7.0 - Version 4.10.0 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/4.1.0/vspackage) |
   [README](https://github.com/idahogurl/vs-code-prettier-eslint/tree/4.x))
+- Prettier 2.0 & ESLint 8.0 - Version 5.1.0 ([DOWNLOAD](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/rvest/vsextensions/vs-code-prettier-eslint/5.1.0/vspackage) | [README](https://github.com/idahogurl/vs-code-prettier-eslint/blob/5.x/README.md))
 
 ## Contributing
 
@@ -162,11 +162,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/idahogurl"><img src="https://secure.gravatar.com/avatar/787139c4c697cfc33cc422566a4ccf78?s=80&d=identicon?s=100" width="100px;" alt=""/><br /><sub><b>Rebecca Vest</b></sub></a><br /><a href="#question-idahogurl" title="Answering Questions">💬</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=idahogurl" title="Code">💻</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=idahogurl" title="Documentation">📖</a> <a href="#infra-idahogurl" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/issues?q=author%3Aidahogurl" title="Bug reports">🐛</a> <a href="#ideas-idahogurl" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/pulls?q=is%3Apr+reviewed-by%3Aidahogurl" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=idahogurl" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/tbekaert"><img src="https://avatars.githubusercontent.com/u/11920484?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Bekaert</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=tbekaert" title="Code">💻</a></td>
-    <td align="center"><a href="https://mattbrannon.dev/"><img src="https://avatars.githubusercontent.com/u/36570183?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Matt Brannon</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=mattbrannon" title="Documentation">📖</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/idahogurl"><img src="https://secure.gravatar.com/avatar/787139c4c697cfc33cc422566a4ccf78?s=80&d=identicon?s=100" width="100px;" alt="Rebecca Vest"/><br /><sub><b>Rebecca Vest</b></sub></a><br /><a href="#question-idahogurl" title="Answering Questions">💬</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=idahogurl" title="Code">💻</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=idahogurl" title="Documentation">📖</a> <a href="#infra-idahogurl" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/issues?q=author%3Aidahogurl" title="Bug reports">🐛</a> <a href="#ideas-idahogurl" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/pulls?q=is%3Apr+reviewed-by%3Aidahogurl" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=idahogurl" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/tbekaert"><img src="https://avatars.githubusercontent.com/u/11920484?v=4?s=100" width="100px;" alt="Thomas Bekaert"/><br /><sub><b>Thomas Bekaert</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=tbekaert" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://mattbrannon.dev/"><img src="https://avatars.githubusercontent.com/u/36570183?v=4?s=100" width="100px;" alt="Matt Brannon"/><br /><sub><b>Matt Brannon</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=mattbrannon" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.1stg.me/"><img src="https://avatars.githubusercontent.com/u/8336744?v=4?s=100" width="100px;" alt="JounQin"/><br /><sub><b>JounQin</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=JounQin" title="Code">💻</a> <a href="https://github.com/idahogurl/vs-code-prettier-eslint/pulls?q=is%3Apr+reviewed-by%3AJounQin" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://netux.site/"><img src="https://avatars.githubusercontent.com/u/6181929?v=4?s=100" width="100px;" alt="Martín Rodríguez"/><br /><sub><b>Martín Rodríguez</b></sub></a><br /><a href="https://github.com/idahogurl/vs-code-prettier-eslint/commits?author=netux" title="Code">💻</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->

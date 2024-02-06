@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/idahogurl/vs-code-prettier-eslint"
   },
-  "version": "5.1.1",
+  "version": "6.0.0",
   "engines": {
     "vscode": "^1.63.0",
     "node": "^16.13.0"
@@ -24,6 +24,9 @@
   "categories": [
     "Formatters"
   ],
+  "sponsor": {
+    "url": "https://github.com/sponsors/idahogurl"
+  },
   "main": "./dist/extension.js",
   "activationEvents": [
     "onLanguage:css",
@@ -41,17 +44,20 @@
     "onLanguage:typescript",
     "onLanguage:typescriptreact",
     "onLanguage:vue",
-    "onLanguage:yaml"
+    "onLanguage:yaml",
+    "onStartupFinished"
   ],
   "scripts": {
     "lint": "eslint . --ignore-pattern test/fixtures/",
     "pretest": "yarn lint",
     "test": "node ./test/runTest.js",
     "test:update": "SNAPSHOT_UPDATE=true node ./test/runTest.js",
-    "dev": "NODE_ENV=dev node ./scripts/build.js",
-    "watch": "NODE_ENV=dev,watch node ./scripts/build.js",
-    "build": "NODE_ENV=prod node ./scripts/build.js",
-    "package": "yarn build && vsce package --yarn",
+    "build:dev": "yarn build:extension && yarn build:worker",
+    "build": "yarn build:extension --minify && yarn build:worker --minify",
+    "build:extension": "esbuild ./src/extension.js --bundle --sourcemap --platform=node --target=node16 --external:vscode --external:./worker.mjs --outfile=./dist/extension.js",
+    "build:worker": "esbuild ./src/worker.mjs --bundle --sourcemap --platform=node --format=esm --target=node16 --outfile=./dist/worker.mjs",
+    "package:dev": "yarn build:dev && vsce package",
+    "package": "yarn build && vsce package",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
@@ -66,15 +72,15 @@
     "all-contributors-cli": "^6.24.0",
     "auto": "^10.42.2",
     "esbuild": "^0.16.14",
-    "esbuild-plugin-text-replace": "^1.2.0",
-    "eslint": "^8.31.0",
+    "eslint": "^8.52.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^27.2.0",
     "jest": "^29.3.1",
     "jest-environment-node": "^29.3.1",
     "ovsx": "^0.7.1",
-    "prettier": "^2.8.1",
+    "prettier": "^3.1.0",
+    "prettier-eslint": "^16.1.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5",
     "vsce": "^2.15.0"
@@ -82,7 +88,8 @@
   "dependencies": {
     "find-up": "^6.3.0",
     "ignore": "^5.2.4",
-    "prettier-eslint": "^15.0.1"
+    "require-relative": "^0.8.7",
+    "synckit": "^0.9.0"
   },
   "contributes": {
     "configuration": {
@@ -95,6 +102,10 @@
         }
       }
     }
+  },
+  "vsce": {
+    "dependencies": false,
+    "yarn": true
   },
   "__metadata": {
     "id": "d4b06bd6-36a0-469f-be55-c0a73413b688",

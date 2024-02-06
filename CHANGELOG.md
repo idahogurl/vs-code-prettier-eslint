@@ -1,3 +1,14 @@
+# v6.0.0 (Fri Dec 1 2023)
+
+#### 🚀 Enhancement
+
+- fix: use `worker_threads` via [`synckit`](https://github.com/un-ts/synckit) to support Prettier 3
+
+#### ⚠️ Breaking Changes
+- `prettier-eslint` is no longer bundled with the extension and must be installed by the user
+- Prettier v3.0 is now required
+- ESLint >= v8.52.0 is now required
+
 # v5.1.0 (Fri Mar 10 2023)
 
 :tada: This release contains work from a new contributor! :tada:
