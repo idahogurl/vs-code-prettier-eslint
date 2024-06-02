@@ -9,6 +9,7 @@ import {
 import * as path from 'path';
 import { createSyncFn } from 'synckit';
 import requireRelative from 'require-relative';
+import * as os from 'os';
 
 import isFilePathMatchedByIgnore from './ignore';
 
@@ -26,6 +27,28 @@ function getModulePath(filePath, moduleName) {
     return requireRelative.resolve(moduleName, filePath);
   } catch (error) {
     return require.resolve(moduleName);
+  }
+}
+
+/**
+ * @description Get the global node_modules path
+ * @returns The global node_modules path
+ */
+function getGlobalNodeModulesPath() {
+  // Detect the operating system
+  switch (os.platform()) {
+    case 'win32':
+      // Windows
+      return path.join(process.env.APPDATA, 'npm', 'node_modules');
+    case 'darwin':
+      // macOS
+      return path.join(process.env.PREFIX || '/usr/local', 'lib', 'node_modules');
+    case 'linux':
+      // Linux
+      return path.join(process.env.PREFIX || '/usr', 'lib', 'node_modules');
+    default:
+      // Unsupported platform
+      throw new Error('Unsupported platform');
   }
 }
 
@@ -60,7 +83,7 @@ function formatter(document) {
 
     const formatted = formatText({
       text,
-      prettierEslintPath: getModulePath(document.fileName, 'prettier-eslint'),
+      prettierEslintPath: getModulePath(getGlobalPackagePath(), 'prettier-eslint'),
       filePath: document.fileName,
       extensionConfig: { prettierLast },
     });
@@ -121,7 +144,7 @@ function waitForActiveSupportedDocument() {
  * by 'prettier-eslint' to resolve its internal dependencies (eslint and prettier).
  */
 async function warmUpWorker(document) {
-  const prettierEslintPath = getModulePath(document.fileName, 'prettier-eslint');
+  const prettierEslintPath = getModulePath(getGlobalPackagePath(), 'prettier-eslint');
 
   formatText({
     text: '',
