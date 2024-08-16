@@ -102,10 +102,10 @@ function waitForActiveSupportedDocument() {
     || !supportedLanguages.includes(window.activeTextEditor.document.languageId)
   ) {
     return new Promise((resolve) => {
-      const handler = window.onDidChangeActiveTextEditor(({ document }) => {
-        if (supportedLanguages.includes(document.languageId)) {
+      const handler = window.onDidChangeActiveTextEditor((editor) => {
+        if (editor && supportedLanguages.includes(editor.document.languageId)) {
           handler.dispose();
-          resolve(document);
+          resolve(editor.document);
         }
       });
     });
