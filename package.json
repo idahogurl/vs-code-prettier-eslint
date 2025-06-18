@@ -99,6 +99,11 @@
           "type": "boolean",
           "default": false,
           "description": "Run Prettier Last"
+        },
+        "vs-code-prettier-eslint.customPrettierEslintPath": {
+          "type": "string",
+          "default": "",
+          "description": "Custom Prettier ESLint Path"
         }
       }
     }

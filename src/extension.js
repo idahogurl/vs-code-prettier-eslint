@@ -22,6 +22,10 @@ const formatText = createSyncFn(require.resolve('./worker.mjs'));
  * @returns {string} - The resolved module path.
  */
 function getModulePath(filePath, moduleName) {
+  const customPrettierEslintPath = workspace.getConfiguration('vs-code-prettier-eslint').get('customPrettierEslintPath');
+  if (customPrettierEslintPath && moduleName === 'prettier-eslint') {
+    return require.resolve(customPrettierEslintPath);
+  }
   try {
     return requireRelative.resolve(moduleName, filePath);
   } catch (error) {
