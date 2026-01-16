@@ -2,7 +2,7 @@
   "publisher": "takline",
   "name": "prettier-eslint-modern",
   "displayName": "Prettier ESLint Modern",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "A fork of vs-code-prettier-eslint focused on compatibility with newer toolchains and improved reliability.",
   "license": "MIT",
