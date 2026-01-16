@@ -6,6 +6,13 @@ export function registerErrorHandler(channel: OutputChannel) {
     outputChannel = channel;
 }
 
+/**
+ * Shows and focuses the extension's output channel
+ */
+export function showOutputChannel() {
+    outputChannel?.show(true);
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function logError(message: string, error?: any) {
     if (outputChannel) {

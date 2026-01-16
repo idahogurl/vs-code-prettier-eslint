@@ -3,7 +3,6 @@ import { ExtensionContext, StatusBarAlignment, languages, window } from 'vscode'
 import { PrettierEditProvider } from './PrettierEditProvider';
 import { WorkerManager } from './WorkerManager';
 import { logError, logInfo, registerErrorHandler } from './errorHandler';
-import { getModulePath } from './utils';
 
 const supportedLanguages = [
   'css',
@@ -65,12 +64,10 @@ async function warmUpWorker(workerManager: WorkerManager) {
 
     const document = window.activeTextEditor.document;
     logInfo(`[warmup] Warming up worker for ${document.fileName}`);
-    const prettierEslintPath = getModulePath(document.fileName, 'prettier-eslint');
 
     try {
         await workerManager.format({
             text: '',
-            prettierEslintPath,
             filePath: document.fileName,
             logLevel: 'warn'
         });

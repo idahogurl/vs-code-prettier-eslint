@@ -8,10 +8,26 @@
   "license": "MIT",
   "author": "takline",
   "icon": "icon.png",
-	"galleryBanner": {
-		"color": "#09090b",
-		"theme": "dark"
-	},
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "pretest": "bun run lint && bun run typecheck",
+    "test": "tsc -p . && node ./dist/test/runTest.js",
+    "vscode:prepublish": "bun run build",
+    "build:dev": "bun run build:extension && bun run build:worker",
+    "build": "bun run build:extension --minify && bun run build:worker --minify",
+    "build:extension": "esbuild ./src/extension.ts --bundle --sourcemap --platform=node --target=node18 --external:vscode --external:./worker.mjs --outfile=./dist/extension.js",
+    "build:worker": "esbuild ./src/worker.ts --bundle --sourcemap --platform=node --format=esm --target=node18 --banner:js=\"import { createRequire } from 'module'; import { fileURLToPath } from 'url'; import { dirname } from 'path'; const require = createRequire(import.meta.url); const __filename = fileURLToPath(import.meta.url); const __dirname = dirname(__filename);\" --outfile=./dist/worker.mjs",
+    "package:dev": "bun run build:dev && vsce package --no-dependencies",
+    "package": "bun run build && vsce package --no-dependencies",
+    "publish:local": "vsce publish --no-dependencies",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
+  },
+  "galleryBanner": {
+    "color": "#09090b",
+    "theme": "dark"
+  },
   "keywords": [
     "eslint",
     "prettier",
@@ -24,16 +40,16 @@
     "type": "git",
     "url": "https://github.com/takline/prettier-eslint-modern"
   },
-	"bugs": {
-		"url": "https://github.com/takline/prettier-eslint-modern/issues"
-	},
+  "bugs": {
+    "url": "https://github.com/takline/prettier-eslint-modern/issues"
+  },
   "engines": {
     "vscode": "^1.93.0",
     "node": "^20.0.0"
   },
-	"extensionKind": [
-		"workspace"
-	],
+  "extensionKind": [
+    "workspace"
+  ],
   "categories": [
     "Formatters"
   ],
@@ -60,22 +76,6 @@
     "onLanguage:yaml",
     "onStartupFinished"
   ],
-  "scripts": {
-    "lint": "eslint src",
-    "typecheck": "tsc --noEmit",
-    "pretest": "bun run lint && bun run typecheck",
-    "test": "tsc -p . && node ./dist/test/runTest.js",
-    "vscode:prepublish": "bun run build",
-    "build:dev": "bun run build:extension && bun run build:worker",
-    "build": "bun run build:extension --minify && bun run build:worker --minify",
-    "build:extension": "esbuild ./src/extension.ts --bundle --sourcemap --platform=node --target=node18 --external:vscode --external:./worker.mjs --outfile=./dist/extension.js",
-    "build:worker": "esbuild ./src/worker.ts --bundle --sourcemap --platform=node --format=esm --target=node18 --banner:js=\"import { createRequire } from 'module'; import { fileURLToPath } from 'url'; import { dirname } from 'path'; const require = createRequire(import.meta.url); const __filename = fileURLToPath(import.meta.url); const __dirname = dirname(__filename);\" --outfile=./dist/worker.mjs",
-    "package:dev": "bun run build:dev && vsce package --no-dependencies",
-    "package": "bun run build && vsce package --no-dependencies",
-    "publish:local": "vsce publish --no-dependencies",
-    "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
-  },
   "devDependencies": {
     "@auto-it/exec": "^11.3.6",
     "@auto-it/first-time-contributor": "^11.3.6",
@@ -98,12 +98,9 @@
     "eslint": "^9.39.2",
     "find-up": "^8.0.0",
     "ignore": "^7.0.5",
-    "prettier": "^3.7.4",
-    "prettier-eslint": "^16.4.2",
-    "require-relative": "^0.8.7"
+    "prettier": "^3.7.4"
   },
   "dependencies": {},
-
   "contributes": {
     "configuration": {
       "title": "Prettier ESLint Modern",

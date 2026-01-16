@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
 import { WorkerManager } from './WorkerManager';
-import { logError, logInfo } from './errorHandler';
+import { logError, logInfo, showOutputChannel } from './errorHandler';
 import { isFilePathMatchedByIgnore } from './ignoreFileHandler';
-import { getConfig, getModulePath } from './utils';
+import { getConfig } from './utils';
 
 export class PrettierEditProvider implements vscode.DocumentRangeFormattingEditProvider {
     private workerManager: WorkerManager;
@@ -40,15 +40,11 @@ export class PrettierEditProvider implements vscode.DocumentRangeFormattingEditP
             this.statusBarItem.show();
             logInfo(`[formatter] Formatting started...`);
 
-            const prettierEslintPath = getModulePath(document.fileName, 'prettier-eslint');
-            logInfo(`[formatter] Resolved prettier-eslint path: ${prettierEslintPath}`);
-
             const formatted = await this.workerManager.format({
                 text,
-                prettierEslintPath,
                 filePath: document.fileName,
                 extensionConfig: { prettierLast },
-                logLevel: 'trace' 
+                logLevel: 'trace'
             });
 
             this.statusBarItem.text = "$(check) Prettier ESLint";
@@ -63,7 +59,7 @@ export class PrettierEditProvider implements vscode.DocumentRangeFormattingEditP
             
             vscode.window.showErrorMessage("Prettier ESLint: Formatting failed", "Show Output").then(selection => {
                 if (selection === "Show Output") {
-                    vscode.commands.executeCommand('workbench.action.output.toggleOutput');
+                    showOutputChannel();
                 }
             });
             return [];

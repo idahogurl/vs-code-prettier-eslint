@@ -1,0 +1,6 @@
+This task outlines the steps needed to debug the prettier-eslint-modern vscode extension, paired with the eslint config package in `./june-os/packages/eslint`. When using the vscode extension with the eslint config package in `june-os/workers/patch`, we are receiving the errors found in `./prettier-eslint-modern/errors.log`. To fix this bug, we need to iteratively conduct this process:
+
+ - You debug the errors in the errors.log file. This may include debugging `@junetechnology/eslint`, the prettier-eslint-modern vscode extension, or any other error causes you determine.
+ - You will make updates to fix the errors. If the root cause is in the eslint package, you will need to rebuild the package (bun run build). If the root cause is in the prettier-eslint-modern vscode extension, you will also need to rebuild the extension (bun run build). Any other error fixes will follow the same pattern.
+ - I will test the new changes and update the errors.log file with the new errors (if any).
+    - We will repeat this process until the errors.log file is empty.

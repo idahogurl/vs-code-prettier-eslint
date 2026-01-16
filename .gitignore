@@ -6,4 +6,4 @@ test/fixtures/temp
 coverage/
 .env
 /*.vsix
-package-lock.json
+package-lock.jsonerrors.log
