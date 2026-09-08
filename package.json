@@ -99,6 +99,11 @@
           "type": "boolean",
           "default": false,
           "description": "Run Prettier Last"
+        },
+        "vs-code-prettier-eslint.globalNodeModulesPath": {
+          "type": "string",
+          "default": "/usr/lib/node_modules",
+          "description": "Global node_modules directory searched for prettier-eslint when it is not installed in the project. Set to an empty string to disable the global fallback."
         }
       }
     }

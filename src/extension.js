@@ -16,7 +16,8 @@ const outputChannel = window.createOutputChannel('Prettier Eslint'); // create o
 const formatText = createSyncFn(require.resolve('./worker.mjs'));
 
 /**
- * Resolves the path of a module relative to a file path.
+ * Resolves the path of a module: project-local first, then the global
+ * node_modules directory.
  * @param {string} filePath - The file path to resolve the module path relative to.
  * @param {string} moduleName - The name of the module to resolve.
  * @returns {string} - The resolved module path.
@@ -25,6 +26,16 @@ function getModulePath(filePath, moduleName) {
   try {
     return requireRelative.resolve(moduleName, filePath);
   } catch (error) {
+    const globalDir = workspace
+      .getConfiguration('vs-code-prettier-eslint')
+      .get('globalNodeModulesPath');
+
+    if (globalDir) {
+      try {
+        return require.resolve(moduleName, { paths: [globalDir] });
+      } catch (globalError) { /* fall through */ }
+    }
+
     return require.resolve(moduleName);
   }
 }
